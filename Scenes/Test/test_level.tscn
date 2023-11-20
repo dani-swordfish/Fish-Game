@@ -1,0 +1,307 @@
+[gd_scene load_steps=18 format=3 uid="uid://cvc5bp36c1uet"]
+
+[ext_resource type="PackedScene" uid="uid://ckvs5mpywhe1v" path="res://Scenes/Tilemap/sub_tilemap.tscn" id="1_rkht3"]
+[ext_resource type="PackedScene" uid="uid://cy6c8snu4ia2t" path="res://Scenes/Conveyor Components/conveyor.tscn" id="2_gtctu"]
+[ext_resource type="PackedScene" uid="uid://8scy2k1de12h" path="res://Scenes/Conveyor Components/conveyor_split.tscn" id="3_pb3g5"]
+[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="3_sr1cf"]
+[ext_resource type="Script" path="res://Scenes/Test/ui.gd" id="4_6gpoe"]
+[ext_resource type="PackedScene" uid="uid://dgjyaiw1bas4v" path="res://Scenes/Conveyor Components/cutter.tscn" id="4_ov1ni"]
+[ext_resource type="Script" path="res://Scenes/Player/player_hand.gd" id="4_pdk6w"]
+[ext_resource type="PackedScene" uid="uid://dwaqp5rfhedr2" path="res://Scenes/Conveyor Components/bin.tscn" id="5_bmkt8"]
+[ext_resource type="PackedScene" uid="uid://3b2ckl862ymm" path="res://Scenes/Boxes/box.tscn" id="6_k24xg"]
+[ext_resource type="Script" path="res://Scenes/Boxes/box_gui.gd" id="6_orwfx"]
+[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="6_qc3lr"]
+[ext_resource type="PackedScene" uid="uid://cdssqx1vrhmdx" path="res://conveyor_sorter.tscn" id="7_8wl17"]
+[ext_resource type="Script" path="res://Scenes/Test/sub_machine.gd" id="7_eqk0a"]
+[ext_resource type="PackedScene" uid="uid://ba7ks25cfru1i" path="res://Scenes/Item/item.tscn" id="9_waxl6"]
+[ext_resource type="Script" path="res://Scenes/Test/item_picker_ui.gd" id="12_nfskl"]
+[ext_resource type="Texture2D" uid="uid://ptwwgp32toke" path="res://Art/test fish.png" id="13_frw5w"]
+[ext_resource type="PackedScene" uid="uid://difpcvx2jdcgu" path="res://Scenes/UI/Item Boxes/item_box.tscn" id="14_aoceu"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="ConveyorBelts" type="Node2D" parent="."]
+
+[node name="Conveyor" parent="ConveyorBelts" node_paths=PackedStringArray("item_node") instance=ExtResource("2_gtctu")]
+position = Vector2(224, 256)
+has_item_ready = true
+item_node = NodePath("../../Items/Item")
+
+[node name="Conveyor2" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(192, 192)
+rotation = -1.5708
+
+[node name="Conveyor3" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(192, 160)
+rotation = -1.5708
+
+[node name="Conveyor4" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(160, 96)
+rotation = 3.14159
+is_static = true
+
+[node name="Conveyor13" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(128, 128)
+rotation = -1.5708
+is_static = true
+
+[node name="Conveyor21" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(320, 96)
+is_static = true
+
+[node name="Conveyor14" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(128, 96)
+rotation = -1.5708
+is_static = true
+
+[node name="Conveyor15" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(128, 64)
+is_static = true
+
+[node name="Conveyor16" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(192, 128)
+rotation = -1.5708
+
+[node name="Conveyor17" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(192, 64)
+is_static = true
+
+[node name="Conveyor23" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(160, 64)
+is_static = true
+
+[node name="Conveyor18" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(224, 64)
+is_static = true
+
+[node name="Conveyor22" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(256, 128)
+rotation = -1.5708
+is_static = true
+
+[node name="Conveyor19" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(256, 64)
+rotation = 1.5708
+is_static = true
+
+[node name="Conveyor20" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(288, 64)
+is_static = true
+
+[node name="Conveyor5" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(320, 64)
+rotation = 1.5708
+is_static = true
+
+[node name="Conveyor6" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(192, 96)
+
+[node name="Conveyor26" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(256, 96)
+
+[node name="Conveyor27" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(224, 128)
+
+[node name="Conveyor7" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(352, 96)
+rotation = 1.5708
+
+[node name="Conveyor24" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(352, 128)
+rotation = 3.14159
+
+[node name="Conveyor25" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(320, 128)
+rotation = 3.14159
+
+[node name="Conveyor8" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(288, 128)
+rotation = 1.5708
+
+[node name="Conveyor9" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(288, 160)
+rotation = 1.5708
+
+[node name="Conveyor10" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(256, 192)
+rotation = 3.14159
+
+[node name="Conveyor11" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(256, 256)
+rotation = 3.14159
+
+[node name="Conveyor12" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
+position = Vector2(288, 192)
+rotation = 3.14159
+
+[node name="Spawner" parent="ConveyorBelts" instance=ExtResource("3_sr1cf")]
+position = Vector2(160, 160)
+item_picker_array = Array[int]([2, 3, 1])
+
+[node name="ConveyorSplit" parent="ConveyorBelts" instance=ExtResource("3_pb3g5")]
+position = Vector2(352, 192)
+rotation = 1.5708
+
+[node name="Cutter" parent="ConveyorBelts" instance=ExtResource("4_ov1ni")]
+position = Vector2(416, 160)
+
+[node name="Cutter2" parent="ConveyorBelts" instance=ExtResource("4_ov1ni")]
+position = Vector2(224, 96)
+
+[node name="Bin" parent="ConveyorBelts" instance=ExtResource("5_bmkt8")]
+position = Vector2(288, 256)
+rotation = 3.14159
+
+[node name="Output" parent="ConveyorBelts" instance=ExtResource("6_qc3lr")]
+position = Vector2(224, 192)
+item = 3
+
+[node name="ConveyorSorter" parent="ConveyorBelts" instance=ExtResource("7_8wl17")]
+position = Vector2(288, 96)
+rotation = 1.5708
+item = 3
+
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("4_6gpoe")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -198.5
+offset_top = -121.0
+offset_right = 198.5
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Box" parent="UI/Control/Panel" instance=ExtResource("6_k24xg")]
+layout_mode = 0
+offset_left = 52.5
+offset_top = 28.0
+offset_right = 92.5
+offset_bottom = 68.0
+script = ExtResource("6_orwfx")
+component = 1
+
+[node name="Box2" parent="UI/Control/Panel" instance=ExtResource("6_k24xg")]
+layout_mode = 0
+offset_left = 157.5
+offset_top = 28.0
+offset_right = 197.5
+offset_bottom = 68.0
+script = ExtResource("6_orwfx")
+component = 2
+
+[node name="Box3" parent="UI/Control/Panel" instance=ExtResource("6_k24xg")]
+layout_mode = 0
+offset_left = 255.5
+offset_top = 22.0
+offset_right = 295.5
+offset_bottom = 62.0
+script = ExtResource("6_orwfx")
+component = 3
+
+[node name="PlayerHand" type="Control" parent="UI/Control"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("4_pdk6w")
+
+[node name="PlayerBox" parent="UI/Control/PlayerHand" instance=ExtResource("6_k24xg")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+mouse_filter = 2
+
+[node name="ItemPickerUI" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_nfskl")
+
+[node name="TestFish" type="Sprite2D" parent="UI/ItemPickerUI"]
+position = Vector2(288, 160)
+texture = ExtResource("13_frw5w")
+
+[node name="GridContainer" type="GridContainer" parent="UI/ItemPickerUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="ItemBox" parent="UI/ItemPickerUI/GridContainer" instance=ExtResource("14_aoceu")]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 159)
+zoom = Vector2(3, 3)
+
+[node name="SubMachine" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 448.0
+offset_top = 96.0
+offset_right = 579.0
+offset_bottom = 223.0
+script = ExtResource("7_eqk0a")
+
+[node name="SubTilemap" parent="SubMachine" instance=ExtResource("1_rkht3")]
+
+[node name="Panel" type="Panel" parent="SubMachine"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -78.0
+offset_right = 79.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ConveyorBelts" type="Node2D" parent="SubMachine"]
+
+[node name="Items" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Item" parent="Items" instance=ExtResource("9_waxl6")]
+position = Vector2(224, 256)
+
+[connection signal="gui_input" from="UI/Control/Panel/Box" to="UI/Control/Panel/Box" method="_on_gui_input"]
+[connection signal="gui_input" from="UI/Control/Panel/Box2" to="UI/Control/Panel/Box2" method="_on_gui_input"]
+[connection signal="gui_input" from="UI/Control/Panel/Box3" to="UI/Control/Panel/Box3" method="_on_gui_input"]
+[connection signal="gui_input" from="SubMachine" to="SubMachine" method="_on_gui_input"]
+[connection signal="gui_input" from="SubMachine/Panel" to="SubMachine" method="_on_panel_gui_input"]

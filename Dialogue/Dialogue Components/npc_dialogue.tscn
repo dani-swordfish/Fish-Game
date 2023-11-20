@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://kyxdvart0d6p"]
+
+[ext_resource type="Script" path="res://Dialogue/Dialogue Components/npc_dialogue.gd" id="1_m75lr"]
+
+[node name="NPCDialogue" type="Area2D" groups=["npc_dialogue"]]
+script = ExtResource("1_m75lr")

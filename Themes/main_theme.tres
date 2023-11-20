@@ -1,0 +1,52 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://iio8g86nc5cm"]
+
+[ext_resource type="StyleBox" uid="uid://sad2yvuc8vd6" path="res://Themes/button_normal.tres" id="1_3b1pg"]
+[ext_resource type="FontFile" uid="uid://d2bwfie2p7v65" path="res://Themes/Fonts/CaslonAntique.ttf" id="1_shlkd"]
+[ext_resource type="StyleBox" uid="uid://dcw1smemise63" path="res://Themes/button_focus_hover.tres" id="2_14aj2"]
+[ext_resource type="StyleBox" uid="uid://sp7kecnp3wn2" path="res://Themes/panel.tres" id="3_gu3m1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdtbi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y31c"]
+bg_color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qu1d"]
+bg_color = Color(0, 0.764706, 0.262745, 1)
+
+[resource]
+default_font = ExtResource("1_shlkd")
+default_font_size = 44
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = ExtResource("1_3b1pg")
+Button/styles/focus = ExtResource("2_14aj2")
+Button/styles/hover = ExtResource("2_14aj2")
+Button/styles/normal = ExtResource("1_3b1pg")
+Button/styles/pressed = ExtResource("1_3b1pg")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.941406, 0.464844, 0.125, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/styles/normal = SubResource("StyleBoxEmpty_jdtbi")
+Panel/styles/panel = ExtResource("3_gu3m1")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_2y31c")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_1qu1d")
+label_light/colors/font_color = Color(1, 1, 1, 1)

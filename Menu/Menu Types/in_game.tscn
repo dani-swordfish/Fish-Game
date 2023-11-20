@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://difubvbh8xgw7"]
+
+[ext_resource type="Script" path="res://Menu/Menu Types/in_game.gd" id="1_o4m8y"]
+[ext_resource type="StyleBox" uid="uid://sp7kecnp3wn2" path="res://Themes/panel.tres" id="2_paaq5"]
+[ext_resource type="PackedScene" uid="uid://ccf3y8xj1tiou" path="res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn" id="3_e6fjx"]
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="4_48moa"]
+[ext_resource type="PackedScene" uid="uid://b5t8ffmkijp1s" path="res://Menu/Menu Components/Menu Buttons/MenuHubFromInGame.tscn" id="5_he3jv"]
+[ext_resource type="Script" path="res://Menu/Menu Components/Menu Buttons/MenuHubFromInGame.gd" id="6_7nyu0"]
+
+[node name="InGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o4m8y")
+menu_type = 5
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(295, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -90.0
+offset_right = 147.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_48moa")
+theme_override_styles/panel = ExtResource("2_paaq5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -120.0
+offset_right = 72.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="CloseMenuHub" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+layout_mode = 2
+text = "Continue"
+transition_to = 6
+
+[node name="MainMenu" parent="VBoxContainer" instance=ExtResource("5_he3jv")]
+layout_mode = 2
+text = "Main Menu
+"
+script = ExtResource("6_7nyu0")
+
+[node name="Instructions" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+layout_mode = 2
+text = "Instructions"
+transition_to = 2
+
+[node name="Settings" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+layout_mode = 2
+text = "Settings"
+transition_to = 1
+
+[node name="Controls" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+layout_mode = 2
+text = "Controls"
+transition_to = 3

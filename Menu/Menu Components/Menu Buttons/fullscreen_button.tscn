@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://m4pwgrtm3784"]
+
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_4i71o"]
+[ext_resource type="Script" path="res://Menu/Menu Components/Menu Buttons/fullscreen_button.gd" id="2_nf47g"]
+
+[node name="FullscreenButton" type="Button"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = -465.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme = ExtResource("1_4i71o")
+toggle_mode = true
+text = "Placeholder
+"
+script = ExtResource("2_nf47g")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

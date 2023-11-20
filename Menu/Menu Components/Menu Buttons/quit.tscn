@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b54nmrga5qjd2"]
+
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_xubt5"]
+[ext_resource type="Script" path="res://Menu/Menu Components/Menu Buttons/quit.gd" id="2_8hdpq"]
+
+[node name="Quit" type="Button"]
+theme = ExtResource("1_xubt5")
+text = "Quit"
+script = ExtResource("2_8hdpq")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

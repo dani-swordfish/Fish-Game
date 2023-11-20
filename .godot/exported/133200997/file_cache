@@ -1,0 +1,33 @@
+res://addons/godot_state_charts/utilities/editor_sidebar.tscn::e32c0165d0fc308bd408479f1b2181ab::1697401144::res://.godot/exported/133200997/export-df2d4cfb237df792ce3cd52de2fbb820-editor_sidebar.scn
+res://addons/godot_state_charts/utilities/state_chart_debugger.tscn::f89ac8876c059098a0736fb040be6739::1697401144::res://.godot/exported/133200997/export-6a5e4d68230ed0f2c2536fee1232a133-state_chart_debugger.scn
+res://Dialogue/Dialogue Components/npc_dialogue.tscn::4dd52b16da766bb77f680c131096c1fb::1697985729::res://.godot/exported/133200997/export-7447f4640342eaa2725c632b8a11b944-npc_dialogue.scn
+res://Dialogue/Dialogue Components/player_dialogue.tscn::cee6024782639d934a1cdbb5a290de24::1697822348::res://.godot/exported/133200997/export-2cfa07010cffc5bab9d6c63270122969-player_dialogue.scn
+res://Dialogue/choice_scene.tscn::33b39a038088d215afe200116881f169::1698496307::res://.godot/exported/133200997/export-671b611a10537c776e8588c6961643f2-choice_scene.scn
+res://Dialogue/dialogue_handler.tscn::813d2fcf0ccd4d6748ade6fff0db3183::1698490649::res://.godot/exported/133200997/export-b5867d8d1ea2b2601daea1287783828a-dialogue_handler.scn
+res://Menu/InputRemapping/InputRemapper.tscn::d139179a17a70c2ddcd4d4bdf612dab7::1699548427::res://.godot/exported/133200997/export-bb6fd1b35526b115ca085b634de2f904-InputRemapper.scn
+res://Menu/InputRemapping/input_remap.tscn::dac097cb87fe9783939fd3f9d9c9af52::1699548427::res://.godot/exported/133200997/export-5e673d7c80b2068e1128401b11a63f09-input_remap.scn
+res://Menu/Win and Loose Menu/game_over.tscn::a2a044cc75530393e4c4545a9158782d::1697400996::res://.godot/exported/133200997/export-c2aaf9ea886cae0db6854fa717ac5332-game_over.scn
+res://Menu/Win and Loose Menu/win.tscn::76b048a36a89691980ed676dc7cc63e5::1697400996::res://.godot/exported/133200997/export-c0c79d04960b71a6b556e7f07b39a852-win.scn
+res://Themes/button_focus_hover.tres::c5f6b0425cd8676650668a9bbb154351::1699543741::res://.godot/exported/133200997/export-2a4ffa3f2d2c77af113f9d1e47362a97-button_focus_hover.res
+res://Themes/button_normal.tres::fd5918682359b1a37afcf36995058259::1699543741::res://.godot/exported/133200997/export-bbed4d58cadd10ff6326a43bb6b4bb58-button_normal.res
+res://Themes/main_theme.tres::d035c6b43e58762a4d1dde95301582c9::1699543741::res://.godot/exported/133200997/export-988ec57cf4f58bad446ca33331ccf2da-main_theme.res
+res://Themes/new_bus_layout.tres::7ca9ec2964fbdbc6643ac5859713b86e::1697280891::res://.godot/exported/133200997/export-4f60adb75da9c2ee421f56e3a3e3882d-new_bus_layout.res
+res://Themes/panel.tres::44910d82ee110d28861080a81c54fb4e::1699543741::res://.godot/exported/133200997/export-7f762e95f5cbd3d5c7f21eeb26cf1474-panel.res
+res://Dialogue/Dialogue Components/TextToConversationConverter.tres::18d613bb99dc724a36e5f6144cf1c686::1697644201::res://.godot/exported/133200997/export-da3447489d685252cddd4432849ab36a-TextToConversationConverter.res
+res://Menu/Menu Components/Menu Buttons/fullscreen_button.tscn::c185a7f0947e0f42a96e137fffeca09f::1698490757::res://.godot/exported/133200997/export-1b1591500bfe8ae1f225c12a3e55699d-fullscreen_button.scn
+res://Menu/Menu Components/Menu Buttons/level_button.tscn::a6030e3e45d3d7f09605897226706c51::1699548426::res://.godot/exported/133200997/export-e11d69dfa983514265432f170b871ed8-level_button.scn
+res://Menu/Menu Components/Menu Buttons/MenuHubFromInGame.tscn::7214e1e57a83f5df4b6314ea563f6f5f::1698492656::res://.godot/exported/133200997/export-4847c09efe692bf5506485fda77d7f21-MenuHubFromInGame.scn
+res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn::43fc2b418638f28975e958687e001bb7::1698492587::res://.godot/exported/133200997/export-f6ef2d8ba0980c082d757cd30a20786f-menu_transition_button.scn
+res://Menu/Menu Components/Menu Buttons/quit.tscn::6b6c03030c780b6d933fba4a34365b58::1698490757::res://.godot/exported/133200997/export-90ceaf2cbc21c0af0d80be8c186c5cb2-quit.scn
+res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn::afc8efe83da966ea4f40e0dfc5f40761::1699548426::res://.godot/exported/133200997/export-658c16185a36ec986b3e5dc2d14c23a3-variable_menu_transition.scn
+res://Menu/Menu Components/Music Settings/music_slider.tscn::6227fad78580f3d0373d9b33817fcab2::1698515265::res://.godot/exported/133200997/export-a8e6000721c63123dbd12ab0660c2989-music_slider.scn
+res://Menu/Menu Hub/menu_hub.tscn::2698c4191ad6d1668b8f02154710d9ab::1699548426::res://.godot/exported/133200997/export-57580904e667fab726091e24fe93f386-menu_hub.scn
+res://Menu/Menu Types/instructions.tscn::17985c9a316405cb29f048bfca298b6b::1699548426::res://.godot/exported/133200997/export-b9a39827f39be212b90de2bb16525496-instructions.scn
+res://Menu/Menu Types/in_game.tscn::f3bd1a696462e4922d4dc59fb52c9f26::1699548426::res://.godot/exported/133200997/export-70fc59bd2a4c9e9e85bd16ef0f07aa55-in_game.scn
+res://Menu/Menu Types/main.tscn::a55cde3b87d3c590222c4298748e204b::1699548426::res://.godot/exported/133200997/export-79355a9505388545b1773e89da3d6ccc-main.scn
+res://Menu/Menu Types/menu_levels.tscn::1e0665be3717d1ef42869c68db3eec0d::1699548426::res://.godot/exported/133200997/export-ebe4a4a330a1833932567f41f6b858b6-menu_levels.scn
+res://Menu/Menu Types/settings.tscn::3b1eb4410c6df1ae4be94a0ed46c824e::1698515265::res://.godot/exported/133200997/export-d7470be896c2a287b7051f921cb5e6cb-settings.scn
+res://Save System/saver.tres::46314b4164a4d82024db8a445c6e1989::1699544913::res://.godot/exported/133200997/export-c21d8ce10dcb6468b724a3faca600240-saver.res
+res://Test/blank.tscn::4eaa990bf60836d025d096c6af7bf9af::1699548426::res://.godot/exported/133200997/export-75de73eb74cc07e4351eb1a03543457d-blank.scn
+res://Test/test_inputs.tscn::5724162764d5779f3d31ec0ac492e870::1699548427::res://.godot/exported/133200997/export-a0d5a472b45501979d147fcf1dabb941-test_inputs.scn
+res://Test/test_action_array.tres::0b8248ec67ad1557150237f59cd1bd5a::1699547069::res://.godot/exported/133200997/export-b94269f0aaee16ceda292506497e212f-test_action_array.res

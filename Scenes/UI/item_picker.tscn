@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://delo2acgw8sqr"]
+
+[ext_resource type="Script" path="res://Scenes/Components/item_picker.gd" id="1_sqcpm"]
+
+[node name="ItemPicker" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -15.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = 14.0
+mouse_filter = 1
+script = ExtResource("1_sqcpm")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

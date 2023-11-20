@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckvs5mpywhe1v"]
+
+[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="1_n7jtq"]
+[ext_resource type="PackedScene" uid="uid://cy6c8snu4ia2t" path="res://Scenes/Conveyor Components/conveyor.tscn" id="2_qb5yl"]
+[ext_resource type="Script" path="res://Scenes/Tilemap/sub_tilemap.gd" id="3_8ar52"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ti3ot"]
+texture = ExtResource("1_n7jtq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bucqi"]
+scenes/1/scene = ExtResource("2_qb5yl")
+
+[sub_resource type="TileSet" id="TileSet_6cdqe"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_ti3ot")
+sources/1 = SubResource("TileSetScenesCollectionSource_bucqi")
+
+[node name="SubTilemap" type="TileMap"]
+tile_set = SubResource("TileSet_6cdqe")
+format = 2
+script = ExtResource("3_8ar52")

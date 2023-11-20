@@ -1,0 +1,27 @@
+extends Node
+class_name Enum
+
+enum DIRECTION {
+	N,
+	E,
+	S,
+	W,
+}
+
+enum COMPONENTS {
+	EMPTY,
+	CONV_STRAIT,
+	CONV_CORNER,
+	CONV_SPLITTER,
+	SPAWNER,
+	CUTTER,
+	CONSTRUCTOR,
+}
+
+enum ITEMS {
+	NONE,
+	TEST_FISH,
+	TEST_SCALE,
+	TEST_MEAT,
+}
+

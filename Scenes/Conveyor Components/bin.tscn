@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwaqp5rfhedr2"]
+
+[ext_resource type="Script" path="res://Scenes/Conveyor Components/bin.gd" id="1_xyeor"]
+[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_ec80u"]
+
+[sub_resource type="Gradient" id="Gradient_dg1oq"]
+colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_33ib3"]
+gradient = SubResource("Gradient_dg1oq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lep0g"]
+size = Vector2(6, 6)
+
+[node name="Bin" type="Node2D"]
+script = ExtResource("1_xyeor")
+
+[node name="SpriteBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.5, 0)
+scale = Vector2(0.128906, 32)
+texture = SubResource("GradientTexture1D_33ib3")
+
+[node name="Top-down-conveyor" type="Sprite2D" parent="."]
+texture = ExtResource("2_ec80u")
+hframes = 4
+vframes = 4
+frame = 3
+region_rect = Rect2(18, 14, 5, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_lep0g")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjp7oigxj17qp"]
+
+[ext_resource type="Script" path="res://Menu/Menu Hub/menu_hub.gd" id="1_23f68"]
+[ext_resource type="PackedScene" uid="uid://bamylp0sx0v1h" path="res://Menu/Menu Types/main.tscn" id="2_c1i0q"]
+[ext_resource type="AudioStream" uid="uid://boxebc1442nec" path="res://Sounds/Click_Standard_00.mp3" id="3_0t3l8"]
+[ext_resource type="PackedScene" uid="uid://v10lyfekxsjd" path="res://Menu/Menu Types/settings.tscn" id="3_kf85n"]
+[ext_resource type="PackedScene" uid="uid://dqaqx8pyws4b7" path="res://Menu/InputRemapping/InputRemapper.tscn" id="4_lhxvt"]
+[ext_resource type="PackedScene" uid="uid://dxdtjm5n7c1rk" path="res://Menu/Menu Types/instructions.tscn" id="5_45fb1"]
+[ext_resource type="PackedScene" uid="uid://d4ca3xkblibch" path="res://Menu/Menu Types/menu_levels.tscn" id="7_5l141"]
+[ext_resource type="PackedScene" uid="uid://ccf3y8xj1tiou" path="res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn" id="7_j56kg"]
+[ext_resource type="PackedScene" uid="uid://difubvbh8xgw7" path="res://Menu/Menu Types/in_game.tscn" id="8_tvxcr"]
+
+[node name="MenuHub" type="Control" groups=["menu_hub"]]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_23f68")
+
+[node name="Error" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuTransitionButton" parent="Error" instance=ExtResource("7_j56kg")]
+layout_mode = 0
+offset_left = 546.0
+offset_top = 491.0
+offset_right = 757.0
+offset_bottom = 555.0
+text = "Go to Main"
+
+[node name="Label" type="Label" parent="Error"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.5
+offset_top = -13.0
+offset_right = 219.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Should never be visible, menu hub is open without menu"
+
+[node name="Menus" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Main" parent="Menus" instance=ExtResource("2_c1i0q")]
+visible = false
+layout_mode = 1
+
+[node name="Settings" parent="Menus" instance=ExtResource("3_kf85n")]
+layout_mode = 1
+
+[node name="Instructions" parent="Menus" instance=ExtResource("5_45fb1")]
+visible = false
+layout_mode = 1
+
+[node name="MenuLevels" parent="Menus" instance=ExtResource("7_5l141")]
+visible = false
+layout_mode = 1
+
+[node name="InGame" parent="Menus" instance=ExtResource("8_tvxcr")]
+visible = false
+layout_mode = 1
+
+[node name="InputRemapper" parent="Menus" instance=ExtResource("4_lhxvt")]
+layout_mode = 1
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_0t3l8")

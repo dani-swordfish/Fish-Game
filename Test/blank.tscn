@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://badh3w5nasqsa"]
+
+[ext_resource type="Script" path="res://Test/menu_test.gd" id="1_ndehk"]
+[ext_resource type="Texture2D" uid="uid://donc6ln3cw5ki" path="res://icon.svg" id="1_v5upf"]
+[ext_resource type="PackedScene" uid="uid://bjp7oigxj17qp" path="res://Menu/Menu Hub/menu_hub.tscn" id="2_xrejj"]
+
+[node name="blank" type="Node2D"]
+script = ExtResource("1_ndehk")
+
+[node name="Gobot" type="Node2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="Gobot"]
+position = Vector2(291, 207)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon2" type="Sprite2D" parent="Gobot"]
+position = Vector2(969, 218)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon3" type="Sprite2D" parent="Gobot"]
+position = Vector2(131, 465)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon4" type="Sprite2D" parent="Gobot"]
+position = Vector2(301, 556)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon5" type="Sprite2D" parent="Gobot"]
+position = Vector2(465, 603)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon6" type="Sprite2D" parent="Gobot"]
+position = Vector2(465, 603)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon7" type="Sprite2D" parent="Gobot"]
+position = Vector2(656, 608)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon8" type="Sprite2D" parent="Gobot"]
+position = Vector2(656, 608)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon9" type="Sprite2D" parent="Gobot"]
+position = Vector2(832, 596)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon10" type="Sprite2D" parent="Gobot"]
+position = Vector2(1032, 553)
+texture = ExtResource("1_v5upf")
+
+[node name="Icon11" type="Sprite2D" parent="Gobot"]
+position = Vector2(1161, 414)
+texture = ExtResource("1_v5upf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuHub" parent="CanvasLayer" instance=ExtResource("2_xrejj")]
+unique_name_in_owner = true
+default_menu = 5

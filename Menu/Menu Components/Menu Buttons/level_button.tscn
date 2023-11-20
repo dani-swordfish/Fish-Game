@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkad02jqltnog"]
+
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_cie0b"]
+[ext_resource type="Script" path="res://Menu/Menu Components/Menu Buttons/level_button.gd" id="2_giebu"]
+
+[node name="LevelButton" type="Button"]
+custom_minimum_size = Vector2(180, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = -460.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme = ExtResource("1_cie0b")
+text = "Placeholder
+"
+script = ExtResource("2_giebu")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

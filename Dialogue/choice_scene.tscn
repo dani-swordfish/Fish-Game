@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://3fud1ikru1v"]
+
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_4idvj"]
+[ext_resource type="Script" path="res://Dialogue/choice_scene.gd" id="2_38mkm"]
+
+[node name="Choice" type="RichTextLabel" groups=["choice"]]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 13.0
+grow_horizontal = 2
+focus_mode = 2
+theme = ExtResource("1_4idvj")
+theme_override_font_sizes/normal_font_size = 32
+text = "My first choice"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("2_38mkm")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

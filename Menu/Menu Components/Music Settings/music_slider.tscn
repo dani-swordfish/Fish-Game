@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cinva11076slr"]
+
+[ext_resource type="Script" path="res://Menu/Menu Components/Music Settings/music.gd" id="3_dv5mk"]
+
+[node name="Music" type="HSlider"]
+offset_left = 4.0
+offset_top = 30.0
+offset_right = 51.0
+offset_bottom = 35.0
+max_value = 1.0
+step = 0.0
+script = ExtResource("3_dv5mk")
+bus_name = "Music"
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

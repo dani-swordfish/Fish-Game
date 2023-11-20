@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bamylp0sx0v1h"]
+
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_i6k0f"]
+[ext_resource type="Script" path="res://Menu/Menu Types/main.gd" id="1_rgqpb"]
+[ext_resource type="PackedScene" uid="uid://ccf3y8xj1tiou" path="res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn" id="1_v3cd4"]
+[ext_resource type="Script" path="res://Menu/Menu Types/VBoxContainer.gd" id="2_msrns"]
+[ext_resource type="PackedScene" uid="uid://b54nmrga5qjd2" path="res://Menu/Menu Components/Menu Buttons/quit.tscn" id="4_rfesp"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rgqpb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.113725, 0.258824, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -164.0
+offset_right = 102.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+script = ExtResource("2_msrns")
+
+[node name="CloseMenuHub" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+visible = false
+layout_mode = 2
+text = "Continue"
+transition_to = 6
+
+[node name="NewGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_i6k0f")
+text = " New Game "
+
+[node name="Levels" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+layout_mode = 2
+text = "Levels"
+transition_to = 4
+
+[node name="Settings" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+layout_mode = 2
+text = "Settings"
+transition_to = 1
+
+[node name="Instructions" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+layout_mode = 2
+text = "Instructions"
+transition_to = 2
+
+[node name="Controls" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+layout_mode = 2
+text = "Controls"
+transition_to = 3
+
+[node name="Quit" parent="VBoxContainer" instance=ExtResource("4_rfesp")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

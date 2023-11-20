@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ActionArray" load_steps=6 format=3 uid="uid://b1pilxdd7hjki"]
+
+[ext_resource type="Script" path="res://Menu/InputRemapping/input_description.gd" id="1_f6360"]
+[ext_resource type="Script" path="res://Menu/InputRemapping/action_array.gd" id="2_jab12"]
+
+[sub_resource type="Resource" id="Resource_feqw2"]
+script = ExtResource("1_f6360")
+action = "left"
+description = "Move Left"
+events = Array[InputEvent]([])
+
+[sub_resource type="Resource" id="Resource_aoij1"]
+script = ExtResource("1_f6360")
+action = "right"
+description = "Move Right"
+events = Array[InputEvent]([])
+
+[sub_resource type="Resource" id="Resource_1ama0"]
+script = ExtResource("1_f6360")
+action = "interact"
+description = "Interact"
+events = Array[InputEvent]([])
+
+[resource]
+script = ExtResource("2_jab12")
+action_array = Array[ExtResource("1_f6360")]([SubResource("Resource_feqw2"), SubResource("Resource_aoij1"), SubResource("Resource_1ama0")])

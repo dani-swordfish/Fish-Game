@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqx7iugws1vmq"]
+
+[ext_resource type="Script" path="res://Menu/Win and Loose Menu/win.gd" id="1_hmc37"]
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="2_pn8yu"]
+[ext_resource type="AudioStream" uid="uid://rodnrqtehm76" path="res://Sounds/Jingle_Win_00.mp3" id="3_co4fe"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hmc37")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2262, 0.71539, 0.78, 1)
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -194.0
+offset_right = 71.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_pn8yu")
+text = "Menu"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 205.0
+offset_right = 112.5
+offset_bottom = 262.0
+grow_horizontal = 2
+theme = ExtResource("2_pn8yu")
+text = "Waves Survived
+You Win!"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_co4fe")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

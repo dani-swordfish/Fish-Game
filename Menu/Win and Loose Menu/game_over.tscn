@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://7amxfgkjp4m"]
+
+[ext_resource type="Script" path="res://Menu/Win and Loose Menu/game_over.gd" id="1_355cl"]
+[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="2_3aprw"]
+[ext_resource type="AudioStream" uid="uid://mt4vw4ohegd4" path="res://Sounds/Jingle_Lose_00.mp3" id="6_3x2ct"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_355cl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00784314, 0.2, 0.321569, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_3aprw")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "CORE LOST
+
+GAME OVER
+"
+horizontal_alignment = 1
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -194.0
+offset_right = 71.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_3aprw")
+text = "Menu"
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3x2ct")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_button_pressed"]
