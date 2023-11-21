@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7uqvrqg5tlpc"]
+
+[ext_resource type="Script" path="res://Scenes/Conveyor Components/conveyor_bridge.gd" id="1_ewsft"]
+[ext_resource type="Script" path="res://Scenes/Conveyor Components/SubConveyor.gd" id="2_k5e12"]
+[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_robnq"]
+
+[sub_resource type="Gradient" id="Gradient_dg1oq"]
+colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_33ib3"]
+gradient = SubResource("Gradient_dg1oq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lep0g"]
+size = Vector2(6, 6)
+
+[node name="ConveyorBridge" type="Node2D"]
+script = ExtResource("1_ewsft")
+
+[node name="SpriteBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.62125e-05, 0)
+scale = Vector2(0.125, 32)
+texture = SubResource("GradientTexture1D_33ib3")
+
+[node name="Conveyor" type="Node2D" parent="." groups=["direction_matters", "test"]]
+script = ExtResource("2_k5e12")
+
+[node name="SpriteBackground" type="Sprite2D" parent="Conveyor"]
+visible = false
+position = Vector2(-1.62125e-05, 0)
+scale = Vector2(0.125, 32)
+texture = SubResource("GradientTexture1D_33ib3")
+
+[node name="ConveyorSprite" type="Sprite2D" parent="Conveyor"]
+texture = ExtResource("2_robnq")
+hframes = 4
+vframes = 4
+region_rect = Rect2(18, 14, 5, 0)
+
+[node name="Area2D" type="Area2D" parent="Conveyor"]
+position = Vector2(-6, 0)
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor/Area2D"]
+shape = SubResource("RectangleShape2D_lep0g")
+
+[node name="RayCast2D" type="RayCast2D" parent="Conveyor"]
+target_position = Vector2(40, 0)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Conveyor2" type="Node2D" parent="." groups=["direction_matters", "sub_2"]]
+rotation = -1.5708
+script = ExtResource("2_k5e12")
+
+[node name="SpriteBackground" type="Sprite2D" parent="Conveyor2"]
+visible = false
+position = Vector2(-1.62125e-05, 0)
+scale = Vector2(0.125, 32)
+texture = SubResource("GradientTexture1D_33ib3")
+
+[node name="ConveyorSprite" type="Sprite2D" parent="Conveyor2"]
+texture = ExtResource("2_robnq")
+hframes = 4
+vframes = 4
+region_rect = Rect2(18, 14, 5, 0)
+
+[node name="Area2D" type="Area2D" parent="Conveyor2"]
+position = Vector2(-6, 0)
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Conveyor2/Area2D"]
+shape = SubResource("RectangleShape2D_lep0g")
+
+[node name="RayCast2D" type="RayCast2D" parent="Conveyor2"]
+target_position = Vector2(40, 0)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false

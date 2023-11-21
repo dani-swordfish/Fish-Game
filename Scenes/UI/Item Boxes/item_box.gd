@@ -17,4 +17,3 @@ func _on_gui_input(event: InputEvent) -> void:
 	and event.is_pressed() \
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		get_parent().get_parent().on_choice(item)
-		print("clicked")

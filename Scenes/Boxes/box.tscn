@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://3b2ckl862ymm"]
 
+[ext_resource type="Script" path="res://Scenes/Boxes/box_gui.gd" id="1_70hnb"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="1_6838i"]
-[ext_resource type="Script" path="res://Scenes/Boxes/box.gd" id="1_cyfi5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37d2o"]
 
@@ -9,10 +9,12 @@
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_37d2o")
-script = ExtResource("1_cyfi5")
+script = ExtResource("1_70hnb")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(20, 20)
 texture = ExtResource("1_6838i")
 hframes = 4
-vframes = 2
+vframes = 4
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

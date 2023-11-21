@@ -17,62 +17,58 @@ grow_vertical = 2
 script = ExtResource("1_o4m8y")
 menu_type = 5
 
-[node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(295, 180)
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -147.5
-offset_top = -90.0
-offset_right = 147.5
-offset_bottom = 90.0
+offset_left = -97.5
+offset_top = -214.0
+offset_right = 97.5
+offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_48moa")
 theme_override_styles/panel = ExtResource("2_paaq5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -120.0
-offset_right = 72.0
-offset_bottom = 120.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="CloseMenuHub" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+[node name="CloseMenuHub" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_e6fjx")]
 layout_mode = 2
 text = "Continue"
 transition_to = 6
 
-[node name="MainMenu" parent="VBoxContainer" instance=ExtResource("5_he3jv")]
+[node name="MainMenu" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("5_he3jv")]
 layout_mode = 2
 text = "Main Menu
 "
 script = ExtResource("6_7nyu0")
 
-[node name="Instructions" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+[node name="Instructions" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_e6fjx")]
 layout_mode = 2
 text = "Instructions"
 transition_to = 2
 
-[node name="Settings" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+[node name="Settings" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_e6fjx")]
 layout_mode = 2
 text = "Settings"
 transition_to = 1
 
-[node name="Controls" parent="VBoxContainer" instance=ExtResource("3_e6fjx")]
+[node name="Controls" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_e6fjx")]
 layout_mode = 2
 text = "Controls"
 transition_to = 3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://m3ip7rbf34xv"]
+[gd_scene load_steps=8 format=3 uid="uid://m3ip7rbf34xv"]
 
 [ext_resource type="Script" path="res://Scenes/Components/constructor.gd" id="1_toue8"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_yab2n"]
@@ -11,8 +11,13 @@ colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_uj8sy"]
 gradient = SubResource("Gradient_1vptp")
 
-[node name="Constructor" type="Node2D" groups=["direction_matters", "item_matters", "stores_items"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gurou"]
+size = Vector2(6, 6)
+
+[node name="Constructor" type="Node2D" groups=["direction_matters", "item_matters", "stores_items", "takes_multiple_items", "test"]]
 script = ExtResource("1_toue8")
+item = 1
+item_picker_array = Array[int]([3, 2, 1])
 
 [node name="SpriteBackground" type="Sprite2D" parent="."]
 position = Vector2(-0.5, 0)
@@ -33,8 +38,14 @@ texture = ExtResource("3_82pgu")
 hframes = 4
 vframes = 4
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gurou")
+
 [node name="ProcessTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 2.0
 one_shot = true
 autostart = true
 
@@ -45,18 +56,21 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="InputRaycast" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(0, 40)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="InputRaycast2" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(-40, 0)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="InputRaycast3" type="RayCast2D" parent="."]
+visible = false
 target_position = Vector2(0, -40)
 collision_mask = 4
 collide_with_areas = true
@@ -65,4 +79,4 @@ collide_with_bodies = false
 [node name="ItemPicker" parent="." instance=ExtResource("4_amv5j")]
 metadata/_edit_use_anchors_ = true
 
-[connection signal="timeout" from="ProcessTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

@@ -1,40 +1,12 @@
-<<<<<<< HEAD
 res://Scenes/Test/test_level.tscn
-=======
-res://Menu/Menu Hub/menu_hub.tscn
->>>>>>> 2774fb38eb3ac4111c009ee81357095b56fbcd30
-res://Dialogue/Dialogue Components/npc_dialogue.gd
-res://Menu/InputRemapping/controls.gd
-res://Themes/button_normal.tres
-res://Themes/button_focus_hover.tres
-res://Themes/panel.tres
-res://Themes/main_theme.tres
-<<<<<<< HEAD
 res://Scenes/Conveyor Components/conveyor.tscn
-res://Scenes/Components/spawner.tscn
-res://Scenes/Conveyor Components/bin.tscn
-res://Scenes/Item/item.tscn
-res://Scenes/Conveyor Components/cutter.tscn
-res://Scenes/Conveyor Components/conveyor_split.tscn
-res://conveyor_sorter.tscn
-res://Scenes/UI/Item Boxes/item_box.tscn
+res://Scenes/Components/cutter.tscn
 res://Scenes/Components/constructor.tscn
-res://Scenes/Components/constructor.gd
-res://Scenes/Conveyor Components/conveyor.gd
-res://Singletons/globals.gd
-res://Scenes/Conveyor Components/conveyor_split.gd
-=======
-res://Menu/InputRemapping/controls.gd
+res://Scenes/Conveyor Components/conveyor_bridge.tscn
+res://Scenes/Components/spawner.tscn
+res://Scenes/Conveyor Components/conveyor_sorter.tscn
+res://Scenes/Boxes/box.tscn
+res://Scenes/Item/item.tscn
+res://Themes/main_theme.tres
 res://Test/test_action_array.tres
-res://Menu/Menu Components/Menu Buttons/level_button.tscn
-res://Menu/Menu Types/instructions.tscn
-res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn
-res://Menu/Menu Types/in_game.tscn
-res://Menu/Menu Types/menu_levels.tscn
-res://Test/blank.tscn
-res://Menu/Menu Types/main.tscn
-res://Menu/InputRemapping/InputRemapper.tscn
-res://Menu/InputRemapping/input_remap.tscn
-res://Test/test_inputs.tscn
-res://Save System/Saver.gd
->>>>>>> 2774fb38eb3ac4111c009ee81357095b56fbcd30
+res://Menu/Menu Hub/menu_hub.tscn

@@ -8,12 +8,12 @@ class_name Conveyor
 @export var item_node: Node2D = null
 
 # has space for a new item.
-var has_space: bool:
-	get:
-		if is_in_group("stores_items"):
-			return get_has_space()
-		else:
-			return has_space
+var has_space: bool = true
+	#get:
+		#if is_in_group("stores_items"):
+			#return get_has_space()
+		#else:
+			#return has_space
 
 var next_component: Node2D = null
 
@@ -23,9 +23,8 @@ var next_component: Node2D = null
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
 
-func get_has_space()-> bool:
-	printerr("getter on conveyer should not be used, component might be in wrong group")
-	return false
+func get_has_space(item_node_received)-> bool:
+	return has_space
 
 #func _on_area_2d_area_entered(area: Area2D) -> void:
 	#area.get_parent().direction = direction
@@ -42,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	if next_component == null: return
 	
 	if has_item_ready:
-		if next_component.has_space:
+		if next_component.get_has_space(item_node):
 			move_item()
 	
 	#if has_space == false and item_node.position == position:
@@ -50,7 +49,8 @@ func _physics_process(delta: float) -> void:
 	
 
 # check prosses class items before changing this code
-func item_arrived():
+# do not use arrived_item_node unless distroying it!!!
+func item_arrived(arrived_item_node):
 	has_item_ready = true
 
 
@@ -67,11 +67,12 @@ func get_next_component(raycast = ray_cast_2d, com_direction = direction) -> Nod
 	var new_component: Node2D = raycast.get_collider().get_parent()
 	
 	if new_component.is_in_group("direction_matters"):
-		for direction in  new_component.get_input_directions_array():
-			print(self)
-			if direction == com_direction:
-				
-				return new_component
+		if new_component.is_in_group("test"):
+			print("tried", com_direction, new_component.get_input_directions_array())
+		if com_direction in new_component.get_input_directions_array():
+			if new_component.is_in_group("test"):
+				print("success", new_component)
+			return new_component
 		return null
 	
 	return new_component
@@ -82,14 +83,24 @@ func move_item(move_direction = direction, new_compnent = next_component, item_t
 		printerr(item_to_move, "  is null")
 	
 	
-	# TODO remove component setter and use this maybe
+	# TODO select correct storage if stores multiple items ##test
 	if new_compnent.is_in_group("stores_items"):
-		new_compnent.storage_space += 1
+		if new_compnent.storage_array[0].any_item:
+			new_compnent.storage_array[0].storage_space += 1
+		else:
+			for i in new_compnent.storage_array.size():
+				if new_compnent.storage_array[i].item == item_to_move.item:
+					new_compnent.storage_array[i].storage_space += 1
+			
 	else:
 		new_compnent.has_space = false
 	
+	if new_compnent.is_in_group("takes_multiple_items"):
+		#new_compnent.item_nodes_array.append(item_to_move)
+		pass
+	else:
+		new_compnent.item_node = item_to_move
 	
-	new_compnent.item_node = item_to_move
 	item_to_move.move(move_direction, new_compnent)
 	has_item_ready = false
 	has_space = true

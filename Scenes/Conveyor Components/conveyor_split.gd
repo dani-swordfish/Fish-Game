@@ -25,18 +25,18 @@ func _physics_process(delta: float) -> void:
 	
 	if next_component == null:
 		if has_item_ready:
-			if next_component_2.has_space:
+			if next_component_2.get_has_space(item_node):
 				move_item(get_splitter_direction(), next_component_2)
 			return
 	
 	if next_component_2 == null:
 		if has_item_ready:
-			if next_component.has_space:
+			if next_component.get_has_space(item_node):
 				move_item()
 			return
 	
 	if has_item_ready:
-		if next_component.has_space and next_component_2.has_space:
+		if next_component.get_has_space(item_node) and next_component_2.get_has_space(item_node):
 			if split:
 				move_item()
 				split = false
@@ -44,11 +44,11 @@ func _physics_process(delta: float) -> void:
 				move_item(get_splitter_direction(), next_component_2)
 			return
 		
-		if next_component.has_space:
+		if next_component.get_has_space(item_node):
 			move_item()
 			split = false
 			return
-		if next_component_2.has_space:
+		if next_component_2.get_has_space(item_node):
 			move_item(get_splitter_direction(), next_component_2)
 			split = true
 			return

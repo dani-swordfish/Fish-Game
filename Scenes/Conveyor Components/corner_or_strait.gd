@@ -1,5 +1,6 @@
 extends Conveyor
 
+
 #@onready var conveyor_sprite: Sprite2D = $ConveyorSprite
 
 @export var corner: bool:

@@ -1,4 +1,6 @@
 extends Node2D
+# TODO so long and thanks for all the fish
+
 
 var item: Enum.ITEMS = 1
 
@@ -33,7 +35,7 @@ func move(direction:int, next_component):
 	var start_position = position
 	tween.tween_property(self, "position", tween_vector + start_position, tween_time)
 	await tween.finished
-	next_component.item_arrived()
+	next_component.item_arrived(self)
 	
 
 func tween_distance(direction: int):
