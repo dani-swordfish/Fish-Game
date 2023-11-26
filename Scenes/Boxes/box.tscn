@@ -1,20 +1,76 @@
-[gd_scene load_steps=4 format=3 uid="uid://3b2ckl862ymm"]
+[gd_scene load_steps=7 format=3 uid="uid://3b2ckl862ymm"]
 
 [ext_resource type="Script" path="res://Scenes/Boxes/box_gui.gd" id="1_70hnb"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="1_6838i"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="1_b2e40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37d2o"]
+bg_color = Color(0.835294, 0.835294, 0.835294, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.227451, 0.227451, 0.227451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u4of"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 0.513726)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js0uu"]
+bg_color = Color(1, 1, 1, 0.627451)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Box" type="Panel"]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(60, 60)
+offset_right = 62.0
+offset_bottom = 62.0
+theme = ExtResource("1_b2e40")
 theme_override_styles/panel = SubResource("StyleBoxFlat_37d2o")
 script = ExtResource("1_70hnb")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(20, 20)
+position = Vector2(31, 31)
+scale = Vector2(1.75, 1.75)
 texture = ExtResource("1_6838i")
 hframes = 4
 vframes = 4
+
+[node name="Shade" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 62.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u4of")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -17.0
+offset_right = 7.0
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_b2e40")
+theme_override_styles/panel = SubResource("StyleBoxFlat_js0uu")
+
+[node name="CountLabel" type="Label" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_b2e40")
+text = "x9"
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]

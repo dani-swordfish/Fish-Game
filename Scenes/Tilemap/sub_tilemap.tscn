@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckvs5mpywhe1v"]
+[gd_scene load_steps=13 format=3 uid="uid://ckvs5mpywhe1v"]
 
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="1_n7jtq"]
 [ext_resource type="PackedScene" uid="uid://cy6c8snu4ia2t" path="res://Scenes/Conveyor Components/conveyor.tscn" id="2_qb5yl"]
 [ext_resource type="Script" path="res://Scenes/Tilemap/sub_tilemap.gd" id="3_8ar52"]
+[ext_resource type="Texture2D" uid="uid://b7bet72ny64f2" path="res://Art/converyor test.png" id="3_i2qry"]
+[ext_resource type="Texture2D" uid="uid://soelkrcm8lvr" path="res://Art/doungon.png" id="3_re083"]
+[ext_resource type="Texture2D" uid="uid://be745rsu4cmkh" path="res://Art/background test.png" id="5_rfsqe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ti3ot"]
 texture = ExtResource("1_n7jtq")
@@ -13,12 +16,104 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bucqi"]
 scenes/1/scene = ExtResource("2_qb5yl")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nealh"]
+texture = ExtResource("3_i2qry")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lnn5"]
+texture = ExtResource("3_re083")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+6:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+6:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+4:1/0 = 0
+5:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hrdy"]
+texture = ExtResource("5_rfsqe")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+1:6/0 = 0
+1:5/0 = 0
+1:7/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_6cdqe"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ti3ot")
 sources/1 = SubResource("TileSetScenesCollectionSource_bucqi")
+sources/3 = SubResource("TileSetAtlasSource_5lnn5")
+sources/2 = SubResource("TileSetAtlasSource_nealh")
+sources/4 = SubResource("TileSetAtlasSource_5hrdy")
 
 [node name="SubTilemap" type="TileMap"]
 tile_set = SubResource("TileSet_6cdqe")
 format = 2
+layer_1/name = "test_layer"
+layer_1/tile_data = PackedInt32Array()
 script = ExtResource("3_8ar52")

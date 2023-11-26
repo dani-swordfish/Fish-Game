@@ -1,211 +1,94 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvc5bp36c1uet"]
+[gd_scene load_steps=33 format=3 uid="uid://cvc5bp36c1uet"]
 
+[ext_resource type="Script" path="res://Scenes/Test/test_level.gd" id="1_glluf"]
 [ext_resource type="PackedScene" uid="uid://ckvs5mpywhe1v" path="res://Scenes/Tilemap/sub_tilemap.tscn" id="1_rkht3"]
-[ext_resource type="PackedScene" uid="uid://cy6c8snu4ia2t" path="res://Scenes/Conveyor Components/conveyor.tscn" id="2_gtctu"]
-[ext_resource type="PackedScene" uid="uid://8scy2k1de12h" path="res://Scenes/Conveyor Components/conveyor_split.tscn" id="3_pb3g5"]
-[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="3_sr1cf"]
+[ext_resource type="Resource" uid="uid://o8v08ng85u34" path="res://Resources/test_level.tres" id="2_pru6v"]
+[ext_resource type="Script" path="res://Scenes/World/References.gd" id="2_s2uab"]
+[ext_resource type="Script" path="res://Scenes/Test/items.gd" id="3_npjkf"]
+[ext_resource type="Script" path="res://Scenes/Test/components.gd" id="3_xkg4n"]
 [ext_resource type="Script" path="res://Scenes/Test/ui.gd" id="4_6gpoe"]
-[ext_resource type="PackedScene" uid="uid://dgjyaiw1bas4v" path="res://Scenes/Components/cutter.tscn" id="4_ov1ni"]
 [ext_resource type="Script" path="res://Scenes/Player/player_hand.gd" id="4_pdk6w"]
-[ext_resource type="PackedScene" uid="uid://dwaqp5rfhedr2" path="res://Scenes/Conveyor Components/bin.tscn" id="5_bmkt8"]
+[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="6_8llby"]
 [ext_resource type="PackedScene" uid="uid://3b2ckl862ymm" path="res://Scenes/Boxes/box.tscn" id="6_k24xg"]
-[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="6_qc3lr"]
-[ext_resource type="PackedScene" uid="uid://cdssqx1vrhmdx" path="res://Scenes/Conveyor Components/conveyor_sorter.tscn" id="7_8wl17"]
 [ext_resource type="Script" path="res://Scenes/Test/sub_machine.gd" id="7_eqk0a"]
-[ext_resource type="PackedScene" uid="uid://m3ip7rbf34xv" path="res://Scenes/Components/constructor.tscn" id="8_icq4o"]
-[ext_resource type="PackedScene" uid="uid://ba7ks25cfru1i" path="res://Scenes/Item/item.tscn" id="9_waxl6"]
-[ext_resource type="PackedScene" uid="uid://c7uqvrqg5tlpc" path="res://Scenes/Conveyor Components/conveyor_bridge.tscn" id="9_xxos7"]
+[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="7_k3v42"]
+[ext_resource type="Script" path="res://Scenes/Test/mode_ui.gd" id="9_u4mii"]
+[ext_resource type="PackedScene" uid="uid://b3c3j1qflhmfx" path="res://Scenes/Components/multi_spawner.tscn" id="9_uqhoy"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="10_hns4d"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="11_3167c"]
+[ext_resource type="PackedScene" uid="uid://bwy3ptujdf41u" path="res://Scenes/Components/randi_cutter.tscn" id="11_pefrv"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="12_avwe8"]
 [ext_resource type="Script" path="res://Scenes/Test/item_picker_ui.gd" id="12_nfskl"]
-[ext_resource type="Texture2D" uid="uid://ptwwgp32toke" path="res://Art/test fish.png" id="13_frw5w"]
-[ext_resource type="PackedScene" uid="uid://difpcvx2jdcgu" path="res://Scenes/UI/Item Boxes/item_box.tscn" id="14_aoceu"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="12_x4jup"]
+[ext_resource type="StyleBox" uid="uid://dn1jmhxxc7nwq" path="res://Scenes/UI/panel_1.tres" id="13_sd7cr"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="13_tg32c"]
+[ext_resource type="ButtonGroup" uid="uid://dbqjgk6fld6ec" path="res://Scenes/UI/play_stop_button_group.tres" id="18_56y3x"]
+[ext_resource type="Script" path="res://Scenes/Test/recipe_ui.gd" id="18_lks1a"]
+[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="19_gobak"]
+[ext_resource type="ButtonGroup" uid="uid://cw806evncma4w" path="res://pages_button_group.tres" id="19_kp4aw"]
+[ext_resource type="Texture2D" uid="uid://bjbhf3pxaktla" path="res://Scenes/UI/book_closed_texture.tres" id="19_mcl8c"]
+[ext_resource type="PackedScene" uid="uid://beinvkawx86b5" path="res://Scenes/UI/recipe_book_page.tscn" id="20_uwc7t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipili"]
+bg_color = Color(0.870588, 0.121569, 0.133333, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vvub"]
+atlas = ExtResource("19_gobak")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdld8"]
+bg_color = Color(0.117647, 0.572549, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22h8h"]
+atlas = ExtResource("19_gobak")
+region = Rect2(96, 32, 32, 32)
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1_glluf")
+options = ExtResource("2_pru6v")
+metadata/_edit_vertical_guides_ = [-80.0]
 
-[node name="ConveyorBelts" type="Node2D" parent="."]
+[node name="Tilemap" parent="." instance=ExtResource("1_rkht3")]
+unique_name_in_owner = true
+layer_0/tile_data = PackedInt32Array(131074, 65540, 7, 131075, 65540, 7, 196610, 65540, 7, 196611, 65540, 7, 262146, 65540, 7, 262147, 65540, 7, 262148, 65540, 7, 262149, 65540, 7, 196612, 65540, 7, 196613, 65540, 7, 131076, 65540, 7, 131077, 65540, 7, 131078, 65540, 7, 131079, 65540, 7, 196614, 65540, 7, 196615, 65540, 7, 262150, 65540, 7, 262151, 65540, 7, 196616, 65540, 7, 196617, 65540, 7, 131080, 65540, 7, 131081, 65540, 7, 262152, 65540, 7, 262153, 65540, 7, 327682, 4, 805306371, 327683, 4, 805306371, 327684, 4, 805306371, 327685, 4, 805306371, 327686, 4, 805306371, 327687, 4, 805306371, 327688, 4, 805306371, 327689, 4, 805306371, 131083, 4, 1342177283, 196619, 4, 1342177283, 262155, 4, 1342177283, 9, 4, 3, 10, 4, 3, 7, 4, 3, 8, 4, 3, 5, 4, 3, 6, 4, 3, 3, 4, 3, 4, 4, 3, 1, 4, 3, 2, 4, 3, 65537, 65540, 7, 65538, 65540, 7, 65539, 65540, 7, 65540, 65540, 7, 65541, 65540, 7, 65542, 65540, 7, 65543, 65540, 7, 65544, 65540, 7, 65545, 65540, 7, 65546, 65540, 7, 65547, 4, 1342177283, 131082, 65540, 7, 196618, 65540, 7, 262154, 65540, 7, 327690, 4, 805306371, 131073, 65540, 7, 196609, 65540, 7, 262145, 65540, 7, 327681, 4, 805306371, 65536, 4, 1610612739, 131072, 4, 1610612739, 196608, 4, 1610612739, 262144, 4, 1610612739)
+layer_1/tile_data = PackedInt32Array(1, 65540, 6, 2, 65540, 6, 3, 65540, 6, 4, 65540, 6, 5, 65540, 6, 6, 65540, 6, 7, 65540, 6, 8, 65540, 6, 9, 65540, 6, 10, 65540, 6, 65547, 65540, 1342177285, 131083, 65540, 1342177285, 196619, 65540, 1342177285, 65536, 65540, 1610612741, 131072, 65540, 1610612741, 196608, 65540, 1610612741, 262144, 65540, 1610612741, 262155, 65540, 1342177285, -65535, 65540, 5, -65534, 65540, 5, -65533, 65540, 5, -65532, 65540, 5, -65531, 65540, 5, -65530, 65540, 5, -65529, 65540, 5, -65528, 65540, 5, -65527, 65540, 5, -65526, 65540, 5, 11, 65540, 1342177285, 0, 65540, 1610612741, 327681, 65540, 805306373, 327682, 65540, 805306373, 327683, 65540, 805306373, 327684, 65540, 805306373, 327685, 65540, 805306373, 327686, 65540, 805306373, 327687, 65540, 805306373, 327688, 65540, 805306373, 327689, 65540, 805306373, 327690, 65540, 805306373)
 
-[node name="Conveyor" parent="ConveyorBelts" node_paths=PackedStringArray("item_node") instance=ExtResource("2_gtctu")]
-position = Vector2(224, 256)
-has_item_ready = true
-item_node = NodePath("../../Items/Item")
+[node name="References" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_s2uab")
 
-[node name="Conveyor2" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(160, 224)
-rotation = -1.5708
+[node name="Items" type="Node2D" parent="."]
+script = ExtResource("3_npjkf")
 
-[node name="Conveyor3" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(192, 192)
-rotation = 3.14159
+[node name="Components" type="Node2D" parent="."]
+script = ExtResource("3_xkg4n")
 
-[node name="Conveyor28" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(192, 160)
-rotation = 1.5708
-
-[node name="Conveyor29" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(160, 160)
-
-[node name="Conveyor30" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(128, 160)
-rotation = -1.5708
-
-[node name="Conveyor32" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(128, 128)
-rotation = -1.5708
-
-[node name="Conveyor31" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(128, 192)
-rotation = -1.5708
-
-[node name="Conveyor4" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(160, 96)
+[node name="Output" parent="Components" instance=ExtResource("6_8llby")]
+position = Vector2(304, 112)
+item = 6
 is_static = true
 
-[node name="Conveyor13" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(384, 96)
-rotation = -1.5708
+[node name="Spawner" parent="Components" instance=ExtResource("7_k3v42")]
+position = Vector2(48, 112)
+item_picker_array = Array[int]([1])
 is_static = true
 
-[node name="Conveyor21" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(256, 128)
-is_static = true
+[node name="MultiSpawner" parent="Components" instance=ExtResource("9_uqhoy")]
+position = Vector2(48, 80)
+item_array = Array[int]([5, 4, 4])
 
-[node name="Conveyor14" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(128, 96)
-is_static = true
+[node name="RandiCutter" parent="Components" instance=ExtResource("11_pefrv")]
+position = Vector2(144, 112)
 
-[node name="Conveyor15" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(128, 64)
-rotation = 3.14159
-is_static = true
-
-[node name="Conveyor16" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(192, 128)
-rotation = -1.5708
-
-[node name="Conveyor17" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(192, 64)
-rotation = 3.14159
-is_static = true
-
-[node name="Conveyor23" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(160, 64)
-rotation = 3.14159
-is_static = true
-
-[node name="Conveyor18" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(224, 64)
-rotation = 3.14159
-is_static = true
-
-[node name="Conveyor22" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(288, 224)
-rotation = -1.5708
-is_static = true
-
-[node name="Conveyor19" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(256, 64)
-rotation = 1.5708
-is_static = true
-
-[node name="Conveyor20" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(288, 96)
-rotation = 1.5708
-is_static = true
-
-[node name="Conveyor5" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(352, 64)
-rotation = 1.5708
-is_static = true
-
-[node name="Conveyor6" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(192, 96)
-
-[node name="Conveyor26" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(256, 96)
-
-[node name="Conveyor27" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(224, 128)
-rotation = -1.5708
-
-[node name="Conveyor7" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(352, 96)
-rotation = 1.5708
-
-[node name="Conveyor24" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(352, 128)
-rotation = 3.14159
-
-[node name="Conveyor25" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(320, 128)
-rotation = 3.14159
-
-[node name="Conveyor8" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(288, 128)
-rotation = 1.5708
-
-[node name="Conveyor9" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(288, 160)
-rotation = 1.5708
-
-[node name="Conveyor10" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(256, 192)
-rotation = 3.14159
-
-[node name="Conveyor11" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(256, 256)
-rotation = 3.14159
-
-[node name="Conveyor12" parent="ConveyorBelts" instance=ExtResource("2_gtctu")]
-position = Vector2(288, 192)
-rotation = 3.14159
-
-[node name="Spawner2" parent="ConveyorBelts" instance=ExtResource("3_sr1cf")]
-position = Vector2(160, 256)
-rotation = -1.5708
-item = 3
-item_picker_array = Array[int]([2, 3, 1])
-
-[node name="Spawner" parent="ConveyorBelts" instance=ExtResource("3_sr1cf")]
-position = Vector2(224, 160)
-rotation = -1.5708
-item = 2
-item_picker_array = Array[int]([2, 3, 1])
-
-[node name="ConveyorSplit" parent="ConveyorBelts" instance=ExtResource("3_pb3g5")]
-position = Vector2(64, 224)
-
-[node name="Cutter" parent="ConveyorBelts" instance=ExtResource("4_ov1ni")]
-position = Vector2(416, 160)
-
-[node name="Cutter2" parent="ConveyorBelts" instance=ExtResource("4_ov1ni")]
-position = Vector2(416, 224)
-
-[node name="Bin" parent="ConveyorBelts" instance=ExtResource("5_bmkt8")]
-position = Vector2(224, 192)
-rotation = 3.14159
-
-[node name="Output" parent="ConveyorBelts" instance=ExtResource("6_qc3lr")]
-position = Vector2(352, 192)
-item = 3
-is_static = null
-
-[node name="ConveyorSorter" parent="ConveyorBelts" instance=ExtResource("7_8wl17")]
-position = Vector2(416, 64)
-rotation = 1.5708
-item = 3
-
-[node name="Constructor" parent="ConveyorBelts" instance=ExtResource("8_icq4o")]
-position = Vector2(224, 96)
-rotation = -1.5708
-
-[node name="ConveyorBridge" parent="ConveyorBelts" instance=ExtResource("9_xxos7")]
-position = Vector2(160, 192)
-rotation = -1.5708
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-16, -16)
+anchor_mode = 0
+zoom = Vector2(3, 3)
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("4_6gpoe")
 
-[node name="Control" type="Control" parent="UI"]
+[node name="ComponentPicker" type="Control" parent="UI"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -214,61 +97,157 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="UI/Control"]
+[node name="PanelContainer" type="PanelContainer" parent="UI/ComponentPicker"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -198.5
-offset_top = -121.0
-offset_right = 198.5
-offset_bottom = -29.0
+offset_top = -135.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("12_x4jup")
 
-[node name="Label" type="Label" parent="UI/Control/Panel"]
-layout_mode = 0
-offset_left = 262.5
-offset_top = 73.0
-offset_right = 457.5
-offset_bottom = 96.0
-text = "Press [r] to rotate objects"
+[node name="MarginContainer" type="MarginContainer" parent="UI/ComponentPicker/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 12
 
-[node name="Label2" type="Label" parent="UI/Control/Panel"]
-layout_mode = 0
-offset_left = 6.5
-offset_top = 73.0
-offset_right = 247.5
-offset_bottom = 96.0
-text = "Press [t] to flip conveyor bridge"
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer"]
+layout_mode = 2
 
-[node name="Box" parent="UI/Control/Panel" instance=ExtResource("6_k24xg")]
-layout_mode = 0
-offset_left = 38.5
-offset_top = 9.0
-offset_right = 78.5
-offset_bottom = 49.0
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("13_sd7cr")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Conveyor Belt - 
+Transports items in one direction."
+initial_component_count = 80
 component = 1
 
-[node name="Box2" parent="UI/Control/Panel" instance=ExtResource("6_k24xg")]
-layout_mode = 0
-offset_left = 102.5
-offset_top = 9.0
-offset_right = 142.5
-offset_bottom = 49.0
+[node name="Box2" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+initial_component_count = 4
 component = 2
 
-[node name="Box3" parent="UI/Control/Panel" instance=ExtResource("6_k24xg")]
-layout_mode = 0
-offset_left = 198.5
-offset_top = 9.0
-offset_right = 238.5
-offset_bottom = 49.0
+[node name="Box3" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Input -
+Delivers items."
+initial_component_count = 3
+component = 6
+
+[node name="Box4" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Splitter -
+Sends items in two directions."
+initial_component_count = 4
+component = 3
+
+[node name="Box5" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Sorter - 
+Sends the chosen item out the top and splits the others in two directions."
+initial_component_count = 5
+component = 4
+
+[node name="Box6" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Bridge -
+Allows items to pass over one and other."
+initial_component_count = 5
+component = 5
+
+[node name="Box7" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Cut and Sort -
+Cuts item into parts, will output items in the order given in the recipe, starting with the left, bottom then top."
+initial_component_count = 5
 component = 7
 
-[node name="PlayerHand" type="Control" parent="UI/Control"]
+[node name="Box13" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Cutter -
+Cuts item into parts, sending them all out a single output."
+initial_component_count = 5
+component = 11
+
+[node name="Box9" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+visible = false
+layout_mode = 2
+initial_component_count = 5
+component = 11
+
+[node name="Box8" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Constructor- 
+Constructs the select item based on it's recipe.
+Click on it after building to change selected item."
+initial_component_count = 5
+component = 8
+
+[node name="Box10" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Output-
+Recives items."
+initial_component_count = 5
+component = 10
+
+[node name="Box11" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Incinerator-
+Destroys all items."
+initial_component_count = 5
+component = 9
+
+[node name="Separator" type="Control" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Box12" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
+layout_mode = 2
+tooltip_text = "Remove-
+When selected, left-click on a component to remove it."
+is_infinate = true
+component = 12
+
+[node name="Spacer" type="Control" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("12_x4jup")
+text = "Press [r] to rotate objects       "
+
+[node name="Label2" type="Label" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("12_x4jup")
+text = "Press [t] to flip objects"
+
+[node name="PlayerHand" type="Control" parent="UI/ComponentPicker"]
 unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
@@ -276,13 +255,28 @@ offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("4_pdk6w")
 
-[node name="PlayerBox" parent="UI/Control/PlayerHand" instance=ExtResource("6_k24xg")]
+[node name="PlayerBox" parent="UI/ComponentPicker/PlayerHand" instance=ExtResource("6_k24xg")]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
 offset_right = 43.0
 offset_bottom = 43.0
 mouse_filter = 2
+
+[node name="Button" type="Button" parent="UI/ComponentPicker"]
+layout_mode = 0
+offset_left = 1149.0
+offset_top = 662.0
+offset_right = 1157.0
+offset_bottom = 670.0
+theme = ExtResource("12_x4jup")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+theme_override_styles/normal = ExtResource("13_sd7cr")
+theme_override_styles/hover = ExtResource("13_sd7cr")
+theme_override_styles/pressed = ExtResource("13_sd7cr")
+theme_override_styles/disabled = ExtResource("13_sd7cr")
+theme_override_styles/focus = ExtResource("13_sd7cr")
+text = "Restart Level"
 
 [node name="ItemPickerUI" type="Control" parent="UI"]
 unique_name_in_owner = true
@@ -295,38 +289,224 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("12_nfskl")
 
-[node name="TestFish" type="Sprite2D" parent="UI/ItemPickerUI"]
-position = Vector2(288, 160)
-texture = ExtResource("13_frw5w")
-
-[node name="GridContainer" type="GridContainer" parent="UI/ItemPickerUI"]
+[node name="PanelContainer" type="PanelContainer" parent="UI/ItemPickerUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("13_sd7cr")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ItemPickerUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 64
+
+[node name="GridContainer" type="GridContainer" parent="UI/ItemPickerUI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 columns = 3
 
-[node name="ItemBox" parent="UI/ItemPickerUI/GridContainer" instance=ExtResource("14_aoceu")]
+[node name="ModeUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -238.0
+offset_bottom = 85.0
+grow_horizontal = 0
+script = ExtResource("9_u4mii")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/ModeUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -16.5
+offset_right = 63.0
+offset_bottom = 46.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_x4jup")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ModeUI/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ModeUI/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PlayButton" type="Button" parent="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Start Conveyors"
+theme = ExtResource("12_x4jup")
+theme_override_font_sizes/font_size = 22
+toggle_mode = true
+button_group = ExtResource("18_56y3x")
+text = "Play"
+
+[node name="StopButton" type="Button" parent="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Stop Conveyors"
+theme = ExtResource("12_x4jup")
+theme_override_font_sizes/font_size = 22
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("18_56y3x")
+text = "Stop"
+
+[node name="RecipeUI" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_lks1a")
+
+[node name="Panel" type="Panel" parent="UI/RecipeUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/RecipeUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -103.0
+offset_right = 228.5
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/RecipeUI/VBoxContainer"]
 layout_mode = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 159)
-zoom = Vector2(3, 3)
+[node name="Spacer" type="Control" parent="UI/RecipeUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/RecipeUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(54, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("12_x4jup")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipili")
+
+[node name="ContructorButton" type="Button" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 3.0
+offset_right = 24.0
+offset_bottom = 51.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("19_kp4aw")
+icon = SubResource("AtlasTexture_6vvub")
+expand_icon = true
+
+[node name="Panel2" type="Panel" parent="UI/RecipeUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(54, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("12_x4jup")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdld8")
+
+[node name="CutterButton" type="Button" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 3.0
+offset_right = 24.0
+offset_bottom = 51.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("19_kp4aw")
+icon = SubResource("AtlasTexture_22h8h")
+expand_icon = true
+
+[node name="TextureButton" type="TextureButton" parent="UI/RecipeUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="ConstructorRecipes" parent="UI/RecipeUI/VBoxContainer" groups=["constructor_recipes"] instance=ExtResource("20_uwc7t")]
+layout_mode = 2
+
+[node name="CutterRecipes" parent="UI/RecipeUI/VBoxContainer" groups=["cutter_recipes"] instance=ExtResource("20_uwc7t")]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="UI"]
+custom_minimum_size = Vector2(128, 128)
+offset_left = 993.0
+offset_top = 585.0
+offset_right = 1121.0
+offset_bottom = 713.0
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/TextureButton"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19_mcl8c")
+expand_mode = 1
 
 [node name="SubMachine" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_left = 448.0
-offset_top = 96.0
-offset_right = 579.0
-offset_bottom = 223.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 206.0
 script = ExtResource("7_eqk0a")
-
-[node name="SubTilemap" parent="SubMachine" instance=ExtResource("1_rkht3")]
 
 [node name="Panel" type="Panel" parent="SubMachine"]
 layout_mode = 1
@@ -335,21 +515,49 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.5
-offset_top = -78.0
-offset_right = 79.5
-offset_bottom = 77.0
+offset_left = -161.0
+offset_top = -96.0
+offset_right = 162.0
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ConveyorBelts" type="Node2D" parent="SubMachine"]
+[node name="WorldStates" type="Node" parent="."]
+script = ExtResource("10_hns4d")
 
-[node name="Items" type="Node2D" parent="."]
-unique_name_in_owner = true
+[node name="Root" type="Node" parent="WorldStates"]
+script = ExtResource("11_3167c")
+initial_state = NodePath("Stop")
 
-[node name="Item" parent="Items" instance=ExtResource("9_waxl6")]
-position = Vector2(224, 256)
+[node name="Play" type="Node" parent="WorldStates/Root"]
+script = ExtResource("12_avwe8")
 
+[node name="ToStop" type="Node" parent="WorldStates/Root/Play"]
+script = ExtResource("13_tg32c")
+to = NodePath("../../Stop")
+event = &"stop"
+
+[node name="Stop" type="Node" parent="WorldStates/Root"]
+script = ExtResource("12_avwe8")
+
+[node name="ToPlay" type="Node" parent="WorldStates/Root/Stop"]
+script = ExtResource("13_tg32c")
+to = NodePath("../../Play")
+event = &"play"
+
+[connection signal="player_dropped_component" from="UI/ComponentPicker/PlayerHand" to="SubMachine" method="_on_player_hand_player_dropped_component"]
+[connection signal="player_picked_up_component" from="UI/ComponentPicker/PlayerHand" to="SubMachine" method="_on_player_hand_player_picked_up_component"]
+[connection signal="pressed" from="UI/ComponentPicker/Button" to="UI" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer/PlayButton" to="UI/ModeUI" method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer/StopButton" to="UI/ModeUI" method="_on_stop_button_pressed"]
+[connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel/ContructorButton" to="UI/RecipeUI" method="_on_contructor_button_toggled"]
+[connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2/CutterButton" to="UI/RecipeUI" method="_on_cutter_button_toggled"]
+[connection signal="pressed" from="UI/TextureButton" to="UI/RecipeUI" method="_on_texture_button_pressed"]
 [connection signal="gui_input" from="SubMachine" to="SubMachine" method="_on_gui_input"]
 [connection signal="gui_input" from="SubMachine/Panel" to="SubMachine" method="_on_panel_gui_input"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="Components" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="UI/ComponentPicker/PlayerHand" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="SubMachine" method="_on_play_state_entered"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="Items" method="_on_play_state_exited"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="Components" method="_on_play_state_exited"]

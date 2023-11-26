@@ -2,9 +2,9 @@ extends Control
 
 var item_picker: Control
 
-@onready var grid_container: GridContainer = $GridContainer
+@onready var grid_container: GridContainer = %GridContainer
 
-const ITEM_BOX: PackedScene = preload("res://Scenes/UI/Item Boxes/item_box.tscn")
+const ITEM_BOX_FOR_PICKER = preload("res://Scenes/UI/item_box_for_picker.tscn")
 
 func _ready() -> void:
 	close()
@@ -13,12 +13,16 @@ func _ready() -> void:
 func open(item_array:Array[int], current_item_picker: Control):
 	item_picker = current_item_picker
 	
+	if item_array.size() == 0:
+		printerr("no options for options picker")
+	
 	for item in item_array:
 		spawn_item_box(item)
+		
 	show()
 
 func spawn_item_box(item: int):
-	var item_box_inst: Panel = ITEM_BOX.instantiate()
+	var item_box_inst: Panel = ITEM_BOX_FOR_PICKER.instantiate()
 	item_box_inst.item = item
 	grid_container.add_child(item_box_inst)
 	

@@ -11,7 +11,9 @@ var new_item_node_array: Array[Node2D]
 #var item_node_array: Array[Node2D]
 
 # Not being used, export in timer being used
-var time_delay: float = 2
+#var time_delay: float = 2
+
+
 
 ## storage
 @export var storage_array: Array[Storage]
@@ -22,16 +24,37 @@ func has_storage_check():
 			return false
 	return true
 
+func reset_storage():
+	pass
+## storage
 
 
 const ITEM_SCENE = preload("res://Scenes/Item/item.tscn")
 
-@onready var items: Node2D = %Items
+@onready var items: Node2D = Globals.references.items
 @onready var process_timer: Timer = $ProcessTimer
 
+
+func _ready() -> void:
+	super._ready()
+	if is_in_group("stores_items"):
+		reset_storage()
+
+
+func _on_play():
+	super._on_play()
+	if is_in_group("stores_items"):
+		reset_storage()
+
+
+func _on_stop():
+	process_timer.stop()
+	super._on_stop()
+
+# used by cutter not constructor
 func get_has_space(item_node_received)-> bool:
 	if is_in_group("stores_items"):
-		return storage_array[0].has_reached_storage_limit()
+		return !storage_array[0].has_reached_storage_limit()
 	else:
 		return has_space
 

@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuwmbrmge6v85"]
+
+[ext_resource type="Texture2D" uid="uid://b7bet72ny64f2" path="res://Art/converyor test.png" id="1_hybss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qylb"]
+atlas = ExtResource("1_hybss")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx7yq"]
+atlas = ExtResource("1_hybss")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55wyt"]
+atlas = ExtResource("1_hybss")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg3rl"]
+atlas = ExtResource("1_hybss")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrt1"]
+atlas = ExtResource("1_hybss")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2vjx"]
+atlas = ExtResource("1_hybss")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pej8d"]
+atlas = ExtResource("1_hybss")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04mm1"]
+atlas = ExtResource("1_hybss")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6na"]
+atlas = ExtResource("1_hybss")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8ras"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_1qylb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx7yq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55wyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg3rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2vjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pej8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04mm1")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_bc6na")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(432, 144)
+sprite_frames = SubResource("SpriteFrames_t8ras")
+autoplay = "default"
+frame_progress = 0.687825

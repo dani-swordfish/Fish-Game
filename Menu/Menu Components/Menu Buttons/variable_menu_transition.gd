@@ -16,8 +16,5 @@ func _on_pressed() -> void:
 			return
 	
 	menu_transition.emit(in_game_transition_to)
-	print("in game")
-	
-	print(get_tree().root.get_child(0))
 	
 	

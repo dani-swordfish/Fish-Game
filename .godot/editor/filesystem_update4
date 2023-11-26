@@ -1,12 +1,16 @@
 res://Scenes/Test/test_level.tscn
-res://Scenes/Conveyor Components/conveyor.tscn
-res://Scenes/Components/cutter.tscn
-res://Scenes/Components/constructor.tscn
-res://Scenes/Conveyor Components/conveyor_bridge.tscn
+res://Resources/test_level.tres
+res://Ingame.tres
+res://Scenes/UI/panel_1.tres
+res://Themes/main_theme.tres
+res://Scenes/Conveyor Components/output.tscn
 res://Scenes/Components/spawner.tscn
 res://Scenes/Conveyor Components/conveyor_sorter.tscn
+res://Scenes/Conveyor Components/converyor_belt_animation.tscn
+res://Scenes/Conveyor Components/conveyor.tscn
+res://Scenes/Components/randi_cutter.tscn
+res://Scenes/Components/cutter.tscn
 res://Scenes/Boxes/box.tscn
-res://Scenes/Item/item.tscn
-res://Themes/main_theme.tres
-res://Test/test_action_array.tres
-res://Menu/Menu Hub/menu_hub.tscn
+res://Scenes/Components/constructor.tscn
+res://Scenes/Conveyor Components/item_picker_sprite.tscn
+res://Scenes/Test/ui.gd

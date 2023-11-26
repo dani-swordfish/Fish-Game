@@ -9,16 +9,16 @@ class_name Storage
 
 var item_storage: Array[int] = []
 var storage_space: int = 0
-
+var items_needed: int = 1
 
 func has_reached_storage_limit()-> bool:
+	#print("storage_space", storage_space, "storage_limit", storage_limit)
 	if storage_space >= storage_limit:
-		#print(storage_space, storage_limit, "check from storage")
-		return false
-	return true
+		return true
+	return false
 
 
 func has_storage()-> bool:
-	if item_storage == []:
-		return false
-	return true
+	if item_storage.size() >= items_needed:
+		return true
+	return false

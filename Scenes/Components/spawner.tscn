@@ -1,24 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://eic31mtpctmq"]
+[gd_scene load_steps=8 format=3 uid="uid://eic31mtpctmq"]
 
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="1_4n4ml"]
 [ext_resource type="Script" path="res://Scenes/Components/spawner.gd" id="1_x75uo"]
-[ext_resource type="Texture2D" uid="uid://ptwwgp32toke" path="res://Art/test fish.png" id="3_563hi"]
+[ext_resource type="PackedScene" uid="uid://c8j5oav6rcoh1" path="res://Scenes/Conveyor Components/item_picker_sprite.tscn" id="4_cmfnk"]
 [ext_resource type="PackedScene" uid="uid://delo2acgw8sqr" path="res://Scenes/UI/item_picker.tscn" id="4_ykaxj"]
+[ext_resource type="PackedScene" uid="uid://dcbppgxay8127" path="res://Scenes/Conveyor Components/converyor_belt_animation.tscn" id="5_q2iow"]
 
-[sub_resource type="Gradient" id="Gradient_1vptp"]
+[sub_resource type="Gradient" id="Gradient_bgkf8"]
 colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_uj8sy"]
-gradient = SubResource("Gradient_1vptp")
+gradient = SubResource("Gradient_bgkf8")
 
-[node name="Spawner" type="Node2D"]
+[node name="Spawner" type="Node2D" groups=["spawner"]]
 script = ExtResource("1_x75uo")
 item = 1
 
 [node name="SpriteBackground" type="Sprite2D" parent="."]
-position = Vector2(-0.5, 0)
-scale = Vector2(0.128906, 32)
+position = Vector2(-1.85966e-05, 0)
+scale = Vector2(0.125, 32)
 texture = SubResource("GradientTexture1D_uj8sy")
+
+[node name="ConveryorBeltAnimation" parent="." instance=ExtResource("5_q2iow")]
+position = Vector2(8, 0)
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("1_4n4ml")
@@ -27,23 +31,18 @@ vframes = 4
 frame = 2
 region_rect = Rect2(18, 14, 5, 0)
 
-[node name="ItemSprite" type="Sprite2D" parent="."]
-position = Vector2(-6, 0)
-scale = Vector2(0.59375, 0.5625)
-texture = ExtResource("3_563hi")
-hframes = 4
-vframes = 4
-
 [node name="ProcessTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
-autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(40, 0)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="ItemPickerSprite" parent="." instance=ExtResource("4_cmfnk")]
+position = Vector2(-7, 0)
 
 [node name="ItemPicker" parent="." instance=ExtResource("4_ykaxj")]
 

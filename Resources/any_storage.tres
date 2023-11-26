@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Storage" load_steps=2 format=3 uid="uid://b0hewc3klabbl"]
+
+[ext_resource type="Script" path="res://Resources/storage.gd" id="1_ol4lv"]
+
+[resource]
+script = ExtResource("1_ol4lv")
+any_item = true
+item = 0
+storage_limit = 5

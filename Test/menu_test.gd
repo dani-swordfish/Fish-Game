@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var menu_hub: Control = %MenuHub
 
+
 func _ready() -> void:
 	menu_hub.close()
 

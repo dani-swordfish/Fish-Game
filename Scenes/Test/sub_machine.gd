@@ -2,12 +2,21 @@ extends Control
 
 
 @onready var player_hand: Control = %PlayerHand
-@onready var sub_tilemap: TileMap = $SubTilemap
-@onready var conveyor_belts: Node2D = $ConveyorBelts
+@onready var tilemap = %Tilemap
+@onready var components: Node2D = $"../Components"
+@onready var world_states: StateChart = $"../WorldStates"
+
+
+func _on_play_state_entered() -> void:
+	pass # Replace with function body.
 
 
 func _on_gui_input(event: InputEvent) -> void:
-	# TODO return if not in buid mode,
+	if Globals.references.world_states.get_child(0)._active_state == null:
+		return
+	
+	if Globals.references.world_states.get_child(0)._active_state.name == "Play":
+		return
 	
 	if !event is InputEventMouseButton:
 		return
@@ -16,42 +25,98 @@ func _on_gui_input(event: InputEvent) -> void:
 		print("player has no compoenent")
 		return
 	
+	if player_hand.get_component() == Enum.COMPONENTS.REMOVE_COMPONENT:
+		remove_component()
+		return
+	
 	if event.is_pressed() \
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		spawn_component(player_hand.get_component())
-		print("spawn component")
+		#print("spawn component")
+
+
+func remove_component():
+	for cov in components.get_children():
+		if cov.tile == tilemap.get_component_pos():
+			print(cov.tile, tilemap.get_component_pos(), "is eqaul??" )
+			if !cov.is_static:
+				get_box_and_count_up(cov)
+				cov.queue_free()
+			else:
+				print("tried to remove static component")
+				return
+
+
+func get_box_and_count_up(component):
+	for box in Globals.references.h_box_container.get_children():
+		print(box)
+		if box is Box\
+		and box.component == component.component:
+			box.component_count += 1
+			print("counter up on box", box)
 
 
 func spawn_component(component: int):
 	if Globals.get_component_scene(component) == "":
-		print("invalid component")
+		printerr("invalid component")
+		return
+	
+	if player_hand.active_box.component_count <= 0:
 		return
 	
 	
 	# check tile if tile is being used by imovable component
-	for cov in conveyor_belts.get_children():
-		if cov.tile == sub_tilemap.get_component_pos():
+	for cov in components.get_children():
+		if cov.tile == tilemap.get_component_pos():
+			#print(cov.tile, tilemap.get_component_pos(), "is eqaul??" )
 			if !cov.is_static:
-				cov.queue_free()
+				remove_component()
 			else:
 				print("tried to place component on top of static component")
 				return
 	
 	## should only run if spawning happens
-	
-	print(Globals.get_component_scene(component))
 	var component_scene: PackedScene = load(Globals.get_component_scene(component))
 	var component_inst: Node2D = component_scene.instantiate()
-	component_inst.position = sub_tilemap.get_component_pos()
+	component_inst.position = tilemap.map_to_local(tilemap.get_component_pos())
 	component_inst.global_rotation_degrees = player_hand.component_rotation
 	if component == Enum.COMPONENTS.CONV_CORNER:
 		component_inst.corner = true
-	conveyor_belts.add_child(component_inst)
+		
+	if component == Enum.COMPONENTS.CONV_CORNER or component == Enum.COMPONENTS.CONV_BRIDGE:
+		if player_hand.player_box.sprite.flip_v:
+			component_inst.flipped = true
+	
+	components.add_child(component_inst)
 	component_inst.is_static = false
-	component_inst.tile = sub_tilemap.get_component_pos()
+	component_inst.tile = tilemap.get_component_pos()
 	
+	# IMPORTANT components placed befor the level don't know their component and therefore can't be used, could fix
+	component_inst.component = player_hand.active_box.component
 	
+	# reduce component count
+	player_hand.active_box.component_count -= 1
+
+
+func _on_player_hand_player_picked_up_component() -> void:
+	open()
+
+
+func open():
+	show()
 	
+
+func _on_player_hand_player_dropped_component() -> void:
+	close()
+	
+
+func close():
+	hide()
+
+
+
+
+
 
 
 

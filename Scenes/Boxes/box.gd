@@ -14,13 +14,9 @@ func set_component():
 		return
 	
 	sprite.show()
-	match component:
-		Enum.COMPONENTS.CONV_STRAIT:
-			sprite.frame_coords = Vector2(0,0)
-		Enum.COMPONENTS.CONV_CORNER:
-			sprite.frame_coords = Vector2(1,0)
-		Enum.COMPONENTS.CONV_SPLITTER:
-			sprite.frame_coords = Vector2(2,0)
+	
+	sprite.frame_coords = Globals.get_component_frame_coords(component)
+	# TODO add coords
 
 
 func has_component() -> bool:

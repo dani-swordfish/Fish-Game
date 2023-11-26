@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8j5oav6rcoh1"]
+
+[ext_resource type="Texture2D" uid="uid://be745rsu4cmkh" path="res://Art/background test.png" id="1_s2u8d"]
+[ext_resource type="Texture2D" uid="uid://ckiav4pe027c0" path="res://Art/items final.png" id="2_1ag2c"]
+
+[node name="ItemPickerSprite" type="Node2D"]
+
+[node name="ItemSpriteBackground" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("1_s2u8d")
+hframes = 8
+vframes = 8
+frame = 38
+region_rect = Rect2(18, 14, 5, 0)
+
+[node name="ItemSprite" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("2_1ag2c")
+hframes = 8
+vframes = 8

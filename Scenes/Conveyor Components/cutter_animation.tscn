@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgq7s2kxcy3tw"]
+
+[ext_resource type="Texture2D" uid="uid://dhcg5y33sju5" path="res://Art/cutter animation.png" id="1_gwd8t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in8rb"]
+atlas = ExtResource("1_gwd8t")
+region = Rect2(0, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_340de"]
+atlas = ExtResource("1_gwd8t")
+region = Rect2(6, 0, 6, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rfs1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in8rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_340de")
+}],
+"loop": true,
+"name": &"cutter",
+"speed": 12.0
+}]
+
+[node name="CutterAnimation" type="AnimatedSprite2D" groups=["conveyor_animation"]]
+sprite_frames = SubResource("SpriteFrames_3rfs1")
+animation = &"cutter"
+frame = 1
+frame_progress = 0.0798816

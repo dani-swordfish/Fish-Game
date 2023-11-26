@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxdtjm5n7c1rk" path="res://Menu/Menu Types/instructions.tscn" id="5_45fb1"]
 [ext_resource type="PackedScene" uid="uid://d4ca3xkblibch" path="res://Menu/Menu Types/menu_levels.tscn" id="7_5l141"]
 [ext_resource type="PackedScene" uid="uid://ccf3y8xj1tiou" path="res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn" id="7_j56kg"]
-[ext_resource type="PackedScene" path="res://Menu/Menu Types/in_game.tscn" id="8_tvxcr"]
+[ext_resource type="PackedScene" uid="uid://difubvbh8xgw7" path="res://Menu/Menu Types/in_game.tscn" id="8_tvxcr"]
 
 [node name="MenuHub" type="Control" groups=["menu_hub"]]
 process_mode = 3

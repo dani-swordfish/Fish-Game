@@ -8,8 +8,14 @@ var next_component_2: Node2D = null
 
 func _ready() -> void:
 	super._ready()
-	await get_tree().create_timer(0.1).timeout
+	
+
+func _on_play():
+	super._on_play()
 	next_component_2 = get_next_component(ray_cast_2d_2, get_splitter_direction())
+
+
+
 
 ## for direction_matters group
 func get_input_directions_array()-> Array[int]:

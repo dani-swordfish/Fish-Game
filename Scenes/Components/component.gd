@@ -1,4 +1,4 @@
-@tool
+#@tool
 extends Node2D
 class_name Componenet
 
@@ -21,8 +21,23 @@ func _ready() -> void:
 	var test = is_static
 	is_static = test
 	set_direction()
+	set_physics_process(false)
 	
-	
+	# only need for tiles which start on the level
+	set_tile()
+
+func set_tile():
+	tile = Globals.references.tilemap.local_to_map(position)
+
+
+func _on_play():
+	set_physics_process(true)
+
+
+func _on_stop():
+	set_physics_process(false)
+
+
 
 func set_direction():
 	var rotation_value: float = round(rad_to_deg(global_rotation)) 

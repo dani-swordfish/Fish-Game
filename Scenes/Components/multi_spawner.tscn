@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3c3j1qflhmfx"]
+
+[ext_resource type="Script" path="res://Scenes/Components/multi_spawner.gd" id="1_okxb0"]
+[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_3ljg3"]
+
+[sub_resource type="Gradient" id="Gradient_1vptp"]
+colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uj8sy"]
+gradient = SubResource("Gradient_1vptp")
+
+[node name="MultiSpawner" type="Node2D"]
+script = ExtResource("1_okxb0")
+
+[node name="SpriteBackground" type="Sprite2D" parent="."]
+position = Vector2(-1.62125e-05, 0)
+scale = Vector2(0.125, 32)
+texture = SubResource("GradientTexture1D_uj8sy")
+
+[node name="Top-down-conveyor" type="Sprite2D" parent="."]
+texture = ExtResource("2_3ljg3")
+hframes = 4
+vframes = 4
+frame = 11
+region_rect = Rect2(18, 14, 5, 0)
+
+[node name="ProcessTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(40, 0)
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

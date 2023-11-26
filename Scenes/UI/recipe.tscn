@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://iw5o368wy1je"]
+
+[ext_resource type="Script" path="res://Scenes/UI/recipe.gd" id="1_gip7d"]
+
+[node name="Recipe" type="PanelContainer"]
+script = ExtResource("1_gip7d")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2

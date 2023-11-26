@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgjyaiw1bas4v"]
+[gd_scene load_steps=9 format=3 uid="uid://dgjyaiw1bas4v"]
 
 [ext_resource type="Script" path="res://Scenes/Components/cutter.gd" id="1_f0v4m"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_cvuov"]
 [ext_resource type="Script" path="res://Resources/storage.gd" id="2_yac3r"]
+[ext_resource type="PackedScene" uid="uid://bgq7s2kxcy3tw" path="res://Scenes/Conveyor Components/cutter_animation.tscn" id="4_j4h0y"]
 
-[sub_resource type="Resource" id="Resource_3bxn5"]
+[sub_resource type="Resource" id="Resource_dwxth"]
 script = ExtResource("2_yac3r")
 any_item = true
 item = 0
@@ -21,9 +22,7 @@ size = Vector2(6, 6)
 
 [node name="Cutter" type="Node2D" groups=["direction_matters", "stores_items"]]
 script = ExtResource("1_f0v4m")
-storage_array = Array[ExtResource("2_yac3r")]([SubResource("Resource_3bxn5")])
-has_item_ready = null
-is_static = null
+storage_array = Array[ExtResource("2_yac3r")]([SubResource("Resource_dwxth")])
 
 [node name="SpriteBackground" type="Sprite2D" parent="."]
 visible = false
@@ -64,6 +63,8 @@ collide_with_bodies = false
 
 [node name="ProcessTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CutterAnimation" parent="." instance=ExtResource("4_j4h0y")]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

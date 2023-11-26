@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy6c8snu4ia2t"]
+[gd_scene load_steps=25 format=3 uid="uid://cy6c8snu4ia2t"]
 
 [ext_resource type="Script" path="res://Scenes/Conveyor Components/corner_or_strait.gd" id="1_4yk4b"]
-[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_x1ctv"]
+[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_a20ei"]
+[ext_resource type="Texture2D" uid="uid://cybocqe0om1t2" path="res://Art/final conveyor animation all.png" id="3_lj4yi"]
 
 [sub_resource type="Gradient" id="Gradient_dg1oq"]
 colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
@@ -12,17 +13,149 @@ gradient = SubResource("Gradient_dg1oq")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lep0g"]
 size = Vector2(6, 6)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyl23"]
+atlas = ExtResource("2_a20ei")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxdp4"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4lna"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eupl5"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tafc8"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf514"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gye03"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_131nk"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3e43"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt1tg"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hko88"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0itu5"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qny5g"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7ie2"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c74nm"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie4x7"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrhxd"]
+atlas = ExtResource("3_lj4yi")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cuv4h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyl23")
+}],
+"loop": true,
+"name": &"corner",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxdp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4lna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eupl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tafc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf514")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gye03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_131nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3e43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt1tg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hko88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0itu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qny5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7ie2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c74nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie4x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrhxd")
+}],
+"loop": true,
+"name": &"strait",
+"speed": 60.0
+}]
+
 [node name="Conveyor" type="Node2D"]
 script = ExtResource("1_4yk4b")
 
 [node name="SpriteBackground" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-1.62125e-05, 0)
 scale = Vector2(0.125, 32)
 texture = SubResource("GradientTexture1D_33ib3")
 
 [node name="ConveyorSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_x1ctv")
+visible = false
+texture = ExtResource("2_a20ei")
 hframes = 4
 vframes = 4
 region_rect = Rect2(18, 14, 5, 0)
@@ -38,3 +171,7 @@ target_position = Vector2(40, 0)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="ConveyorAnimation" type="AnimatedSprite2D" parent="." groups=["conveyor_animation"]]
+sprite_frames = SubResource("SpriteFrames_cuv4h")
+animation = &"strait"

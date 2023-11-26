@@ -8,6 +8,9 @@ var item_count: int
 @onready var label: Label = $Label
 
 func item_arrived(arrived_item_node):
+	if item_node == null:
+		return
+	
 	if item_node.item == item:
 		item_count += 1
 		label.text = str(item_count)

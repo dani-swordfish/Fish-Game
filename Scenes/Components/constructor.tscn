@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/Components/constructor.gd" id="1_toue8"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_yab2n"]
-[ext_resource type="Texture2D" uid="uid://ptwwgp32toke" path="res://Art/test fish.png" id="3_82pgu"]
+[ext_resource type="PackedScene" uid="uid://c8j5oav6rcoh1" path="res://Scenes/Conveyor Components/item_picker_sprite.tscn" id="3_w01w2"]
 [ext_resource type="PackedScene" uid="uid://delo2acgw8sqr" path="res://Scenes/UI/item_picker.tscn" id="4_amv5j"]
 
 [sub_resource type="Gradient" id="Gradient_1vptp"]
@@ -14,7 +14,7 @@ gradient = SubResource("Gradient_1vptp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gurou"]
 size = Vector2(6, 6)
 
-[node name="Constructor" type="Node2D" groups=["direction_matters", "item_matters", "stores_items", "takes_multiple_items", "test"]]
+[node name="Constructor" type="Node2D" groups=["constructor", "direction_matters", "item_matters", "stores_items", "takes_multiple_items", "test"]]
 script = ExtResource("1_toue8")
 item = 1
 item_picker_array = Array[int]([3, 2, 1])
@@ -31,13 +31,6 @@ vframes = 4
 frame = 9
 region_rect = Rect2(18, 14, 5, 0)
 
-[node name="ItemSprite" type="Sprite2D" parent="."]
-position = Vector2(-6, 0)
-scale = Vector2(0.59375, 0.5625)
-texture = ExtResource("3_82pgu")
-hframes = 4
-vframes = 4
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 5
 
@@ -47,7 +40,6 @@ shape = SubResource("RectangleShape2D_gurou")
 [node name="ProcessTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-autostart = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(40, 0)
@@ -75,6 +67,8 @@ target_position = Vector2(0, -40)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="ItemPickerSprite" parent="." instance=ExtResource("3_w01w2")]
 
 [node name="ItemPicker" parent="." instance=ExtResource("4_amv5j")]
 metadata/_edit_use_anchors_ = true

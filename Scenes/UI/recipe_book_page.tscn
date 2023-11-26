@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://beinvkawx86b5"]
+
+[ext_resource type="StyleBox" uid="uid://dn1jmhxxc7nwq" path="res://Scenes/UI/panel_1.tres" id="1_5tut3"]
+[ext_resource type="Script" path="res://Scenes/UI/recipe_book_page.gd" id="2_cif47"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="2_yv2ej"]
+
+[node name="ConstructorRecipes" type="PanelContainer"]
+theme_override_styles/panel = ExtResource("1_5tut3")
+script = ExtResource("2_cif47")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 64
+
+[node name="RecipeContainer" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/RecipeContainer"]
+layout_mode = 2
+theme = ExtResource("2_yv2ej")
+text = "Constructor (pic) recipies"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="MarginContainer/RecipeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_yv2ej")
+text = "Close"
+
+[connection signal="pressed" from="MarginContainer/RecipeContainer/CloseButton" to="." method="_on_close_button_pressed"]

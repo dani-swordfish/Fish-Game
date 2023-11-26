@@ -14,13 +14,22 @@ var next_component_array: Array[Node2D] = [
 @onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
 @onready var ray_cast_2d_3: RayCast2D = $RayCast2D3
 
+
 func _ready() -> void:
 	# TODO set item spacific time delay
 	super._ready()
 	
-	await get_tree().create_timer(0.1).timeout
+
+func _on_play():
+	super._on_play()
 	next_component_2 = get_next_component(ray_cast_2d_2, get_direction(1))
 	next_component_3 = get_next_component(ray_cast_2d_3, get_direction(2))
+
+func reset_storage():
+	#print("cutter storage reset")
+	storage_array = []
+	var new_storage: Storage = Storage.new()
+	storage_array = [new_storage]
 
 
 func _physics_process(delta: float) -> void:
@@ -56,6 +65,11 @@ func after_item_moved():
 # super.item_arrived is never run check if changing super
 # has_item_ready is changed in cut item instead
 func item_arrived(arrived_item_node):
+	## can happen when game is stopped, this is normal
+	if item_node == null:
+		has_item_ready = false
+		return
+	
 	if Globals.get_cutter_recipe(item_node.item) == []:
 		print("invalid item distroyed")
 		item_node.queue_free()
@@ -75,11 +89,11 @@ func cut_item():
 	#await get_tree().create_timer(time_delay).timeout
 	new_item_node_array = []
 	
-	var output_array: Array[int] = Globals.get_cutter_recipe(storage_array[0].item_storage.pop_back())
+	var output_array: Array[Array] = Globals.get_cutter_recipe(storage_array[0].item_storage.pop_back())
 	
-	for i in output_array.size():
-		new_item_node_array.append(spawn_item(output_array[i]))
-	
+	for item_and_amount: Array[int] in output_array:
+		for i in item_and_amount[1]:
+			new_item_node_array.append(spawn_item(item_and_amount[0]))
 	
 	storage_array[0].storage_space -= 1
 	has_item_ready = true
@@ -89,6 +103,7 @@ func _on_process_timer_timeout() -> void:
 	if has_storage_check() and !has_item_ready:
 		cut_item()
 		process_timer.start()
+
 
 func get_direction(i: int) -> int:
 	var object_direction: int

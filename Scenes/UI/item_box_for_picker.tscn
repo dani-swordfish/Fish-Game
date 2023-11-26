@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://6kjiqju4yqo0"]
+
+[ext_resource type="PackedScene" uid="uid://difpcvx2jdcgu" path="res://Scenes/UI/Item Boxes/item_box.tscn" id="1_jsdwn"]
+[ext_resource type="Script" path="res://Scenes/UI/item_box_for_picker.gd" id="2_wjtmh"]
+
+[node name="ItemBox" instance=ExtResource("1_jsdwn")]
+script = ExtResource("2_wjtmh")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

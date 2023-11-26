@@ -1,17 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://difpcvx2jdcgu"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Item Boxes/item_box.gd" id="1_dlc7m"]
-[ext_resource type="Texture2D" uid="uid://ptwwgp32toke" path="res://Art/test fish.png" id="2_6o6rj"]
+[ext_resource type="Texture2D" uid="uid://ckiav4pe027c0" path="res://Art/items final.png" id="2_ixlco"]
 
 [node name="ItemBox" type="Panel"]
 custom_minimum_size = Vector2(64, 64)
 script = ExtResource("1_dlc7m")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("2_6o6rj")
+scale = Vector2(4, 4)
+texture = ExtResource("2_ixlco")
 centered = false
-hframes = 4
-vframes = 4
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+hframes = 8
+vframes = 8

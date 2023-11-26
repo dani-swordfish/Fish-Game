@@ -18,7 +18,6 @@ var has_space: bool = true
 var next_component: Node2D = null
 
 
-
 # should do with code instead
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
@@ -26,14 +25,25 @@ var next_component: Node2D = null
 func get_has_space(item_node_received)-> bool:
 	return has_space
 
-#func _on_area_2d_area_entered(area: Area2D) -> void:
-	#area.get_parent().direction = direction
 
 func _ready() -> void:
 	has_space = true
 	super._ready()
-	await get_tree().create_timer(0.1).timeout # only needed if run on ready.
+	
+	
+
+func _on_play():
+	super._on_play()
 	next_component = get_next_component()
+
+
+func _on_stop():
+	has_item_ready = false
+	item_node = null
+	has_space = true
+	
+	## shouldn't be needed
+	#next_component = null
 
 
 # TODO at player start of game
@@ -51,6 +61,8 @@ func _physics_process(delta: float) -> void:
 # check prosses class items before changing this code
 # do not use arrived_item_node unless distroying it!!!
 func item_arrived(arrived_item_node):
+	
+
 	has_item_ready = true
 
 
@@ -81,6 +93,8 @@ func get_next_component(raycast = ray_cast_2d, com_direction = direction) -> Nod
 func move_item(move_direction = direction, new_compnent = next_component, item_to_move = item_node):
 	if item_to_move == null:
 		printerr(item_to_move, "  is null")
+		has_item_ready = false
+		return
 	
 	
 	# TODO select correct storage if stores multiple items ##test

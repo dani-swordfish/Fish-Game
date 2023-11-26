@@ -3,7 +3,9 @@ extends ConveyorSplitter
 ## stuff for item picker
 @export var item: Enum.ITEMS
 @export var item_picker_array: Array[Enum.ITEMS]
-@onready var item_picker_ui: Control = %ItemPickerUI
+@export var player_can_pick: bool = true
+@export var override_level_default: bool = false
+@onready var item_picker_ui: Control = Globals.references.item_picker_ui
 
 var next_component_3: Node2D = null
 @onready var ray_cast_2d_3: RayCast2D = $RayCast2D3
@@ -11,8 +13,24 @@ var next_component_3: Node2D = null
 
 func _ready() -> void:
 	super._ready()
-	await get_tree().create_timer(0.1).timeout
+
+
+func _on_play():
+	super._on_play()
 	next_component_3 = get_next_component(ray_cast_2d_3, get_sorter_direction())
+	
+	# TODO change to something better
+	for child in get_children():
+		if child is AnimatedSprite2D:
+			child.play()
+
+
+func _on_stop():
+	super._on_stop()
+	for child in get_children():
+		if child is AnimatedSprite2D:
+			child.stop()
+
 
 
 func get_sorter_direction() -> int:

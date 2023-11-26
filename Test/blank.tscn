@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://badh3w5nasqsa"]
+[gd_scene load_steps=12 format=3 uid="uid://badh3w5nasqsa"]
 
 [ext_resource type="Script" path="res://Test/menu_test.gd" id="1_ndehk"]
 [ext_resource type="Texture2D" uid="uid://donc6ln3cw5ki" path="res://icon.svg" id="1_v5upf"]
-[ext_resource type="PackedScene" uid="uid://bjp7oigxj17qp" path="res://Menu/Menu Hub/menu_hub.tscn" id="2_xrejj"]
+[ext_resource type="PackedScene" uid="uid://cy6c8snu4ia2t" path="res://Scenes/Conveyor Components/conveyor.tscn" id="3_fxmdb"]
+[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="4_hdgjk"]
+[ext_resource type="PackedScene" uid="uid://8scy2k1de12h" path="res://Scenes/Conveyor Components/conveyor_split.tscn" id="5_fn7w0"]
+[ext_resource type="PackedScene" uid="uid://dgjyaiw1bas4v" path="res://Scenes/Components/cutter.tscn" id="6_gjs6g"]
+[ext_resource type="PackedScene" uid="uid://dwaqp5rfhedr2" path="res://Scenes/Conveyor Components/bin.tscn" id="7_kb5a8"]
+[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="8_pewgd"]
+[ext_resource type="PackedScene" uid="uid://cdssqx1vrhmdx" path="res://Scenes/Conveyor Components/conveyor_sorter.tscn" id="9_dl4k7"]
+[ext_resource type="PackedScene" uid="uid://m3ip7rbf34xv" path="res://Scenes/Components/constructor.tscn" id="10_f4axi"]
+[ext_resource type="PackedScene" uid="uid://c7uqvrqg5tlpc" path="res://Scenes/Conveyor Components/conveyor_bridge.tscn" id="11_3ohcp"]
 
 [node name="blank" type="Node2D"]
 script = ExtResource("1_ndehk")
@@ -53,8 +61,182 @@ texture = ExtResource("1_v5upf")
 position = Vector2(1161, 414)
 texture = ExtResource("1_v5upf")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ConveyorBelts" type="Node2D" parent="."]
 
-[node name="MenuHub" parent="CanvasLayer" instance=ExtResource("2_xrejj")]
-unique_name_in_owner = true
-default_menu = 5
+[node name="Conveyor" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(224, 256)
+has_item_ready = true
+
+[node name="Conveyor2" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(160, 224)
+rotation = -1.5708
+
+[node name="Conveyor3" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(192, 192)
+rotation = 3.14159
+
+[node name="Conveyor28" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(192, 160)
+rotation = 1.5708
+
+[node name="Conveyor29" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(160, 160)
+
+[node name="Conveyor30" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(128, 160)
+rotation = -1.5708
+
+[node name="Conveyor32" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(128, 128)
+rotation = -1.5708
+
+[node name="Conveyor31" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(128, 192)
+rotation = -1.5708
+
+[node name="Conveyor4" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(160, 96)
+is_static = true
+
+[node name="Conveyor13" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(384, 96)
+rotation = -1.5708
+is_static = true
+
+[node name="Conveyor21" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(256, 128)
+is_static = true
+
+[node name="Conveyor14" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(128, 96)
+is_static = true
+
+[node name="Conveyor15" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(128, 64)
+rotation = 3.14159
+is_static = true
+
+[node name="Conveyor16" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(192, 128)
+rotation = -1.5708
+
+[node name="Conveyor17" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(192, 64)
+rotation = 3.14159
+is_static = true
+
+[node name="Conveyor23" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(160, 64)
+rotation = 3.14159
+is_static = true
+
+[node name="Conveyor18" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(224, 64)
+rotation = 3.14159
+is_static = true
+
+[node name="Conveyor22" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(288, 224)
+rotation = -1.5708
+is_static = true
+
+[node name="Conveyor19" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(256, 64)
+rotation = 1.5708
+is_static = true
+
+[node name="Conveyor20" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(288, 96)
+rotation = 1.5708
+is_static = true
+
+[node name="Conveyor5" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(352, 64)
+rotation = 1.5708
+is_static = true
+
+[node name="Conveyor6" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(192, 96)
+
+[node name="Conveyor26" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(256, 96)
+
+[node name="Conveyor27" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(224, 128)
+rotation = -1.5708
+
+[node name="Conveyor7" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(352, 96)
+rotation = 1.5708
+
+[node name="Conveyor24" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(352, 128)
+rotation = 3.14159
+
+[node name="Conveyor25" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(320, 128)
+rotation = 3.14159
+
+[node name="Conveyor8" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(288, 128)
+rotation = 1.5708
+
+[node name="Conveyor9" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(288, 160)
+rotation = 1.5708
+
+[node name="Conveyor10" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(256, 192)
+rotation = 3.14159
+
+[node name="Conveyor11" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(256, 256)
+rotation = 3.14159
+
+[node name="Conveyor12" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
+position = Vector2(288, 192)
+rotation = 3.14159
+
+[node name="Spawner2" parent="ConveyorBelts" instance=ExtResource("4_hdgjk")]
+position = Vector2(160, 256)
+rotation = -1.5708
+item = 3
+item_picker_array = Array[int]([2, 3, 1])
+
+[node name="Spawner" parent="ConveyorBelts" instance=ExtResource("4_hdgjk")]
+position = Vector2(224, 160)
+rotation = -1.5708
+item = 2
+item_picker_array = Array[int]([2, 3, 1])
+
+[node name="ConveyorSplit" parent="ConveyorBelts" instance=ExtResource("5_fn7w0")]
+position = Vector2(64, 224)
+
+[node name="Cutter" parent="ConveyorBelts" instance=ExtResource("6_gjs6g")]
+position = Vector2(416, 160)
+
+[node name="Cutter2" parent="ConveyorBelts" instance=ExtResource("6_gjs6g")]
+position = Vector2(416, 224)
+
+[node name="Bin" parent="ConveyorBelts" instance=ExtResource("7_kb5a8")]
+position = Vector2(224, 192)
+rotation = 3.14159
+
+[node name="Output" parent="ConveyorBelts" instance=ExtResource("8_pewgd")]
+position = Vector2(352, 192)
+item = 3
+
+[node name="ConveyorSorter" parent="ConveyorBelts" instance=ExtResource("9_dl4k7")]
+position = Vector2(416, 64)
+rotation = 1.5708
+item = 3
+has_item_ready = null
+is_static = null
+
+[node name="Constructor" parent="ConveyorBelts" instance=ExtResource("10_f4axi")]
+position = Vector2(224, 96)
+rotation = -1.5708
+
+[node name="ConveyorBridge" parent="ConveyorBelts" instance=ExtResource("11_3ohcp")]
+position = Vector2(160, 192)
+rotation = -1.5708

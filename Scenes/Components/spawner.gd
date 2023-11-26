@@ -1,16 +1,26 @@
 extends Process
 
 ## stuff for item picker
+# TODO turn into resource
 @export var item: Enum.ITEMS
 @export var item_picker_array: Array[Enum.ITEMS]
-@onready var item_picker_ui: Control = %ItemPickerUI
+@export var player_can_pick: bool = true
+@export var override_level_default: bool = false
+@onready var item_picker_ui: Control = Globals.references.item_picker_ui
 
-@onready var item_sprite: Sprite2D = $ItemSprite
+# TODO use to give spawner different rates in different levels
+# also add to randi spawner
+#@export var spawn_rate: int 
+
 
 func _ready() -> void:
 	#storage_limit = 1
 	super._ready()
-	
+
+
+func _on_play():
+	super._on_play()
+	process_timer.start()
 
 
 func _on_timer_timeout() -> void:
