@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cvc5bp36c1uet"]
+[gd_scene load_steps=39 format=3 uid="uid://cvc5bp36c1uet"]
 
 [ext_resource type="Script" path="res://Scenes/Test/test_level.gd" id="1_glluf"]
 [ext_resource type="PackedScene" uid="uid://ckvs5mpywhe1v" path="res://Scenes/Tilemap/sub_tilemap.tscn" id="1_rkht3"]
@@ -30,6 +30,10 @@
 [ext_resource type="ButtonGroup" uid="uid://cw806evncma4w" path="res://pages_button_group.tres" id="19_kp4aw"]
 [ext_resource type="Texture2D" uid="uid://bjbhf3pxaktla" path="res://Scenes/UI/book_closed_texture.tres" id="19_mcl8c"]
 [ext_resource type="PackedScene" uid="uid://beinvkawx86b5" path="res://Scenes/UI/recipe_book_page.tscn" id="20_uwc7t"]
+[ext_resource type="PackedScene" uid="uid://difpcvx2jdcgu" path="res://Scenes/UI/Item Boxes/item_box.tscn" id="21_2xu2t"]
+[ext_resource type="Script" path="res://Scenes/Test/level_stats.gd" id="21_grbjm"]
+[ext_resource type="PackedScene" uid="uid://dp6gw4tnm4g13" path="res://Scenes/UI/output_count_ui.tscn" id="22_ia65w"]
+[ext_resource type="Script" path="res://Scenes/Test/level_completion_check.gd" id="22_tcdy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipili"]
 bg_color = Color(0.870588, 0.121569, 0.133333, 1)
@@ -52,8 +56,8 @@ metadata/_edit_vertical_guides_ = [-80.0]
 
 [node name="Tilemap" parent="." instance=ExtResource("1_rkht3")]
 unique_name_in_owner = true
-layer_0/tile_data = PackedInt32Array(131074, 65540, 7, 131075, 65540, 7, 196610, 65540, 7, 196611, 65540, 7, 262146, 65540, 7, 262147, 65540, 7, 262148, 65540, 7, 262149, 65540, 7, 196612, 65540, 7, 196613, 65540, 7, 131076, 65540, 7, 131077, 65540, 7, 131078, 65540, 7, 131079, 65540, 7, 196614, 65540, 7, 196615, 65540, 7, 262150, 65540, 7, 262151, 65540, 7, 196616, 65540, 7, 196617, 65540, 7, 131080, 65540, 7, 131081, 65540, 7, 262152, 65540, 7, 262153, 65540, 7, 327682, 4, 805306371, 327683, 4, 805306371, 327684, 4, 805306371, 327685, 4, 805306371, 327686, 4, 805306371, 327687, 4, 805306371, 327688, 4, 805306371, 327689, 4, 805306371, 131083, 4, 1342177283, 196619, 4, 1342177283, 262155, 4, 1342177283, 9, 4, 3, 10, 4, 3, 7, 4, 3, 8, 4, 3, 5, 4, 3, 6, 4, 3, 3, 4, 3, 4, 4, 3, 1, 4, 3, 2, 4, 3, 65537, 65540, 7, 65538, 65540, 7, 65539, 65540, 7, 65540, 65540, 7, 65541, 65540, 7, 65542, 65540, 7, 65543, 65540, 7, 65544, 65540, 7, 65545, 65540, 7, 65546, 65540, 7, 65547, 4, 1342177283, 131082, 65540, 7, 196618, 65540, 7, 262154, 65540, 7, 327690, 4, 805306371, 131073, 65540, 7, 196609, 65540, 7, 262145, 65540, 7, 327681, 4, 805306371, 65536, 4, 1610612739, 131072, 4, 1610612739, 196608, 4, 1610612739, 262144, 4, 1610612739)
-layer_1/tile_data = PackedInt32Array(1, 65540, 6, 2, 65540, 6, 3, 65540, 6, 4, 65540, 6, 5, 65540, 6, 6, 65540, 6, 7, 65540, 6, 8, 65540, 6, 9, 65540, 6, 10, 65540, 6, 65547, 65540, 1342177285, 131083, 65540, 1342177285, 196619, 65540, 1342177285, 65536, 65540, 1610612741, 131072, 65540, 1610612741, 196608, 65540, 1610612741, 262144, 65540, 1610612741, 262155, 65540, 1342177285, -65535, 65540, 5, -65534, 65540, 5, -65533, 65540, 5, -65532, 65540, 5, -65531, 65540, 5, -65530, 65540, 5, -65529, 65540, 5, -65528, 65540, 5, -65527, 65540, 5, -65526, 65540, 5, 11, 65540, 1342177285, 0, 65540, 1610612741, 327681, 65540, 805306373, 327682, 65540, 805306373, 327683, 65540, 805306373, 327684, 65540, 805306373, 327685, 65540, 805306373, 327686, 65540, 805306373, 327687, 65540, 805306373, 327688, 65540, 805306373, 327689, 65540, 805306373, 327690, 65540, 805306373)
+layer_0/tile_data = PackedInt32Array(131074, 65540, 7, 131075, 65540, 7, 196610, 65540, 7, 196611, 65540, 7, 262146, 65540, 7, 262147, 65540, 7, 262148, 65540, 7, 262149, 65540, 7, 196612, 65540, 7, 196613, 65540, 7, 131076, 65540, 7, 131077, 65540, 7, 131078, 65540, 7, 131079, 65540, 7, 196614, 65540, 7, 196615, 65540, 7, 262150, 65540, 7, 262151, 65540, 7, 196616, 65540, 7, 196617, 65540, 7, 131080, 65540, 7, 131081, 65540, 7, 262152, 65540, 7, 262153, 65540, 7, 327682, 4, 805306371, 327683, 4, 805306371, 327684, 4, 805306371, 327685, 4, 805306371, 327686, 4, 805306371, 327687, 4, 805306371, 327688, 4, 805306371, 327689, 4, 805306371, 9, 65540, 7, 7, 65540, 7, 8, 65540, 7, 5, 65540, 7, 6, 65540, 7, 3, 65540, 7, 4, 65540, 7, 1, 65540, 7, 2, 65540, 7, 65537, 65540, 7, 65538, 65540, 7, 65539, 65540, 7, 65540, 65540, 7, 65541, 65540, 7, 65542, 65540, 7, 65543, 65540, 7, 65544, 65540, 7, 65545, 65540, 7, 131073, 65540, 7, 196609, 65540, 7, 262145, 65540, 7, 327681, 4, 805306371, 65536, 4, 1610612739, 131072, 4, 1610612739, 196608, 4, 1610612739, 262144, 4, 1610612739)
+layer_1/tile_data = PackedInt32Array(65536, 65540, 1610612741, 131072, 65540, 1610612741, 196608, 65540, 1610612741, 262144, 65540, 1610612741, -65535, 65540, 6, -65534, 65540, 6, -65533, 65540, 6, -65532, 65540, 6, -65531, 65540, 6, -65530, 65540, 6, -65529, 65540, 6, -65528, 65540, 6, -65527, 65540, 6, 0, 65540, 1610612741, 327681, 65540, 805306373, 327682, 65540, 805306373, 327683, 65540, 805306373, 327684, 65540, 805306373, 327685, 65540, 805306373, 327686, 65540, 805306373, 327687, 65540, 805306373, 327688, 65540, 805306373, 327689, 65540, 805306373, -131071, 65540, 5, -131070, 65540, 5, -131069, 65540, 5, -131068, 65540, 5, -131067, 65540, 5, -131066, 65540, 5, -131065, 65540, 5, -131064, 65540, 5, -131063, 65540, 5, -65536, 65540, 1610612741, -65526, 65540, 1342177285, 10, 65540, 1342177285, 65546, 65540, 1342177285, 131082, 65540, 1342177285, 196618, 65540, 1342177285, 262154, 65540, 1342177285)
 
 [node name="References" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -66,7 +70,7 @@ script = ExtResource("3_npjkf")
 script = ExtResource("3_xkg4n")
 
 [node name="Output" parent="Components" instance=ExtResource("6_8llby")]
-position = Vector2(304, 112)
+position = Vector2(304, 80)
 item = 6
 is_static = true
 
@@ -94,12 +98,11 @@ position = Vector2(208, 81)
 rotation = 1.5708
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-16, -16)
+position = Vector2(-17, -27)
 anchor_mode = 0
 zoom = Vector2(3, 3)
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("4_6gpoe")
 
 [node name="ComponentPicker" type="Control" parent="UI"]
@@ -189,7 +192,8 @@ component = 5
 [node name="Box7" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
 layout_mode = 2
 tooltip_text = "Cut and Sort -
-Cuts item into parts, will output items in the order given in the recipe, starting with the left, bottom then top."
+Cuts item into parts, will output items in the order given in the recipe, 
+starting with the right, bottom then top."
 initial_component_count = 5
 component = 7
 
@@ -335,22 +339,22 @@ offset_bottom = 85.0
 grow_horizontal = 0
 script = ExtResource("9_u4mii")
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/ModeUI"]
+[node name="PlayStop" type="PanelContainer" parent="UI/ModeUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = -16.5
-offset_right = 63.0
-offset_bottom = 46.5
+offset_left = -153.0
+offset_top = -26.5
+offset_right = 12.0
+offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("12_x4jup")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/ModeUI/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/ModeUI/PlayStop"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -359,11 +363,11 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/ModeUI/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ModeUI/PlayStop/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="PlayButton" type="Button" parent="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="PlayButton" type="Button" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer"]
 layout_mode = 2
 tooltip_text = "Start Conveyors"
 theme = ExtResource("12_x4jup")
@@ -372,7 +376,7 @@ toggle_mode = true
 button_group = ExtResource("18_56y3x")
 text = "Play"
 
-[node name="StopButton" type="Button" parent="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="StopButton" type="Button" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer"]
 layout_mode = 2
 tooltip_text = "Stop Conveyors"
 theme = ExtResource("12_x4jup")
@@ -382,7 +386,83 @@ button_pressed = true
 button_group = ExtResource("18_56y3x")
 text = "Stop"
 
+[node name="LevelStats" type="PanelContainer" parent="UI/ModeUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.260504
+anchor_top = 2.07059
+anchor_right = 0.945378
+anchor_bottom = 4.71765
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_x4jup")
+script = ExtResource("21_grbjm")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelCompletionCheck" type="Node" parent="UI/ModeUI/LevelStats"]
+script = ExtResource("22_tcdy2")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ModeUI/LevelStats"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ModeUI/LevelStats/MarginContainer"]
+layout_mode = 2
+
+[node name="OutputCountUI" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer" instance=ExtResource("22_ia65w")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("12_x4jup")
+text = "10/10"
+horizontal_alignment = 1
+
+[node name="ItemBox" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("21_2xu2t")]
+layout_mode = 2
+
+[node name="HeaderTimeTakenLabel" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("12_x4jup")
+text = "Time Taken:
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="TimeTakenLabel" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("12_x4jup")
+text = "0.00.00"
+
+[node name="Label3" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("12_x4jup")
+text = "Components:"
+horizontal_alignment = 1
+
+[node name="ComponentCountLabel" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("12_x4jup")
+text = "20"
+horizontal_alignment = 1
+
 [node name="RecipeUI" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -557,18 +637,21 @@ event = &"play"
 [connection signal="player_dropped_component" from="UI/ComponentPicker/PlayerHand" to="SubMachine" method="_on_player_hand_player_dropped_component"]
 [connection signal="player_picked_up_component" from="UI/ComponentPicker/PlayerHand" to="SubMachine" method="_on_player_hand_player_picked_up_component"]
 [connection signal="pressed" from="UI/ComponentPicker/Button" to="UI" method="_on_button_pressed"]
-[connection signal="pressed" from="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer/PlayButton" to="UI/ModeUI" method="_on_play_button_pressed"]
-[connection signal="pressed" from="UI/ModeUI/PanelContainer/MarginContainer/HBoxContainer/StopButton" to="UI/ModeUI" method="_on_stop_button_pressed"]
+[connection signal="pressed" from="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer/PlayButton" to="UI/ModeUI" method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer/StopButton" to="UI/ModeUI" method="_on_stop_button_pressed"]
 [connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel/ContructorButton" to="UI/RecipeUI" method="_on_contructor_button_toggled"]
 [connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2/CutterButton" to="UI/RecipeUI" method="_on_cutter_button_toggled"]
 [connection signal="pressed" from="UI/TextureButton" to="UI/RecipeUI" method="_on_texture_button_pressed"]
 [connection signal="after_components_changed" from="SubMachine" to="Components" method="_on_sub_machine_after_components_changed"]
+[connection signal="after_components_changed" from="SubMachine" to="UI/ModeUI/LevelStats" method="_on_sub_machine_after_components_changed"]
 [connection signal="before_components_changed" from="SubMachine" to="Components" method="_on_sub_machine_before_components_changed"]
 [connection signal="components_changed" from="SubMachine" to="Components" method="_on_sub_machine_components_changed"]
 [connection signal="gui_input" from="SubMachine" to="SubMachine" method="_on_gui_input"]
 [connection signal="gui_input" from="SubMachine/Panel" to="SubMachine" method="_on_panel_gui_input"]
 [connection signal="state_entered" from="WorldStates/Root/Play" to="Components" method="_on_play_state_entered"]
 [connection signal="state_entered" from="WorldStates/Root/Play" to="UI/ComponentPicker/PlayerHand" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="UI/ModeUI/LevelStats" method="_on_play_state_entered"]
 [connection signal="state_entered" from="WorldStates/Root/Play" to="SubMachine" method="_on_play_state_entered"]
 [connection signal="state_exited" from="WorldStates/Root/Play" to="Items" method="_on_play_state_exited"]
 [connection signal="state_exited" from="WorldStates/Root/Play" to="Components" method="_on_play_state_exited"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="UI/ModeUI/LevelStats" method="_on_play_state_exited"]

@@ -2,8 +2,7 @@ extends Control
 
 @onready var world_states: StateChart = $"../../WorldStates"
 
-@onready var stop_button: Button = $PanelContainer/MarginContainer/HBoxContainer/StopButton
-
+@onready var stop_button: Button = $PlayStop/MarginContainer/HBoxContainer/StopButton
 
 
 

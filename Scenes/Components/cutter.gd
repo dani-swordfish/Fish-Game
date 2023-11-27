@@ -16,7 +16,7 @@ var next_component_array: Array[Node2D] = [
 
 
 func _ready() -> void:
-	# TODO set item spacific time delay
+	# TODO set item spacific time delay or level, probably not gonna happen
 	super._ready()
 	
 

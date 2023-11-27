@@ -1,9 +1,16 @@
 extends Process
 
 @export var item_array: Array[Enum.ITEMS]
+@export var spawn_rate: float = 1.0
 
 # only works if item array is set on export and not changed
 var counter: int = 0
+
+
+func _ready() -> void:
+	super._ready()
+	process_timer.wait_time = spawn_rate
+
 
 var current_item: Enum.ITEMS:
 	get: 

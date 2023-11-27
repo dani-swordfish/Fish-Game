@@ -10,12 +10,13 @@ extends Process
 
 # TODO use to give spawner different rates in different levels
 # also add to randi spawner
-#@export var spawn_rate: int 
+@export var spawn_rate: float = 1.0
 
 
 func _ready() -> void:
 	#storage_limit = 1
 	super._ready()
+	process_timer.wait_time = spawn_rate
 
 
 func _on_play():

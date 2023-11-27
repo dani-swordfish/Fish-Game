@@ -58,6 +58,8 @@ func get_item_frame_coords(item: Enum.ITEMS) -> Vector2:
 			return Vector2(1,1)
 		Enum.ITEMS.LIGHT_BULB:
 			return Vector2(2,1)
+		Enum.ITEMS.LAMP:
+			return Vector2(3,1)
 		
 		Enum.ITEMS.SNAKE:
 			return Vector2(0,2)
@@ -88,7 +90,7 @@ func get_item_frame_coords(item: Enum.ITEMS) -> Vector2:
 			return Vector2(5,3)
 		
 		Enum.ITEMS.MALTI_SCALE:
-			return Vector2(1,4)
+			return Vector2(0,4)
 		_:
 			printerr("item frame_coords not found")
 			return Vector2(0,0)
@@ -125,16 +127,16 @@ func get_component_frame_coords(component):
 func get_cutter_recipe(item: Enum.ITEMS)-> Array[Array]:
 	match item:
 		Enum.ITEMS.SALMON:
-			return [[Enum.ITEMS.SALMON_MEAT, 1], [Enum.ITEMS.SALMON_SCALE, 2]]
+			return [[Enum.ITEMS.SALMON_SCALE, 2], [Enum.ITEMS.SALMON_MEAT, 1]]
 		
 		Enum.ITEMS.ANGLER:
 			return [[Enum.ITEMS.ANGLER_SCALE, 2], [Enum.ITEMS.LIGHT_BULB, 1]]
 		
 		Enum.ITEMS.SNAKE:
-			return [[Enum.ITEMS.SNAKE_SCALE, 1], [Enum.ITEMS.SALMON_MEAT, 1]]
+			return [[Enum.ITEMS.SNAKE_SCALE, 1], [Enum.ITEMS.SNAKE_MEAT, 1]]
 		
 		Enum.ITEMS.CLOWN_FISH:
-			return [[Enum.ITEMS.CLOWN_FISH_SCALE, 2]]
+			return [[Enum.ITEMS.CLOWN_FISH_SCALE, 1]]
 		_:
 			printerr("no recipie for item")
 			return []
@@ -142,11 +144,11 @@ func get_cutter_recipe(item: Enum.ITEMS)-> Array[Array]:
 
 func get_constuctor_recipe(item: Enum.ITEMS)-> Array[Array]:
 	match item:
-		Enum.ITEMS.SALMON:
-			return [[Enum.ITEMS.SALMON_MEAT, 1], [Enum.ITEMS.SALMON_SCALE, 2]]
-		
 		Enum.ITEMS.SALMON_SUSHI:
 			return [[Enum.ITEMS.SALMON_MEAT, 1], [Enum.ITEMS.RICE, 2], [Enum.ITEMS.SEAWEED, 1]]
+		
+		Enum.ITEMS.LAMP:
+			return [[Enum.ITEMS.LIGHT_BULB, 1], [Enum.ITEMS.SNAKE_SCALE, 2]]
 		
 		Enum.ITEMS.SNAKE_SKEWER:
 			return [[Enum.ITEMS.SNAKE_MEAT, 1]]
@@ -154,20 +156,20 @@ func get_constuctor_recipe(item: Enum.ITEMS)-> Array[Array]:
 		Enum.ITEMS.GOLD_BUCKLE:
 			return [[Enum.ITEMS.GOLD, 1]]
 		
-		Enum.ITEMS.GOLD_BUCKLE:
+		Enum.ITEMS.SNAKE_BELT:
 			return [[Enum.ITEMS.GOLD_BUCKLE, 1], [Enum.ITEMS.SNAKE_SCALE, 2]]
 		
 		Enum.ITEMS.CLOWN_FISH_SUSHI:
 			return [[Enum.ITEMS.CLOWN_FISH, 2], [Enum.ITEMS.RICE, 2], [Enum.ITEMS.SEAWEED, 1]]
 		
-		Enum.ITEMS.GLASS:
-			return [[Enum.ITEMS.FISH_BOWL, 1]]
+		Enum.ITEMS.FISH_BOWL:
+			return [[Enum.ITEMS.GLASS, 1]]
 		
 		Enum.ITEMS.CLOWN_FISH_BOWL:
 			return [[Enum.ITEMS.FISH_BOWL, 1], [Enum.ITEMS.CLOWN_FISH, 1]]
 		
 		Enum.ITEMS.MALTI_SCALE:
-			return [[Enum.ITEMS.SALMON_SCALE, 1], [Enum.ITEMS.ANGLER_SCALE, 1], [Enum.ITEMS.SALMON_SCALE, 1], [Enum.ITEMS.CLOWN_FISH_SCALE, 1]]
+			return [[Enum.ITEMS.SALMON_SCALE, 1], [Enum.ITEMS.ANGLER_SCALE, 1], [Enum.ITEMS.SNAKE_SCALE, 1], [Enum.ITEMS.CLOWN_FISH_SCALE, 1]]
 		_:
 			printerr("no recipie for item")
 			return []

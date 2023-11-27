@@ -23,8 +23,6 @@ size = Vector2(6, 6)
 [node name="Cutter" type="Node2D" groups=["direction_matters", "stores_items"]]
 script = ExtResource("1_f0v4m")
 storage_array = Array[ExtResource("2_yac3r")]([SubResource("Resource_dwxth")])
-has_item_ready = null
-is_static = null
 
 [node name="SpriteBackground" type="Sprite2D" parent="."]
 visible = false
@@ -64,6 +62,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="ProcessTimer" type="Timer" parent="."]
+wait_time = 2.5
 one_shot = true
 
 [node name="CutterAnimation" parent="." instance=ExtResource("4_j4h0y")]

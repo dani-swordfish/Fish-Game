@@ -54,5 +54,6 @@ enum ITEMS {
 	
 	MALTI_SCALE,
 	
+	LAMP,
 }
 

@@ -38,7 +38,7 @@ collision_layer = 5
 shape = SubResource("RectangleShape2D_gurou")
 
 [node name="ProcessTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
