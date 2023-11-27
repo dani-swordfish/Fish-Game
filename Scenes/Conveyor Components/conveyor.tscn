@@ -1,8 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cy6c8snu4ia2t"]
+[gd_scene load_steps=30 format=3 uid="uid://cy6c8snu4ia2t"]
 
 [ext_resource type="Script" path="res://Scenes/Conveyor Components/corner_or_strait.gd" id="1_4yk4b"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_a20ei"]
+[ext_resource type="Texture2D" uid="uid://bc0djudtitcc6" path="res://Art/doungon wall blue.png" id="3_483tx"]
 [ext_resource type="Texture2D" uid="uid://cybocqe0om1t2" path="res://Art/final conveyor animation all.png" id="3_lj4yi"]
+[ext_resource type="Texture2D" uid="uid://be745rsu4cmkh" path="res://Art/background test.png" id="4_ujbk3"]
 
 [sub_resource type="Gradient" id="Gradient_dg1oq"]
 colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
@@ -16,6 +18,10 @@ size = Vector2(6, 6)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vyl23"]
 atlas = ExtResource("2_a20ei")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5471s"]
+atlas = ExtResource("3_483tx")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxdp4"]
 atlas = ExtResource("3_lj4yi")
@@ -81,6 +87,14 @@ region = Rect2(448, 0, 32, 32)
 atlas = ExtResource("3_lj4yi")
 region = Rect2(480, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_loxwa"]
+atlas = ExtResource("4_ujbk3")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3sia"]
+atlas = ExtResource("4_ujbk3")
+region = Rect2(192, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cuv4h"]
 animations = [{
 "frames": [{
@@ -89,6 +103,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"corner",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5471s")
+}],
+"loop": true,
+"name": &"left_and_other_inputs",
 "speed": 5.0
 }, {
 "frames": [{
@@ -143,9 +165,25 @@ animations = [{
 "loop": true,
 "name": &"strait",
 "speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loxwa")
+}],
+"loop": true,
+"name": &"three_inputs",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3sia")
+}],
+"loop": true,
+"name": &"up_and_down_inputs",
+"speed": 5.0
 }]
 
-[node name="Conveyor" type="Node2D"]
+[node name="Conveyor" type="Node2D" groups=["basic_conveyor"]]
 script = ExtResource("1_4yk4b")
 
 [node name="SpriteBackground" type="Sprite2D" parent="."]

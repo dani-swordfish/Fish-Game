@@ -18,6 +18,14 @@ func _on_play():
 		if child.is_in_group("direction_matters"):
 			child._on_play()
 
+
+func _components_changed():
+	super._components_changed()
+	for child in get_children():
+		if child.is_in_group("direction_matters"):
+			child._components_changed()
+
+
 func _on_stop():
 	super._on_stop()
 	for child in get_children():

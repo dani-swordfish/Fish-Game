@@ -23,6 +23,8 @@ size = Vector2(6, 6)
 [node name="Cutter" type="Node2D" groups=["direction_matters", "stores_items"]]
 script = ExtResource("1_f0v4m")
 storage_array = Array[ExtResource("2_yac3r")]([SubResource("Resource_dwxth")])
+has_item_ready = null
+is_static = null
 
 [node name="SpriteBackground" type="Sprite2D" parent="."]
 visible = false

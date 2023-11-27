@@ -10,9 +10,15 @@ func _ready() -> void:
 	super._ready()
 	
 
+
+func _components_changed():
+	super._components_changed()
+	next_component_2 = get_next_component(ray_cast_2d_2, get_splitter_direction())
+
+
 func _on_play():
 	super._on_play()
-	next_component_2 = get_next_component(ray_cast_2d_2, get_splitter_direction())
+	
 
 
 

@@ -20,10 +20,14 @@ func _ready() -> void:
 	super._ready()
 	
 
-func _on_play():
-	super._on_play()
+func _components_changed():
+	super._components_changed()
 	next_component_2 = get_next_component(ray_cast_2d_2, get_direction(1))
 	next_component_3 = get_next_component(ray_cast_2d_3, get_direction(2))
+
+func _on_play():
+	super._on_play()
+	
 
 func reset_storage():
 	#print("cutter storage reset")

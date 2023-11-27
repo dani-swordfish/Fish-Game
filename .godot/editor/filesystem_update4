@@ -6,11 +6,22 @@ res://Themes/main_theme.tres
 res://Scenes/Conveyor Components/output.tscn
 res://Scenes/Components/spawner.tscn
 res://Scenes/Conveyor Components/conveyor_sorter.tscn
-res://Scenes/Conveyor Components/converyor_belt_animation.tscn
 res://Scenes/Conveyor Components/conveyor.tscn
 res://Scenes/Components/randi_cutter.tscn
 res://Scenes/Components/cutter.tscn
 res://Scenes/Boxes/box.tscn
 res://Scenes/Components/constructor.tscn
 res://Scenes/Conveyor Components/item_picker_sprite.tscn
-res://Scenes/Test/ui.gd
+res://Scenes/Conveyor Components/conveyor.gd
+res://Scenes/Conveyor Components/corner_or_strait.gd
+res://Scenes/Test/sub_machine.gd
+res://Scenes/Test/components.gd
+res://Scenes/Components/component.gd
+res://Scenes/Components/cutter.gd
+res://Scenes/Conveyor Components/conveyor_bridge.gd
+res://Scenes/Conveyor Components/conveyor_sorter.gd
+res://Scenes/Conveyor Components/conveyor_split.gd
+res://Scenes/Components/multi_spawner.tscn
+res://Scenes/Conveyor Components/bin.tscn
+res://Scenes/Conveyor Components/conveyor_bridge.tscn
+res://Scenes/Conveyor Components/conveyor_split.tscn

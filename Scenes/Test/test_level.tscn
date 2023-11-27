@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cvc5bp36c1uet"]
+[gd_scene load_steps=34 format=3 uid="uid://cvc5bp36c1uet"]
 
 [ext_resource type="Script" path="res://Scenes/Test/test_level.gd" id="1_glluf"]
 [ext_resource type="PackedScene" uid="uid://ckvs5mpywhe1v" path="res://Scenes/Tilemap/sub_tilemap.tscn" id="1_rkht3"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b3c3j1qflhmfx" path="res://Scenes/Components/multi_spawner.tscn" id="9_uqhoy"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="10_hns4d"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="11_3167c"]
+[ext_resource type="PackedScene" uid="uid://cy6c8snu4ia2t" path="res://Scenes/Conveyor Components/conveyor.tscn" id="11_mcwq8"]
 [ext_resource type="PackedScene" uid="uid://bwy3ptujdf41u" path="res://Scenes/Components/randi_cutter.tscn" id="11_pefrv"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="12_avwe8"]
 [ext_resource type="Script" path="res://Scenes/Test/item_picker_ui.gd" id="12_nfskl"]
@@ -80,6 +81,10 @@ item_array = Array[int]([5, 4, 4])
 [node name="RandiCutter" parent="Components" instance=ExtResource("11_pefrv")]
 position = Vector2(144, 112)
 
+[node name="Conveyor" parent="Components" groups=["for_test"] instance=ExtResource("11_mcwq8")]
+position = Vector2(208, 81)
+rotation = 1.5708
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-16, -16)
 anchor_mode = 0
@@ -143,11 +148,6 @@ tooltip_text = "Conveyor Belt -
 Transports items in one direction."
 initial_component_count = 80
 component = 1
-
-[node name="Box2" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
-layout_mode = 2
-initial_component_count = 4
-component = 2
 
 [node name="Box3" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("6_k24xg")]
 layout_mode = 2
@@ -245,7 +245,7 @@ text = "Press [r] to rotate objects       "
 [node name="Label2" type="Label" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("12_x4jup")
-text = "Press [t] to flip objects"
+text = "Press [t] to flip conveyor bridge"
 
 [node name="PlayerHand" type="Control" parent="UI/ComponentPicker"]
 unique_name_in_owner = true
@@ -554,6 +554,9 @@ event = &"play"
 [connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel/ContructorButton" to="UI/RecipeUI" method="_on_contructor_button_toggled"]
 [connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2/CutterButton" to="UI/RecipeUI" method="_on_cutter_button_toggled"]
 [connection signal="pressed" from="UI/TextureButton" to="UI/RecipeUI" method="_on_texture_button_pressed"]
+[connection signal="after_components_changed" from="SubMachine" to="Components" method="_on_sub_machine_after_components_changed"]
+[connection signal="before_components_changed" from="SubMachine" to="Components" method="_on_sub_machine_before_components_changed"]
+[connection signal="components_changed" from="SubMachine" to="Components" method="_on_sub_machine_components_changed"]
 [connection signal="gui_input" from="SubMachine" to="SubMachine" method="_on_gui_input"]
 [connection signal="gui_input" from="SubMachine/Panel" to="SubMachine" method="_on_panel_gui_input"]
 [connection signal="state_entered" from="WorldStates/Root/Play" to="Components" method="_on_play_state_entered"]

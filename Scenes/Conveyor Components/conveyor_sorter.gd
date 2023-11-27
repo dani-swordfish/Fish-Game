@@ -14,15 +14,17 @@ var next_component_3: Node2D = null
 func _ready() -> void:
 	super._ready()
 
+func _components_changed():
+	super._components_changed()
+	next_component_3 = get_next_component(ray_cast_2d_3, get_sorter_direction())
+	
+	
 
 func _on_play():
 	super._on_play()
-	next_component_3 = get_next_component(ray_cast_2d_3, get_sorter_direction())
 	
-	# TODO change to something better
-	for child in get_children():
-		if child is AnimatedSprite2D:
-			child.play()
+	
+
 
 
 func _on_stop():

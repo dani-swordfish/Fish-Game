@@ -30,6 +30,10 @@ func set_tile():
 	tile = Globals.references.tilemap.local_to_map(position)
 
 
+func _components_changed():
+	pass
+
+
 func _on_play():
 	set_physics_process(true)
 

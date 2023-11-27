@@ -1,10 +1,18 @@
 extends Control
 
+# needs to happen only once, not twice if changed and removed both happen
+signal components_changed
+
+signal before_components_changed
+signal after_components_changed
+
 
 @onready var player_hand: Control = %PlayerHand
 @onready var tilemap = %Tilemap
 @onready var components: Node2D = $"../Components"
 @onready var world_states: StateChart = $"../WorldStates"
+
+
 
 
 func _on_play_state_entered() -> void:
@@ -25,35 +33,46 @@ func _on_gui_input(event: InputEvent) -> void:
 		print("player has no compoenent")
 		return
 	
-	if player_hand.get_component() == Enum.COMPONENTS.REMOVE_COMPONENT:
-		remove_component()
-		return
 	
 	if event.is_pressed() \
 	and event.button_index == MOUSE_BUTTON_LEFT:
+		if player_hand.get_component() == Enum.COMPONENTS.REMOVE_COMPONENT:
+			if remove_component():
+				handle_signals()
+			return
+		
 		spawn_component(player_hand.get_component())
-		#print("spawn component")
+		
+		
+		
+
+func handle_signals():
+	before_components_changed.emit()
+	await get_tree().create_timer(0.05).timeout
+	components_changed.emit()
+	await get_tree().create_timer(0.05).timeout
+	after_components_changed.emit()
 
 
-func remove_component():
+
+func remove_component() -> bool:
 	for cov in components.get_children():
 		if cov.tile == tilemap.get_component_pos():
-			print(cov.tile, tilemap.get_component_pos(), "is eqaul??" )
 			if !cov.is_static:
 				get_box_and_count_up(cov)
 				cov.queue_free()
+				return true
 			else:
 				print("tried to remove static component")
-				return
+				return false
+	return false
 
 
 func get_box_and_count_up(component):
 	for box in Globals.references.h_box_container.get_children():
-		print(box)
 		if box is Box\
 		and box.component == component.component:
 			box.component_count += 1
-			print("counter up on box", box)
 
 
 func spawn_component(component: int):
@@ -96,6 +115,8 @@ func spawn_component(component: int):
 	
 	# reduce component count
 	player_hand.active_box.component_count -= 1
+	
+	handle_signals()
 
 
 func _on_player_hand_player_picked_up_component() -> void:

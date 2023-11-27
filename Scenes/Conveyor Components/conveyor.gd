@@ -30,11 +30,15 @@ func _ready() -> void:
 	has_space = true
 	super._ready()
 	
-	
+
+
+func _components_changed():
+	super._components_changed()
+	next_component = get_next_component()
 
 func _on_play():
 	super._on_play()
-	next_component = get_next_component()
+	
 
 
 func _on_stop():
@@ -79,15 +83,17 @@ func get_next_component(raycast = ray_cast_2d, com_direction = direction) -> Nod
 	var new_component: Node2D = raycast.get_collider().get_parent()
 	
 	if new_component.is_in_group("direction_matters"):
-		if new_component.is_in_group("test"):
-			print("tried", com_direction, new_component.get_input_directions_array())
 		if com_direction in new_component.get_input_directions_array():
-			if new_component.is_in_group("test"):
-				print("success", new_component)
+			for_conveyor_connect(com_direction, new_component)
 			return new_component
 		return null
-	
+	for_conveyor_connect(com_direction, new_component)
 	return new_component
+
+
+func for_conveyor_connect(com_direction, new_component):
+	if new_component.is_in_group("basic_conveyor"):
+			new_component.connection_made(com_direction)
 
 
 func move_item(move_direction = direction, new_compnent = next_component, item_to_move = item_node):
