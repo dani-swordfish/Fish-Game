@@ -76,17 +76,17 @@ func ajust_for_inputs():
 		print(2)
 		
 		if inputs == [1,3]:
-			conveyor_animation.play("up_and_down_inputs")
+			conveyor_animation.animation = "up_and_down_inputs"
 		
 		else:
-			conveyor_animation.play("left_and_other_inputs")
+			conveyor_animation.animation = "left_and_other_inputs"
 			if  inputs == [1,2]:
-				flipped = true
-			if inputs == [2,3]:
 				flipped = false
+			if inputs == [2,3]:
+				flipped = true
 	
 	if inputs.size() == 3:
-		conveyor_animation.play("three_inputs")
+		conveyor_animation.animation = "three_inputs"
 		
 	
 

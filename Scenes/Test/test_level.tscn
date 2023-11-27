@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cvc5bp36c1uet"]
+[gd_scene load_steps=35 format=3 uid="uid://cvc5bp36c1uet"]
 
 [ext_resource type="Script" path="res://Scenes/Test/test_level.gd" id="1_glluf"]
 [ext_resource type="PackedScene" uid="uid://ckvs5mpywhe1v" path="res://Scenes/Tilemap/sub_tilemap.tscn" id="1_rkht3"]
@@ -23,6 +23,7 @@
 [ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="12_x4jup"]
 [ext_resource type="StyleBox" uid="uid://dn1jmhxxc7nwq" path="res://Scenes/UI/panel_1.tres" id="13_sd7cr"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="13_tg32c"]
+[ext_resource type="PackedScene" uid="uid://bijk8c6lns3yb" path="res://Scenes/Boxes/player_box.tscn" id="17_nn53d"]
 [ext_resource type="ButtonGroup" uid="uid://dbqjgk6fld6ec" path="res://Scenes/UI/play_stop_button_group.tres" id="18_56y3x"]
 [ext_resource type="Script" path="res://Scenes/Test/recipe_ui.gd" id="18_lks1a"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="19_gobak"]
@@ -71,11 +72,18 @@ is_static = true
 
 [node name="Spawner" parent="Components" instance=ExtResource("7_k3v42")]
 position = Vector2(48, 112)
+item = 14
+item_picker_array = Array[int]([1])
+is_static = true
+
+[node name="Spawner2" parent="Components" instance=ExtResource("7_k3v42")]
+position = Vector2(48, 80)
+item = 10
 item_picker_array = Array[int]([1])
 is_static = true
 
 [node name="MultiSpawner" parent="Components" instance=ExtResource("9_uqhoy")]
-position = Vector2(48, 80)
+position = Vector2(48, 48)
 item_array = Array[int]([5, 4, 4])
 
 [node name="RandiCutter" parent="Components" instance=ExtResource("11_pefrv")]
@@ -91,6 +99,7 @@ anchor_mode = 0
 zoom = Vector2(3, 3)
 
 [node name="UI" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("4_6gpoe")
 
 [node name="ComponentPicker" type="Control" parent="UI"]
@@ -255,12 +264,12 @@ offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("4_pdk6w")
 
-[node name="PlayerBox" parent="UI/ComponentPicker/PlayerHand" instance=ExtResource("6_k24xg")]
+[node name="PlayerBox" parent="UI/ComponentPicker/PlayerHand" instance=ExtResource("17_nn53d")]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 43.0
-offset_bottom = 43.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 67.0
+offset_bottom = 67.0
 mouse_filter = 2
 
 [node name="Button" type="Button" parent="UI/ComponentPicker"]
@@ -374,7 +383,6 @@ button_group = ExtResource("18_56y3x")
 text = "Stop"
 
 [node name="RecipeUI" type="Control" parent="UI"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
