@@ -23,7 +23,8 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="MarginContainer/RecipeContainer"]
 layout_mode = 2
 theme = ExtResource("2_yv2ej")
-text = "Constructor (pic) recipies"
+theme_override_font_sizes/font_size = 32
+text = "Constructor recipies"
 horizontal_alignment = 1
 
 [node name="CloseButton" type="Button" parent="MarginContainer/RecipeContainer"]

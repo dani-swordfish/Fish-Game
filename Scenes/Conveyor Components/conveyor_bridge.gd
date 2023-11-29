@@ -4,12 +4,15 @@ extends Componenet
 # asthetics? hide one item?
 @onready var conveyor_2: Node2D = $Conveyor2
 @export var flipped: bool = false
+@onready var top_down_conveyor: Sprite2D = $"Top-down-conveyor"
 
 
 func _ready() -> void:
 	if flipped:
 		conveyor_2.rotation_degrees += 180
+		top_down_conveyor.flip_v = true
 	conveyor_2.set_direction()
+	
 
 
 func _on_play():

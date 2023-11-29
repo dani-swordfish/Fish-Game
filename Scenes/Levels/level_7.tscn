@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcjr6t5n25p70"]
+
+[ext_resource type="PackedScene" uid="uid://cvc5bp36c1uet" path="res://Scenes/Levels/LevelBase.tscn" id="1_mdd0a"]
+[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="2_666xc"]
+[ext_resource type="Texture2D" uid="uid://be745rsu4cmkh" path="res://Art/background test.png" id="2_no6nn"]
+[ext_resource type="Resource" uid="uid://byfcg03pwob6g" path="res://Scenes/Level Options/level_7_options.tres" id="2_y0bgy"]
+[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="3_1ptgt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bea0i"]
+atlas = ExtResource("2_no6nn")
+region = Rect2(128, 64, 19, 33)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_cjd87"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_hmnh5"]
+
+[node name="Level_7" instance=ExtResource("1_mdd0a")]
+options = ExtResource("2_y0bgy")
+
+[node name="Tilemap" parent="." index="0"]
+layer_2/tile_data = PackedInt32Array(196608, 262148, 2, 262141, 65540, 2, 262142, 131076, 2, 262143, 196612, 2, 65549, 65540, 805306370, 65548, 131076, 805306370, 65547, 196612, 805306370, 65546, 262148, 805306370, -327677, 65540, 1342177281, -262141, 131076, 1342177281, -196605, 196612, 1342177281, -131069, 262148, 1342177281, -327674, 65540, 1342177281, -262138, 131076, 1342177281, -196602, 196612, 1342177281, -131066, 262148, 1342177281)
+
+[node name="PipeSprite" type="Sprite2D" parent="." index="1"]
+position = Vector2(208, -9)
+rotation = 1.5708
+texture = SubResource("AtlasTexture_bea0i")
+
+[node name="PipeSprite2" type="Sprite2D" parent="." index="2"]
+position = Vector2(112, -9)
+rotation = 1.5708
+texture = SubResource("AtlasTexture_bea0i")
+
+[node name="Spawner" parent="Components" index="0" instance=ExtResource("2_666xc")]
+position = Vector2(304, 48)
+rotation = 3.14159
+item = 10
+
+[node name="Spawner3" parent="Components" index="1" instance=ExtResource("2_666xc")]
+position = Vector2(112, 16)
+rotation = 1.5708
+item = 7
+
+[node name="Output" parent="Components" index="2" instance=ExtResource("3_1ptgt")]
+position = Vector2(48, 112)
+rotation = 3.14159
+item = 24
+
+[node name="Output2" parent="Components" index="3" instance=ExtResource("3_1ptgt")]
+position = Vector2(208, 16)
+rotation = -1.5708
+item = 13
+
+[node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
+is_infinate = true
+
+[node name="Box6" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="4"]
+initial_component_count = 6
+
+[node name="Box8" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="7"]
+initial_component_count = 2
+
+[node name="Box11" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="9"]
+initial_component_count = 8
+
+[node name="PlayButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="0"]
+button_group = SubResource("ButtonGroup_cjd87")
+
+[node name="StopButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="1"]
+button_group = SubResource("ButtonGroup_cjd87")
+
+[node name="ContructorButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel" index="0"]
+button_group = SubResource("ButtonGroup_hmnh5")
+
+[node name="CutterButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2" index="0"]
+button_group = SubResource("ButtonGroup_hmnh5")
+
+[node name="LevelComplete" parent="UI" index="5"]
+level_no = 7
+
+[node name="LevelInfo" parent="UI" index="6"]
+visible = true
+
+[node name="Polygon2D" type="Polygon2D" parent="UI/LevelInfo/Panel" index="0"]
+position = Vector2(-240, -60)
+polygon = PackedVector2Array(464, 176, 457, 174, 451, 180, 458, 190, 462, 192, 479, 193, 479, 182, 473, 183, 465, 181)
+
+[node name="Polygon2D2" type="Polygon2D" parent="UI/LevelInfo/Panel" index="1"]
+polygon = PackedVector2Array(385, 124, 386, 135, 403, 133, 411, 126, 410, 115, 403, 117, 400, 124)
+
+[node name="Polygon2D3" type="Polygon2D" parent="UI/LevelInfo/Panel" index="2"]
+position = Vector2(-240, -60)
+polygon = PackedVector2Array(728, 163, 721, 176, 734, 184, 753, 183, 751, 168)
+
+[node name="Label" parent="UI/LevelInfo/Panel" index="3"]
+text = "mOre SnAkes"
+
+[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="4"]
+text = "[center]Can you handle two products?"

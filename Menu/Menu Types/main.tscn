@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bamylp0sx0v1h"]
+[gd_scene load_steps=11 format=3 uid="uid://bamylp0sx0v1h"]
 
 [ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_i6k0f"]
 [ext_resource type="Script" path="res://Menu/Menu Types/main.gd" id="1_rgqpb"]
 [ext_resource type="PackedScene" uid="uid://ccf3y8xj1tiou" path="res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn" id="1_v3cd4"]
 [ext_resource type="Script" path="res://Menu/Menu Types/VBoxContainer.gd" id="2_msrns"]
 [ext_resource type="PackedScene" uid="uid://b54nmrga5qjd2" path="res://Menu/Menu Components/Menu Buttons/quit.tscn" id="4_rfesp"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="5_6bo4p"]
+[ext_resource type="FontFile" uid="uid://c1mdurghusp7i" path="res://Themes/Fonts/Toucon__.ttf" id="6_sxdpe"]
+[ext_resource type="StyleBox" uid="uid://3kofhgr5wwsw" path="res://dark_panel.tres" id="7_yqg8i"]
+[ext_resource type="StyleBox" uid="uid://b45tlk71xlyij" path="res://Scenes/spare.tres" id="8_0wed3"]
+[ext_resource type="StyleBox" uid="uid://dn1jmhxxc7nwq" path="res://Scenes/UI/panel_1.tres" id="9_gv76r"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -22,7 +27,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.105882, 0.113725, 0.258824, 1)
+color = Color(0.231373, 0.443137, 0.592157, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-52, 11)
+polygon = PackedVector2Array(450, 127, 444, 139, 448, 151, 463, 151, 468, 144, 472, 137, 477, 131, 473, 126, 459, 131)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(334, -2)
+polygon = PackedVector2Array(439, 120, 442, 145, 466, 146, 480, 139, 471, 127)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(6, 11)
+polygon = PackedVector2Array(666, 141, 661, 146, 648, 146, 641, 149, 645, 160, 658, 161, 668, 158, 674, 151, 675, 141)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -32,9 +49,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -102.0
-offset_top = -164.0
+offset_top = -115.0
 offset_right = 102.0
-offset_bottom = 164.0
+offset_bottom = 213.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 24
@@ -47,31 +64,85 @@ text = "Continue"
 transition_to = 6
 
 [node name="NewGame" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme = ExtResource("1_i6k0f")
 text = " New Game "
 
 [node name="Levels" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme = ExtResource("5_6bo4p")
+theme_override_font_sizes/font_size = 32
 text = "Levels"
 transition_to = 4
 
 [node name="Settings" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme = ExtResource("5_6bo4p")
+theme_override_font_sizes/font_size = 32
 text = "Settings"
 transition_to = 1
 
 [node name="Instructions" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+visible = false
 layout_mode = 2
 text = "Instructions"
 transition_to = 2
 
 [node name="Controls" parent="VBoxContainer" instance=ExtResource("1_v3cd4")]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme = ExtResource("5_6bo4p")
+theme_override_font_sizes/font_size = 32
 text = "Controls"
 transition_to = 3
 
 [node name="Quit" parent="VBoxContainer" instance=ExtResource("4_rfesp")]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+theme = ExtResource("5_6bo4p")
+theme_override_font_sizes/font_size = 32
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 107.0
+offset_right = 171.0
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.482353, 0, 1)
+theme_override_fonts/font = ExtResource("6_sxdpe")
+theme_override_font_sizes/font_size = 82
+text = "Fish gaMe"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = -97.0
+offset_right = 219.0
+offset_bottom = -57.0
+theme_override_styles/panel = ExtResource("7_yqg8i")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = -94.0
+offset_right = 329.0
+offset_bottom = -54.0
+theme_override_styles/panel = ExtResource("8_0wed3")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = -91.0
+offset_right = 416.0
+offset_bottom = -51.0
+theme_override_styles/panel = ExtResource("9_gv76r")
 
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

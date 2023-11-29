@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpnemb3edm48c"]
+[gd_scene load_steps=4 format=3 uid="uid://dpnemb3edm48c"]
 
 [ext_resource type="Script" path="res://Menu/InputRemapping/input_remap.gd" id="1_0h5d3"]
 [ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="2_x28gy"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="3_o6ycd"]
 
 [node name="InputRemap" type="HBoxContainer"]
 anchors_preset = 10
@@ -26,9 +27,11 @@ size_flags_horizontal = 3
 [node name="ButtonInput" type="Button" parent="."]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+theme = ExtResource("3_o6ycd")
 theme_override_font_sizes/font_size = 24
 
 [node name="ButtonInput2" type="Button" parent="."]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
+theme = ExtResource("3_o6ycd")
 theme_override_font_sizes/font_size = 24

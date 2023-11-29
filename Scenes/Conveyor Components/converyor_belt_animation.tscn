@@ -358,5 +358,6 @@ animations = [{
 }]
 
 [node name="ConveryorBeltAnimation" type="AnimatedSprite2D" groups=["conveyor_animation"]]
+z_index = -2
 sprite_frames = SubResource("SpriteFrames_skquu")
 animation = &"half_belt"

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkndhlof3l4s4"]
+
+[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="1_rjxjl"]
+
+[node name="SpriteBackground" type="Sprite2D"]
+z_index = -4
+position = Vector2(-1.57356e-05, 0)
+texture = ExtResource("1_rjxjl")
+hframes = 4
+vframes = 4
+frame = 15

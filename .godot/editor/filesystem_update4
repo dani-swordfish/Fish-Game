@@ -1,30 +1,26 @@
-res://Scenes/Test/test_level.tscn
+res://Scenes/Levels/LevelBase.tscn
 res://Resources/test_level.tres
-res://Ingame.tres
 res://Scenes/UI/panel_1.tres
+res://Ingame.tres
 res://Themes/main_theme.tres
-res://Scenes/Conveyor Components/conveyor.tscn
-res://Scenes/Components/constructor.tscn
-res://Scenes/Components/cutter.tscn
-res://Scenes/Components/multi_spawner.tscn
-res://Scenes/Components/randi_cutter.tscn
-res://Scenes/Components/spawner.tscn
-res://Scenes/Conveyor Components/bin.tscn
-res://Scenes/Conveyor Components/conveyor_bridge.tscn
-res://Scenes/Conveyor Components/conveyor_sorter.tscn
-res://Scenes/Conveyor Components/conveyor_split.tscn
-res://Scenes/Conveyor Components/output.tscn
-res://Scenes/Boxes/box.tscn
-res://Scenes/Boxes/player_box.tscn
-res://Singletons/globals.gd
-res://Scenes/Components/cutter.gd
-res://Scenes/Components/multi_spawner.gd
-res://Scenes/Components/spawner.gd
-res://Scenes/UI/item_picker.tscn
-res://Scenes/Conveyor Components/output.gd
-res://Scenes/Conveyor Components/item_picker_sprite.tscn
-res://Scenes/Test/level_stats.gd
-res://Scenes/Test/mode_ui.gd
-res://Scenes/UI/output_count_ui.gd
-res://Scenes/UI/output_count_ui.tscn
-res://Scenes/Test/level_completion_check.gd
+res://Test/test_action_array.tres
+res://Scenes/Level Options/level_3_options.tres
+res://Scenes/Level Options/level_5_options.tres
+res://Scenes/Level Options/level_6_options.tres
+res://Scenes/Level Options/level_7_options.tres
+res://Scenes/Test/level_complete.gd
+res://Menu/Menu Types/menu_levels.gd
+res://Scenes/Levels/level_1.tscn
+res://Scenes/Levels/level_2.tscn
+res://Scenes/Levels/level_3.tscn
+res://Scenes/Levels/level_4.tscn
+res://Scenes/Levels/level_5.tscn
+res://Scenes/Levels/level_6.tscn
+res://Scenes/Levels/level_7.tscn
+res://Scenes/Levels/level_8.tscn
+res://Menu/InputRemapping/InputRemapper.tscn
+res://Menu/Menu Types/menu_levels.tscn
+res://Save System/Saver.gd
+res://Menu/Menu Components/Menu Buttons/level_button.tscn
+res://Scenes/UI/saved_number_label.tscn
+res://Resources/high_score.gd

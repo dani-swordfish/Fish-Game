@@ -7,6 +7,10 @@
 [node name="OutputCountUI" type="HBoxContainer"]
 script = ExtResource("1_nm31x")
 
+[node name="spacer" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="CurrentLabel" type="Label" parent="."]
 layout_mode = 2
 theme = ExtResource("1_adwll")

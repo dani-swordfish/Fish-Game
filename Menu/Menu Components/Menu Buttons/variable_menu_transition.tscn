@@ -1,11 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwoqyjwe64ymg"]
 
-[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_3wdp4"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="1_fln2o"]
 [ext_resource type="Script" path="res://Menu/Menu Components/Menu Buttons/variable_menu_transition.gd" id="2_0h47x"]
 
 [node name="VariableMenuTransition" type="Button" groups=["menu_transition_button"]]
-custom_minimum_size = Vector2(180, 0)
-theme = ExtResource("1_3wdp4")
+custom_minimum_size = Vector2(180, 64)
+theme = ExtResource("1_fln2o")
+theme_override_font_sizes/font_size = 32
 text = "Back"
 script = ExtResource("2_0h47x")
 

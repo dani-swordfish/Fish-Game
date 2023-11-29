@@ -16,6 +16,7 @@ var component_count:int:
 			modulate = Color(0.49, 0.49, 0.49)
 		else:
 			modulate = Color(1,1,1)
+@onready var select_component: AudioStreamPlayer = $"../../../../../../../../../../Sounds/SelectComponent"
 
 # could change to global reference if boxes are spawned
 @onready var references: Node2D = %References
@@ -45,4 +46,5 @@ func _on_gui_input(event: InputEvent) -> void:
 		print("test")
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_hand.pick_up_componant(component, self)
+			select_component.play()
 

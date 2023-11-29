@@ -11,6 +11,7 @@ var time_taken: float = 0.0
 func _ready() -> void:
 	set_physics_process(false)
 	time_taken = 0
+	time_taken_label.text = "0.00"
 	update_component_label()
 
 
@@ -30,17 +31,24 @@ func _on_play_state_entered() -> void:
 func _on_play_state_exited() -> void:
 	set_physics_process(false)
 	time_taken = 0
+	time_taken_label.text = "0.00"
 
 
 func _on_sub_machine_after_components_changed() -> void:
 	update_component_label()
+	
 
 
 func update_component_label():
+	var component_count:int = get_component_count()
+	component_count_label.text = str(component_count)
+	
+
+func get_component_count() -> int:
 	var component_count:int
 	for component in components.get_children():
 		if !component.is_static:
 			component_count += 1
-	component_count_label.text = str(component_count)
+	return component_count
 
 

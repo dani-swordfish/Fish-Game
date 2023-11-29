@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="1_sfo0k"]
 [ext_resource type="Script" path="res://Scenes/Boxes/box.gd" id="2_civkx"]
-[ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="3_5jppa"]
+[ext_resource type="Texture2D" uid="uid://bimk2xgflawvq" path="res://Art/components_for_ui.png" id="3_f5oha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37d2o"]
 bg_color = Color(0.835294, 0.835294, 0.835294, 1)
@@ -41,7 +41,7 @@ script = ExtResource("2_civkx")
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(31, 31)
 scale = Vector2(1.75, 1.75)
-texture = ExtResource("3_5jppa")
+texture = ExtResource("3_f5oha")
 hframes = 4
 vframes = 4
 

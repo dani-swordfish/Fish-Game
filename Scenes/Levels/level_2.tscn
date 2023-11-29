@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=3 uid="uid://cq2ita22sa2cf"]
+
+[ext_resource type="PackedScene" uid="uid://cvc5bp36c1uet" path="res://Scenes/Levels/LevelBase.tscn" id="1_bqp4c"]
+[ext_resource type="Resource" uid="uid://h8shve7cr5ql" path="res://Scenes/Level Options/level_2_options.tres" id="2_f8amw"]
+[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="2_w65h6"]
+[ext_resource type="Texture2D" uid="uid://be745rsu4cmkh" path="res://Art/background test.png" id="3_32dq5"]
+[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="3_ont5v"]
+[ext_resource type="PackedScene" uid="uid://dgjyaiw1bas4v" path="res://Scenes/Components/cutter.tscn" id="4_vtlgs"]
+[ext_resource type="PackedScene" uid="uid://cy6c8snu4ia2t" path="res://Scenes/Conveyor Components/conveyor.tscn" id="5_noil3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i7ng"]
+atlas = ExtResource("3_32dq5")
+region = Rect2(128, 64, 19, 33)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_vcu11"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ajmdp"]
+
+[node name="Level_2" instance=ExtResource("1_bqp4c")]
+options = ExtResource("2_f8amw")
+
+[node name="Tilemap" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(131074, 65540, 7, 131075, 65540, 7, 196611, 65540, 7, 262146, 65540, 7, 262147, 65540, 7, 262148, 65540, 7, 262149, 65540, 7, 196612, 65540, 7, 196613, 65540, 7, 131076, 65540, 7, 131077, 65540, 7, 131078, 65540, 7, 131079, 65540, 7, 196614, 65540, 7, 196615, 65540, 7, 262150, 65540, 7, 262151, 65540, 7, 196616, 65540, 7, 196617, 65540, 7, 131080, 65540, 7, 131081, 65540, 7, 262152, 65540, 7, 262153, 65540, 7, 65537, 65540, 7, 65538, 65540, 7, 65539, 65540, 7, 65540, 65540, 7, 65541, 65540, 7, 65542, 65540, 7, 65543, 65540, 7, 65544, 65540, 7, 65545, 65540, 7, 131073, 65540, 7, 196609, 65540, 7, 262145, 65540, 7, 196610, 65540, 7)
+layer_1/tile_data = PackedInt32Array(65536, 4, 3, 131072, 4, 4, 196608, 4, 3, 262144, 4, 4, -65535, 4, 5, -65534, 65540, 5, -65533, 4, 5, -65532, 65540, 5, -65531, 4, 5, -65530, 65540, 5, -65529, 4, 5, -65528, 65540, 5, -65527, 4, 5, 0, 4, 3, 327681, 131076, 5, 327682, 196612, 5, 327683, 131076, 5, 327684, 196612, 5, 327685, 131076, 5, 327686, 196612, 5, 327687, 131076, 5, 327688, 196612, 5, 327689, 131076, 5, -131071, 4, 7, -131070, 4, 7, -131069, 4, 7, -131068, 4, 7, -131067, 4, 7, -131066, 4, 7, -131065, 4, 7, -131064, 4, 7, -131063, 4, 7, -65536, 393220, 5, -65526, 327684, 5, 10, 4, 805306372, 65546, 4, 805306372, 131082, 4, 805306371, 196618, 4, 805306372, 262154, 4, 805306371, 393216, 4, 7, 458749, 4, 7, 524285, 4, 7, 589821, 4, 7, 655357, 4, 7, 458750, 4, 7, 524286, 4, 7, 589822, 4, 7, 655358, 4, 7, 458751, 4, 7, 524287, 4, 7, 589823, 4, 7, 655359, 4, 7, 458752, 4, 7, 524288, 4, 7, 589824, 4, 7, 393217, 131076, 6, 458753, 4, 7, 524289, 4, 7, 589825, 4, 7, 393218, 196612, 6, 458754, 4, 7, 524290, 4, 7, 589826, 4, 7, 393219, 131076, 6, 458755, 4, 7, 524291, 4, 7, 589827, 4, 7, 393220, 196612, 6, 458756, 4, 7, 524292, 4, 7, 589828, 4, 7, 393221, 131076, 6, 458757, 4, 7, 524293, 4, 7, 589829, 4, 7, 393222, 196612, 6, 458758, 4, 7, 524294, 4, 7, 589830, 4, 7, 393223, 131076, 6, 458759, 4, 7, 524295, 4, 7, 589831, 4, 7, 393224, 196612, 6, 458760, 4, 7, 524296, 4, 7, 589832, 4, 7, 393225, 131076, 6, 458761, 4, 7, 524297, 4, 7, 589833, 4, 7, 458762, 4, 7, 524298, 4, 7, 589834, 4, 7, 393227, 4, 7, 458763, 4, 7, 524299, 4, 7, 589835, 4, 7, 458764, 4, 7, 524300, 4, 7, 589836, 4, 7, 393229, 4, 7, 458765, 4, 7, 524301, 4, 7, 589837, 4, 7, 458766, 4, 7, 524302, 4, 7, 589838, 4, 7, 327691, 4, 7, 327692, 4, 7, 327693, 4, 7, -131060, 4, 7, -131059, 4, 7, -131058, 4, 7, -131057, 4, 7, -65525, 4, 7, 11, 4, 7, 65547, 4, 7, 131083, 4, 7, 196619, 4, 7, 262155, 4, 7, -65524, 4, 7, 12, 4, 7, 65548, 4, 7, 131084, 4, 7, 196620, 4, 7, 262156, 4, 7, -65523, 4, 7, 13, 4, 7, 65549, 4, 7, 131085, 4, 7, 196621, 4, 7, 262157, 4, 7, -65522, 4, 7, 14, 4, 7, 65550, 4, 7, 131086, 4, 7, 196622, 4, 7, 262158, 4, 7, 327694, 4, 7, -65521, 4, 7, 15, 4, 7, 65551, 4, 7, 131087, 4, 7, 196623, 4, 7, 262159, 4, 7, 327695, 4, 7, 393231, 4, 7, -262148, 4, 7, -196612, 4, 7, -131076, 4, 7, -262147, 4, 7, -196611, 4, 7, -131075, 4, 7, -262146, 4, 7, -196610, 4, 7, -131074, 4, 7, -262145, 4, 7, -196609, 4, 7, -131073, 4, 7, -327680, 4, 7, -262144, 4, 7, -196608, 4, 7, -327679, 4, 7, -262143, 4, 7, -196607, 4, 7, -327678, 4, 7, -262142, 4, 7, -196606, 4, 7, -327677, 4, 7, -262141, 4, 7, -196605, 4, 7, -327676, 4, 7, -262140, 4, 7, -196604, 4, 7, -327675, 4, 7, -262139, 4, 7, -196603, 4, 7, -327674, 4, 7, -262138, 4, 7, -196602, 4, 7, -327673, 4, 7, -262137, 4, 7, -196601, 4, 7, -327672, 4, 7, -262136, 4, 7, -196600, 4, 7, -327671, 4, 7, -262135, 4, 7, -196599, 4, 7, -327670, 4, 7, -262134, 4, 7, -196598, 4, 7, -327669, 4, 7, -262133, 4, 7, -196597, 4, 7, -327668, 4, 7, -262132, 4, 7, -196596, 4, 7, -327667, 4, 7, -262131, 4, 7, -196595, 4, 7, -327666, 4, 7, -262130, 4, 7, -196594, 4, 7, -65540, 4, 7, -4, 4, 7, 65532, 4, 7, 131068, 4, 7, 196604, 4, 7, 262140, 4, 7, 327676, 4, 7, 393212, 4, 7, 458748, 4, 7, -65539, 4, 7, -3, 4, 7, 65533, 4, 7, 131069, 4, 7, 196605, 4, 7, 327677, 4, 7, 393213, 4, 7, -65538, 4, 7, -2, 4, 7, 65534, 4, 7, 131070, 4, 7, 196606, 4, 7, 262142, 4, 7, 327678, 4, 7, 393214, 4, 7, -65537, 4, 7, -1, 4, 7, 65535, 4, 7, 131071, 4, 7, 196607, 4, 7, 262143, 4, 7, 327679, 4, 7, 393215, 4, 7, -131072, 4, 7, 262141, 4, 7, 524281, 4, 7, 589817, 4, 7, 524282, 4, 7, 589818, 4, 7, 524283, 4, 7, 589819, 4, 7, 524284, 4, 7, 589820, 4, 7, -131061, 4, 7, -131062, 4, 7, 327680, 458756, 268435462, 327690, 458756, 6, 393226, 4, 7, 393228, 4, 7, 393230, 4, 7, 1, 4, 6, 2, 65540, 6, 3, 4, 6, 4, 65540, 6, 5, 4, 6, 6, 65540, 6, 7, 4, 6, 8, 65540, 6, 9, 4, 6)
+layer_2/tile_data = PackedInt32Array(131072, 262148, 2, 196605, 65540, 2, 196606, 131076, 2, 196607, 196612, 2, 327688, 262148, 1610612738, 393224, 196612, 1610612738, 458760, 131076, 1610612738, 524296, 65540, 1610612738, -196602, 131076, 1342177281, -131066, 196612, 1342177281, -262138, 65540, 1342177281, -65530, 262148, 1342177281)
+
+[node name="PipeSprite" type="Sprite2D" parent="." index="1"]
+position = Vector2(208, 22)
+rotation = 1.5708
+texture = SubResource("AtlasTexture_1i7ng")
+
+[node name="Spawner" parent="Components" index="0" instance=ExtResource("2_w65h6")]
+position = Vector2(208, 48)
+rotation = 1.5708
+item = 10
+
+[node name="Output" parent="Components" index="1" instance=ExtResource("3_ont5v")]
+position = Vector2(48, 80)
+rotation = 3.14159
+item = 13
+
+[node name="Output2" parent="Components" index="2" instance=ExtResource("3_ont5v")]
+position = Vector2(272, 144)
+rotation = 1.5708
+item = 11
+
+[node name="Cutter" parent="Components" index="3" instance=ExtResource("4_vtlgs")]
+position = Vector2(176, 112)
+rotation = 1.5708
+
+[node name="Conveyor" parent="Components" index="4" instance=ExtResource("5_noil3")]
+position = Vector2(176, 80)
+rotation = 1.5708
+is_static = false
+
+[node name="Conveyor2" parent="Components" index="5" instance=ExtResource("5_noil3")]
+position = Vector2(208, 80)
+rotation = 3.14159
+is_static = false
+
+[node name="UI" parent="." index="6"]
+visible = false
+
+[node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
+is_infinate = true
+
+[node name="Box5" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="3"]
+visible = false
+
+[node name="Box6" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="4"]
+initial_component_count = 2
+
+[node name="Box7" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="5"]
+initial_component_count = 1
+
+[node name="Box13" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="6"]
+visible = false
+
+[node name="Box8" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="7"]
+initial_component_count = 6
+
+[node name="Box11" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="9"]
+visible = false
+
+[node name="PlayButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="0"]
+button_group = SubResource("ButtonGroup_vcu11")
+
+[node name="StopButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="1"]
+button_group = SubResource("ButtonGroup_vcu11")
+
+[node name="ContructorButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel" index="0"]
+button_group = SubResource("ButtonGroup_ajmdp")
+
+[node name="CutterButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2" index="0"]
+button_group = SubResource("ButtonGroup_ajmdp")
+
+[node name="LevelComplete" parent="UI" index="5"]
+level_no = 2
+
+[node name="LevelInfo" parent="UI" index="6"]
+visible = true
+
+[node name="Polygon2D" type="Polygon2D" parent="UI/LevelInfo/Panel" index="0"]
+polygon = PackedVector2Array(102, 124, 103, 133, 120, 133, 129, 124, 125, 115, 117, 117, 117, 123)
+
+[node name="Polygon2D2" type="Polygon2D" parent="UI/LevelInfo/Panel" index="1"]
+polygon = PackedVector2Array(247, 100, 249, 118, 276, 118, 275, 105)
+
+[node name="Polygon2D3" type="Polygon2D" parent="UI/LevelInfo/Panel" index="2"]
+position = Vector2(-240, -60)
+polygon = PackedVector2Array(743, 168, 750, 184, 768, 184, 770, 172, 747, 167)
+
+[node name="Polygon2D4" type="Polygon2D" parent="UI/LevelInfo/Panel" index="3"]
+position = Vector2(-240, -60)
+polygon = PackedVector2Array(858, 170, 859, 186, 873, 187, 883, 185, 883, 177, 868, 172)
+
+[node name="Label" parent="UI/LevelInfo/Panel" index="4"]
+text = "SnaKe skeWeRs"
+
+[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="5"]
+offset_left = -196.5
+offset_top = -82.5
+offset_right = 196.5
+offset_bottom = 82.5
+text = "[center]The Cutter separates items into parts.
+Check the recipe book cutter and constructor recipes."
+
+[node name="SubMachine" parent="." index="7"]
+offset_top = 33.0

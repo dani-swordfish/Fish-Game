@@ -1,17 +1,12 @@
-[gd_scene load_steps=76 format=3 uid="uid://cy6c8snu4ia2t"]
+[gd_scene load_steps=75 format=3 uid="uid://cy6c8snu4ia2t"]
 
 [ext_resource type="Script" path="res://Scenes/Conveyor Components/corner_or_strait.gd" id="1_4yk4b"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_a20ei"]
+[ext_resource type="PackedScene" uid="uid://dkndhlof3l4s4" path="res://Scenes/Components/sprite_background.tscn" id="2_ux12n"]
 [ext_resource type="Texture2D" uid="uid://cybocqe0om1t2" path="res://Art/final conveyor animation all.png" id="3_lj4yi"]
 [ext_resource type="Texture2D" uid="uid://bb0hbvliiab1a" path="res://Art/final conveyor animation left and otherl.png" id="3_r0efe"]
 [ext_resource type="Texture2D" uid="uid://ci2in8u30saay" path="res://Art/final conveyor animation left and up and down.png" id="6_cga1j"]
 [ext_resource type="Texture2D" uid="uid://et3g7yyackq7" path="res://Art/final conveyor animation up and down.png" id="6_parkv"]
-
-[sub_resource type="Gradient" id="Gradient_dg1oq"]
-colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_33ib3"]
-gradient = SubResource("Gradient_dg1oq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lep0g"]
 size = Vector2(6, 6)
@@ -502,11 +497,7 @@ animations = [{
 [node name="Conveyor" type="Node2D" groups=["basic_conveyor"]]
 script = ExtResource("1_4yk4b")
 
-[node name="SpriteBackground" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-1.62125e-05, 0)
-scale = Vector2(0.125, 32)
-texture = SubResource("GradientTexture1D_33ib3")
+[node name="SpriteBackground" parent="." instance=ExtResource("2_ux12n")]
 
 [node name="ConveyorSprite" type="Sprite2D" parent="."]
 visible = false
@@ -528,5 +519,6 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="ConveyorAnimation" type="AnimatedSprite2D" parent="." groups=["conveyor_animation"]]
+z_index = -3
 sprite_frames = SubResource("SpriteFrames_cuv4h")
-animation = &"up_and_down_inputs"
+animation = &"corner"

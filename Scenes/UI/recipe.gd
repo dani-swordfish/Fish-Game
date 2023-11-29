@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func spawn_contructor_recipe():
 	recipe = Globals.get_constuctor_recipe(item)
-	
+	spwan_spacer()
 	# j is items and amont index, i is amount index
 	for j in recipe.size():
 		for i in recipe[j][1]:
@@ -41,6 +41,7 @@ func spawn_cutter_recipe():
 	spawn_item_box(item)
 	spawn_label(false)
 	
+	spwan_spacer()
 	for j in recipe.size():
 		for i in recipe[j][1]:
 			spawn_item_box(recipe[j][0])
@@ -51,7 +52,7 @@ func spawn_cutter_recipe():
 			else:
 				spawn_label(true)
 	
-	
+	spwan_spacer()
 
 
 func spawn_item_box(item_to_spawn):
@@ -65,7 +66,7 @@ func spawn_label(is_plus:bool):
 	if is_plus:
 		label_inst.text = "+"
 	else:
-		label_inst.text = " = "
+		label_inst.text = "= "
 	h_box_container.add_child(label_inst)
 
 func spwan_spacer():

@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://du3f767y6yk3u"]
+
+[ext_resource type="PackedScene" uid="uid://cvc5bp36c1uet" path="res://Scenes/Levels/LevelBase.tscn" id="1_f10np"]
+[ext_resource type="Texture2D" uid="uid://be745rsu4cmkh" path="res://Art/background test.png" id="2_5tw4w"]
+[ext_resource type="Resource" uid="uid://csp7pyn1uxkk7" path="res://Scenes/Level Options/level_6_options.tres" id="2_xsqhh"]
+[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="2_yr5y7"]
+[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="3_8dvjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itbqf"]
+atlas = ExtResource("2_5tw4w")
+region = Rect2(128, 64, 19, 33)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_lsmk7"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_8rr58"]
+
+[node name="Level_6" instance=ExtResource("1_f10np")]
+options = ExtResource("2_xsqhh")
+
+[node name="Tilemap" parent="." index="0"]
+layer_2/tile_data = PackedInt32Array(65536, 262148, 2, 131069, 65540, 2, 131070, 131076, 2, 131071, 196612, 2, 327682, 262148, 1610612738, 393218, 196612, 1610612738, 458754, 131076, 1610612738, 524290, 65540, 1610612738, 327687, 262148, 1610612738, 393223, 196612, 1610612738, 458759, 131076, 1610612738, 524295, 65540, 1610612738, -327673, 65540, 1342177281, -262137, 131076, 1342177281, -196601, 196612, 1342177281, -131065, 262148, 1342177281)
+
+[node name="PipeSprite" type="Sprite2D" parent="." index="1"]
+position = Vector2(240, -9)
+rotation = 1.5708
+texture = SubResource("AtlasTexture_itbqf")
+
+[node name="Spawner" parent="Components" index="0" instance=ExtResource("2_yr5y7")]
+position = Vector2(48, 48)
+item = 14
+
+[node name="Spawner2" parent="Components" index="1" instance=ExtResource("2_yr5y7")]
+position = Vector2(240, 16)
+rotation = 1.5708
+item = 10
+
+[node name="Output" parent="Components" index="2" instance=ExtResource("3_8dvjr")]
+position = Vector2(240, 144)
+rotation = 1.5708
+item = 16
+item_count_target = 9
+
+[node name="UI" parent="." index="6"]
+visible = false
+
+[node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
+is_infinate = true
+
+[node name="Box4" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="2"]
+initial_component_count = 6
+
+[node name="Box5" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="3"]
+initial_component_count = 7
+
+[node name="Box6" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="4"]
+initial_component_count = 8
+
+[node name="Box7" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="5"]
+visible = false
+
+[node name="Box8" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="7"]
+initial_component_count = 4
+
+[node name="Box11" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="9"]
+initial_component_count = 6
+
+[node name="PlayButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="0"]
+button_group = SubResource("ButtonGroup_lsmk7")
+
+[node name="StopButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="1"]
+button_group = SubResource("ButtonGroup_lsmk7")
+
+[node name="ContructorButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel" index="0"]
+button_group = SubResource("ButtonGroup_8rr58")
+
+[node name="CutterButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2" index="0"]
+button_group = SubResource("ButtonGroup_8rr58")
+
+[node name="LevelComplete" parent="UI" index="5"]
+level_no = 6
+
+[node name="LevelInfo" parent="UI" index="6"]
+visible = true
+
+[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="1"]
+text = "[center]Time to buckle down and get things done!"

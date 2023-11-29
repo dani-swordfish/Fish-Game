@@ -1,0 +1,889 @@
+[gd_scene load_steps=45 format=3 uid="uid://cvc5bp36c1uet"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/LevelBase.gd" id="1_3bvkw"]
+[ext_resource type="Resource" uid="uid://o8v08ng85u34" path="res://Resources/test_level.tres" id="2_cmisu"]
+[ext_resource type="PackedScene" uid="uid://ckvs5mpywhe1v" path="res://Scenes/Tilemap/sub_tilemap.tscn" id="3_3igx3"]
+[ext_resource type="Script" path="res://Scenes/World/References.gd" id="4_07lwq"]
+[ext_resource type="Script" path="res://Scenes/Test/items.gd" id="5_6ea5h"]
+[ext_resource type="Script" path="res://Scenes/Test/components.gd" id="6_aoqc6"]
+[ext_resource type="Script" path="res://Scenes/Test/ui.gd" id="13_lhtkp"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="14_ua3s4"]
+[ext_resource type="StyleBox" uid="uid://dn1jmhxxc7nwq" path="res://Scenes/UI/panel_1.tres" id="15_bq8yl"]
+[ext_resource type="PackedScene" uid="uid://3b2ckl862ymm" path="res://Scenes/Boxes/box.tscn" id="16_w228g"]
+[ext_resource type="Script" path="res://Scenes/Player/player_hand.gd" id="17_aeg2n"]
+[ext_resource type="PackedScene" uid="uid://bijk8c6lns3yb" path="res://Scenes/Boxes/player_box.tscn" id="18_elrbm"]
+[ext_resource type="Script" path="res://Scenes/Test/item_picker_ui.gd" id="19_03fba"]
+[ext_resource type="Script" path="res://Scenes/Test/mode_ui.gd" id="20_bjxkt"]
+[ext_resource type="Texture2D" uid="uid://bimk2xgflawvq" path="res://Art/components_for_ui.png" id="20_heg6l"]
+[ext_resource type="ButtonGroup" uid="uid://dbqjgk6fld6ec" path="res://Scenes/UI/play_stop_button_group.tres" id="21_ql5wt"]
+[ext_resource type="Script" path="res://Scenes/Test/level_stats.gd" id="22_6o68c"]
+[ext_resource type="Script" path="res://Scenes/Test/level_completion_check.gd" id="23_cmi4i"]
+[ext_resource type="Script" path="res://Scenes/Test/recipe_ui.gd" id="24_68tlo"]
+[ext_resource type="ButtonGroup" uid="uid://cw806evncma4w" path="res://pages_button_group.tres" id="25_bvq0s"]
+[ext_resource type="FontFile" uid="uid://c1mdurghusp7i" path="res://Themes/Fonts/Toucon__.ttf" id="26_j6eco"]
+[ext_resource type="PackedScene" uid="uid://beinvkawx86b5" path="res://Scenes/UI/recipe_book_page.tscn" id="27_ay0cf"]
+[ext_resource type="Texture2D" uid="uid://bjbhf3pxaktla" path="res://Scenes/UI/book_closed_texture.tres" id="28_7dwxi"]
+[ext_resource type="Script" path="res://Scenes/Test/level_complete.gd" id="29_q7tb4"]
+[ext_resource type="StyleBox" uid="uid://3kofhgr5wwsw" path="res://dark_panel.tres" id="30_1pa0c"]
+[ext_resource type="Script" path="res://Scenes/UI/level_info.gd" id="31_tkcpm"]
+[ext_resource type="PackedScene" uid="uid://bjp7oigxj17qp" path="res://Menu/Menu Hub/menu_hub.tscn" id="32_c6we1"]
+[ext_resource type="Script" path="res://Menu/Menu Hub/in_game_menu_hub.gd" id="33_0xndx"]
+[ext_resource type="Script" path="res://Scenes/World/sounds.gd" id="33_f14hk"]
+[ext_resource type="AudioStream" uid="uid://dwnwuyury5la4" path="res://Sounds/Conveyor.wav" id="34_pa7dn"]
+[ext_resource type="Script" path="res://Scenes/Test/sub_machine.gd" id="34_sltir"]
+[ext_resource type="AudioStream" uid="uid://vps482hwm63l" path="res://Sounds/woo-hoo-82843.mp3" id="35_184dl"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="35_fe2kx"]
+[ext_resource type="AudioStream" uid="uid://bv8sb1a1453st" path="res://Sounds/Page Turning Sfx.wav" id="36_e1cba"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="36_qektb"]
+[ext_resource type="AudioStream" uid="uid://cqdmtif5s6yms" path="res://Sounds/craft-[AudioTrimmer.com].ogg" id="37_ocrma"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="37_wttq0"]
+[ext_resource type="AudioStream" uid="uid://djtmdbq4o3q6b" path="res://Sounds/switch6.wav" id="38_ccwmp"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="38_q25ob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipili"]
+bg_color = Color(0.870588, 0.121569, 0.133333, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vvub"]
+atlas = ExtResource("20_heg6l")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdld8"]
+bg_color = Color(0.117647, 0.572549, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22h8h"]
+atlas = ExtResource("20_heg6l")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyl4f"]
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_3bvkw")
+options = ExtResource("2_cmisu")
+metadata/_edit_vertical_guides_ = [-80.0]
+
+[node name="Tilemap" parent="." instance=ExtResource("3_3igx3")]
+unique_name_in_owner = true
+layer_0/tile_data = PackedInt32Array(131074, 65540, 7, 131075, 65540, 7, 196611, 65540, 7, 262146, 65540, 7, 262147, 65540, 7, 262148, 65540, 7, 262149, 65540, 7, 196612, 65540, 7, 196613, 65540, 7, 131076, 65540, 7, 131077, 65540, 7, 131078, 65540, 7, 131079, 65540, 7, 196614, 65540, 7, 196615, 65540, 7, 262150, 65540, 7, 262151, 65540, 7, 196616, 65540, 7, 196617, 65540, 7, 131080, 65540, 7, 131081, 65540, 7, 262152, 65540, 7, 262153, 65540, 7, 9, 65540, 7, 7, 65540, 7, 8, 65540, 7, 5, 65540, 7, 6, 65540, 7, 3, 65540, 7, 4, 65540, 7, 1, 65540, 7, 2, 65540, 7, 65537, 65540, 7, 65538, 65540, 7, 65539, 65540, 7, 65540, 65540, 7, 65541, 65540, 7, 65542, 65540, 7, 65543, 65540, 7, 65544, 65540, 7, 65545, 65540, 7, 131073, 65540, 7, 196609, 65540, 7, 262145, 65540, 7, 196610, 65540, 7)
+layer_1/tile_data = PackedInt32Array(65536, 4, 3, 131072, 4, 4, 196608, 4, 3, 262144, 4, 4, -65535, 4, 6, -65534, 65540, 6, -65533, 4, 6, -65532, 65540, 6, -65531, 4, 6, -65530, 65540, 6, -65529, 4, 6, -65528, 65540, 6, -65527, 4, 6, 0, 4, 4, 327681, 131076, 5, 327682, 196612, 5, 327683, 131076, 5, 327684, 196612, 5, 327685, 131076, 5, 327686, 196612, 5, 327687, 131076, 5, 327688, 196612, 5, 327689, 131076, 5, -131071, 4, 5, -131070, 65540, 5, -131069, 4, 5, -131068, 65540, 5, -131067, 4, 5, -131066, 65540, 5, -131065, 4, 5, -131064, 65540, 5, -131063, 4, 5, -65536, 4, 3, -65526, 4, 805306372, 10, 4, 805306371, 65546, 4, 805306372, 131082, 4, 805306371, 196618, 4, 805306372, 262154, 4, 805306371, 393216, 4, 7, 458749, 4, 7, 524285, 4, 7, 589821, 4, 7, 655357, 4, 7, 458750, 4, 7, 524286, 4, 7, 589822, 4, 7, 655358, 4, 7, 458751, 4, 7, 524287, 4, 7, 589823, 4, 7, 655359, 4, 7, 458752, 4, 7, 524288, 4, 7, 589824, 4, 7, 393217, 131076, 6, 458753, 4, 7, 524289, 4, 7, 589825, 4, 7, 393218, 196612, 6, 458754, 4, 7, 524290, 4, 7, 589826, 4, 7, 393219, 131076, 6, 458755, 4, 7, 524291, 4, 7, 589827, 4, 7, 393220, 196612, 6, 458756, 4, 7, 524292, 4, 7, 589828, 4, 7, 393221, 131076, 6, 458757, 4, 7, 524293, 4, 7, 589829, 4, 7, 393222, 196612, 6, 458758, 4, 7, 524294, 4, 7, 589830, 4, 7, 393223, 131076, 6, 458759, 4, 7, 524295, 4, 7, 589831, 4, 7, 393224, 196612, 6, 458760, 4, 7, 524296, 4, 7, 589832, 4, 7, 393225, 131076, 6, 458761, 4, 7, 524297, 4, 7, 589833, 4, 7, 458762, 4, 7, 524298, 4, 7, 589834, 4, 7, 393227, 4, 7, 458763, 4, 7, 524299, 4, 7, 589835, 4, 7, 458764, 4, 7, 524300, 4, 7, 589836, 4, 7, 393229, 4, 7, 458765, 4, 7, 524301, 4, 7, 589837, 4, 7, 458766, 4, 7, 524302, 4, 7, 589838, 4, 7, 327691, 4, 7, 327692, 4, 7, 327693, 4, 7, -131060, 4, 7, -131059, 4, 7, -131058, 4, 7, -131057, 4, 7, -65525, 4, 7, 11, 4, 7, 65547, 4, 7, 131083, 4, 7, 196619, 4, 7, 262155, 4, 7, -65524, 4, 7, 12, 4, 7, 65548, 4, 7, 131084, 4, 7, 196620, 4, 7, 262156, 4, 7, -65523, 4, 7, 13, 4, 7, 65549, 4, 7, 131085, 4, 7, 196621, 4, 7, 262157, 4, 7, -65522, 4, 7, 14, 4, 7, 65550, 4, 7, 131086, 4, 7, 196622, 4, 7, 262158, 4, 7, 327694, 4, 7, -65521, 4, 7, 15, 4, 7, 65551, 4, 7, 131087, 4, 7, 196623, 4, 7, 262159, 4, 7, 327695, 4, 7, 393231, 4, 7, -262148, 4, 7, -196612, 4, 7, -131076, 4, 7, -262147, 4, 7, -196611, 4, 7, -131075, 4, 7, -262146, 4, 7, -196610, 4, 7, -131074, 4, 7, -262145, 4, 7, -196609, 4, 7, -131073, 4, 7, -327680, 4, 7, -262144, 4, 7, -196608, 4, 7, -327679, 4, 7, -262143, 4, 7, -196607, 4, 7, -327678, 4, 7, -262142, 4, 7, -196606, 4, 7, -327677, 4, 7, -262141, 4, 7, -196605, 4, 7, -327676, 4, 7, -262140, 4, 7, -196604, 4, 7, -327675, 4, 7, -262139, 4, 7, -196603, 4, 7, -327674, 4, 7, -262138, 4, 7, -196602, 4, 7, -327673, 4, 7, -262137, 4, 7, -196601, 4, 7, -327672, 4, 7, -262136, 4, 7, -196600, 4, 7, -327671, 4, 7, -262135, 4, 7, -196599, 4, 7, -327670, 4, 7, -262134, 4, 7, -196598, 4, 7, -327669, 4, 7, -262133, 4, 7, -196597, 4, 7, -327668, 4, 7, -262132, 4, 7, -196596, 4, 7, -327667, 4, 7, -262131, 4, 7, -196595, 4, 7, -327666, 4, 7, -262130, 4, 7, -196594, 4, 7, -65540, 4, 7, -4, 4, 7, 65532, 4, 7, 131068, 4, 7, 196604, 4, 7, 262140, 4, 7, 327676, 4, 7, 393212, 4, 7, 458748, 4, 7, -65539, 4, 7, -3, 4, 7, 65533, 4, 7, 131069, 4, 7, 196605, 4, 7, 327677, 4, 7, 393213, 4, 7, -65538, 4, 7, -2, 4, 7, 65534, 4, 7, 131070, 4, 7, 196606, 4, 7, 262142, 4, 7, 327678, 4, 7, 393214, 4, 7, -65537, 4, 7, -1, 4, 7, 65535, 4, 7, 131071, 4, 7, 196607, 4, 7, 262143, 4, 7, 327679, 4, 7, 393215, 4, 7, -131072, 393220, 5, 262141, 4, 7, 524281, 4, 7, 589817, 4, 7, 524282, 4, 7, 589818, 4, 7, 524283, 4, 7, 589819, 4, 7, 524284, 4, 7, 589820, 4, 7, -131061, 4, 7, -131062, 327684, 5, 327680, 458756, 268435462, 327690, 458756, 6, 393226, 4, 7, 393228, 4, 7, 393230, 4, 7)
+layer_2/tile_data = PackedInt32Array(65536, 262148, 2, 262144, 262148, 2, 196608, 262148, 2, 131072, 262148, 2, 327677, 65540, 2, 327678, 131076, 2, 327679, 196612, 2, 262141, 65540, 2, 262142, 131076, 2, 262143, 196612, 2, 196605, 65540, 2, 196606, 131076, 2, 196607, 196612, 2, 131069, 65540, 2, 131070, 131076, 2, 131071, 196612, 2, 65533, 65540, 2, 65534, 131076, 2, 65535, 196612, 2, 0, 262148, 2, 196618, 262148, 805306370, 196621, 65540, 805306370, 196620, 131076, 805306370, 196619, 196612, 805306370, 131085, 65540, 805306370, 131084, 131076, 805306370, 131083, 196612, 805306370, 131082, 262148, 805306370, 65549, 65540, 805306370, 65548, 131076, 805306370, 65547, 196612, 805306370, 65546, 262148, 805306370, 13, 65540, 805306370, 12, 131076, 805306370, 11, 196612, 805306370, 10, 262148, 805306370, 327682, 262148, 1610612738, 393218, 196612, 1610612738, 458754, 131076, 1610612738, 524290, 65540, 1610612738, 327687, 262148, 1610612738, 393223, 196612, 1610612738, 458759, 131076, 1610612738, 524295, 65540, 1610612738)
+
+[node name="References" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_07lwq")
+
+[node name="Items" type="Node2D" parent="."]
+script = ExtResource("5_6ea5h")
+
+[node name="Components" type="Node2D" parent="."]
+script = ExtResource("6_aoqc6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-17, -27)
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("13_lhtkp")
+
+[node name="ComponentPicker" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/ComponentPicker"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("14_ua3s4")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ComponentPicker/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("15_bq8yl")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Conveyor Belt - 
+Transports items in one direction."
+initial_component_count = 80
+component = 1
+
+[node name="Box3" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+visible = false
+layout_mode = 2
+tooltip_text = "Input -
+Delivers items."
+initial_component_count = 3
+component = 6
+
+[node name="Box4" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Splitter -
+Sends items in two directions."
+initial_component_count = 4
+component = 3
+
+[node name="Box5" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Sorter - 
+Sends the chosen item out the top and splits the others in two directions."
+initial_component_count = 5
+component = 4
+
+[node name="Box6" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Bridge -
+Allows items to pass over one and other."
+initial_component_count = 5
+component = 5
+
+[node name="Box7" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Cut and Sort -
+Cuts item into parts, will output items in the order given in the recipe, 
+starting with the right, bottom then top."
+initial_component_count = 5
+component = 7
+
+[node name="Box13" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Cutter -
+Cuts item into parts, sending them all out a single output."
+initial_component_count = 5
+component = 11
+
+[node name="Box8" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Constructor- 
+Constructs the select item based on it's recipe.
+Click on it after building to change selected item."
+initial_component_count = 5
+component = 8
+
+[node name="Box10" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+visible = false
+layout_mode = 2
+tooltip_text = "Output-
+Recives items."
+initial_component_count = 5
+component = 10
+
+[node name="Box11" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Incinerator-
+Destroys all items."
+initial_component_count = 5
+component = 9
+
+[node name="Separator" type="Control" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Box12" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" instance=ExtResource("16_w228g")]
+layout_mode = 2
+tooltip_text = "Remove-
+When selected, left-click on a component to remove it."
+is_infinate = true
+component = 12
+
+[node name="Spacer" type="Control" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+text = "Press [r] to rotate objects       "
+
+[node name="Label2" type="Label" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+text = "Press [t] to flip conveyor bridge"
+
+[node name="PlayerHand" type="Control" parent="UI/ComponentPicker"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("17_aeg2n")
+
+[node name="PlayerBox" parent="UI/ComponentPicker/PlayerHand" instance=ExtResource("18_elrbm")]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 67.0
+offset_bottom = 67.0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="UI/ComponentPicker"]
+layout_mode = 0
+offset_left = 1139.0
+offset_top = 663.0
+offset_right = 1251.0
+offset_bottom = 694.0
+theme = ExtResource("14_ua3s4")
+theme_override_colors/font_color = Color(0.619608, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.619608, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.619608, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.619608, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.619608, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.619608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.619608, 0, 0, 1)
+text = " Restart Level "
+
+[node name="LevelInfoButton" type="Button" parent="UI/ComponentPicker"]
+layout_mode = 0
+offset_left = 1151.0
+offset_top = 620.0
+offset_right = 1239.0
+offset_bottom = 651.0
+theme = ExtResource("14_ua3s4")
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " Level Info "
+
+[node name="ItemPickerUI" type="Control" parent="UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("19_03fba")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/ItemPickerUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("15_bq8yl")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ItemPickerUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 64
+
+[node name="GridContainer" type="GridContainer" parent="UI/ItemPickerUI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+
+[node name="ModeUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -238.0
+offset_bottom = 85.0
+grow_horizontal = 0
+script = ExtResource("20_bjxkt")
+
+[node name="PlayStop" type="PanelContainer" parent="UI/ModeUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -26.5
+offset_right = 12.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_ua3s4")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ModeUI/PlayStop"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ModeUI/PlayStop/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PlayButton" type="Button" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Start Conveyors"
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/font_size = 22
+toggle_mode = true
+button_group = ExtResource("21_ql5wt")
+text = " Play "
+
+[node name="StopButton" type="Button" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Stop Conveyors"
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/font_size = 22
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("21_ql5wt")
+text = " Stop "
+
+[node name="LevelStats" type="PanelContainer" parent="UI/ModeUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.394958
+anchor_top = 3.2
+anchor_right = 0.987395
+anchor_bottom = 4.89412
+offset_bottom = -3.05176e-05
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("14_ua3s4")
+script = ExtResource("22_6o68c")
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelCompletionCheck" type="Node" parent="UI/ModeUI/LevelStats"]
+script = ExtResource("23_cmi4i")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/ModeUI/LevelStats"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ModeUI/LevelStats/MarginContainer"]
+layout_mode = 2
+
+[node name="HeaderTimeTakenLabel" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+text = "Time Taken:
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="TimeTakenLabel" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+text = "0.00.00"
+
+[node name="Label3" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+text = "Components:"
+horizontal_alignment = 1
+
+[node name="ComponentCountLabel" type="Label" parent="UI/ModeUI/LevelStats/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+text = "20"
+horizontal_alignment = 1
+
+[node name="RecipeUI" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("24_68tlo")
+
+[node name="Panel" type="Panel" parent="UI/RecipeUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/RecipeUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -103.0
+offset_right = 228.5
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/RecipeUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="UI/RecipeUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/RecipeUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(54, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("14_ua3s4")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ipili")
+
+[node name="ContructorButton" type="Button" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 3.0
+offset_right = 24.0
+offset_bottom = 51.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("25_bvq0s")
+icon = SubResource("AtlasTexture_6vvub")
+expand_icon = true
+
+[node name="Panel2" type="Panel" parent="UI/RecipeUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(54, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("14_ua3s4")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdld8")
+
+[node name="CutterButton" type="Button" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = 3.0
+offset_right = 24.0
+offset_bottom = 51.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+toggle_mode = true
+button_group = ExtResource("25_bvq0s")
+icon = SubResource("AtlasTexture_22h8h")
+expand_icon = true
+
+[node name="TextureButton" type="TextureButton" parent="UI/RecipeUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="ConstructorRecipes" parent="UI/RecipeUI/VBoxContainer" groups=["constructor_recipes"] instance=ExtResource("27_ay0cf")]
+layout_mode = 2
+
+[node name="CutterRecipes" parent="UI/RecipeUI/VBoxContainer" groups=["cutter_recipes"] instance=ExtResource("27_ay0cf")]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="UI"]
+custom_minimum_size = Vector2(128, 128)
+offset_left = 993.0
+offset_top = 585.0
+offset_right = 1121.0
+offset_bottom = 713.0
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/TextureButton"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("28_7dwxi")
+expand_mode = 1
+
+[node name="LevelComplete" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("29_q7tb4")
+
+[node name="Panel" type="Panel" parent="UI/LevelComplete"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_ua3s4")
+theme_override_styles/panel = ExtResource("30_1pa0c")
+
+[node name="Polygon2D" type="Polygon2D" parent="UI/LevelComplete/Panel"]
+polygon = PackedVector2Array(196, 127, 191, 129, 192, 137, 197, 146, 215, 144, 215, 132)
+
+[node name="Polygon2D2" type="Polygon2D" parent="UI/LevelComplete/Panel"]
+position = Vector2(255, -14)
+polygon = PackedVector2Array(196, 127, 191, 129, 192, 137, 197, 146, 215, 144, 215, 132)
+
+[node name="Polygon2D3" type="Polygon2D" parent="UI/LevelComplete/Panel"]
+position = Vector2(438, -24)
+polygon = PackedVector2Array(197, 129, 191, 129, 192, 137, 196, 142, 200, 144, 206, 144, 213, 142, 214, 137, 215, 132)
+
+[node name="Label" type="Label" parent="UI/LevelComplete/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.0
+offset_top = 101.0
+offset_right = 296.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme = ExtResource("14_ua3s4")
+theme_override_colors/font_color = Color(1, 0.482353, 0, 1)
+theme_override_fonts/font = ExtResource("26_j6eco")
+theme_override_font_sizes/font_size = 64
+text = "leVel coMpleTe"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LevelComplete/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.5
+offset_top = -52.0
+offset_right = 50.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderTimeTakenLabel" type="Label" parent="UI/LevelComplete/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/font_size = 32
+text = "Time Taken:
+"
+horizontal_alignment = 1
+
+[node name="TimeTakenLabel" type="Label" parent="UI/LevelComplete/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/font_size = 32
+text = "0.00.00"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="UI/LevelComplete/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/font_size = 32
+text = "Components:"
+horizontal_alignment = 1
+
+[node name="ComponentCountLabel" type="Label" parent="UI/LevelComplete/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/font_size = 32
+text = "20"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/LevelComplete/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Spacer3" type="Control" parent="UI/LevelComplete/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+
+[node name="ContinueButton" type="Button" parent="UI/LevelComplete/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/font_size = 32
+text = "Continue "
+
+[node name="Spacer2" type="Control" parent="UI/LevelComplete/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="NextLevelButton" type="Button" parent="UI/LevelComplete/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Next Level"
+
+[node name="Spacer" type="Control" parent="UI/LevelComplete/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+
+[node name="LevelInfo" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("31_tkcpm")
+
+[node name="Panel" type="Panel" parent="UI/LevelInfo"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_ua3s4")
+theme_override_styles/panel = ExtResource("30_1pa0c")
+
+[node name="Label" type="Label" parent="UI/LevelInfo/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 83.0
+offset_right = 220.0
+offset_bottom = 149.0
+grow_horizontal = 2
+theme = ExtResource("14_ua3s4")
+theme_override_colors/font_color = Color(1, 0.482353, 0, 1)
+theme_override_fonts/font = ExtResource("26_j6eco")
+theme_override_font_sizes/font_size = 64
+text = "Level name"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/LevelInfo/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -91.0
+offset_right = 153.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_ua3s4")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Level info and hint text"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/LevelInfo/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -138.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Spacer3" type="Control" parent="UI/LevelInfo/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContinueButton" type="Button" parent="UI/LevelInfo/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Continue "
+
+[node name="Spacer2" type="Control" parent="UI/LevelInfo/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuHub" parent="UI" instance=ExtResource("32_c6we1")]
+visible = false
+script = ExtResource("33_0xndx")
+default_menu = 5
+
+[node name="SubMachine" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 33.0
+offset_top = 1.0
+offset_right = 319.0
+offset_bottom = 159.0
+script = ExtResource("34_sltir")
+
+[node name="Panel" type="Panel" parent="SubMachine"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yyl4f")
+
+[node name="Darken" type="ColorRect" parent="."]
+visible = false
+z_index = -5
+offset_left = -93.0
+offset_top = -75.0
+offset_right = 462.0
+offset_bottom = 249.0
+mouse_filter = 2
+color = Color(0.172549, 0.172549, 0.172549, 0.486275)
+
+[node name="WorldStates" type="Node" parent="."]
+script = ExtResource("35_fe2kx")
+
+[node name="Root" type="Node" parent="WorldStates"]
+script = ExtResource("36_qektb")
+initial_state = NodePath("Stop")
+
+[node name="Play" type="Node" parent="WorldStates/Root"]
+script = ExtResource("37_wttq0")
+
+[node name="ToStop" type="Node" parent="WorldStates/Root/Play"]
+script = ExtResource("38_q25ob")
+to = NodePath("../../Stop")
+event = &"stop"
+
+[node name="Stop" type="Node" parent="WorldStates/Root"]
+script = ExtResource("37_wttq0")
+
+[node name="ToPlay" type="Node" parent="WorldStates/Root/Stop"]
+script = ExtResource("38_q25ob")
+to = NodePath("../../Play")
+event = &"play"
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("33_f14hk")
+
+[node name="ConveyorBelt" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("34_pa7dn")
+volume_db = -20.0
+
+[node name="LevelComplete" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("35_184dl")
+
+[node name="RecipeOpen" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("36_e1cba")
+
+[node name="BuildComponent" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("37_ocrma")
+
+[node name="SelectComponent" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("38_ccwmp")
+volume_db = -10.0
+
+[connection signal="player_dropped_component" from="UI/ComponentPicker/PlayerHand" to="SubMachine" method="_on_player_hand_player_dropped_component"]
+[connection signal="player_picked_up_component" from="UI/ComponentPicker/PlayerHand" to="SubMachine" method="_on_player_hand_player_picked_up_component"]
+[connection signal="pressed" from="UI/ComponentPicker/Button" to="UI" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/ComponentPicker/LevelInfoButton" to="UI/LevelInfo" method="_on_level_info_button_pressed"]
+[connection signal="pressed" from="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer/PlayButton" to="UI/ModeUI" method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer/StopButton" to="UI/ModeUI" method="_on_stop_button_pressed"]
+[connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel/ContructorButton" to="UI/RecipeUI" method="_on_contructor_button_toggled"]
+[connection signal="toggled" from="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2/CutterButton" to="UI/RecipeUI" method="_on_cutter_button_toggled"]
+[connection signal="pressed" from="UI/TextureButton" to="UI/RecipeUI" method="_on_texture_button_pressed"]
+[connection signal="pressed" from="UI/LevelComplete/Panel/HBoxContainer/ContinueButton" to="UI/LevelComplete" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="UI/LevelComplete/Panel/HBoxContainer/NextLevelButton" to="UI/LevelComplete" method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="UI/LevelInfo/Panel/HBoxContainer/ContinueButton" to="UI/LevelInfo" method="_on_continue_button_pressed"]
+[connection signal="after_components_changed" from="SubMachine" to="Components" method="_on_sub_machine_after_components_changed"]
+[connection signal="after_components_changed" from="SubMachine" to="UI/ModeUI/LevelStats" method="_on_sub_machine_after_components_changed"]
+[connection signal="before_components_changed" from="SubMachine" to="Components" method="_on_sub_machine_before_components_changed"]
+[connection signal="components_changed" from="SubMachine" to="Components" method="_on_sub_machine_components_changed"]
+[connection signal="gui_input" from="SubMachine" to="SubMachine" method="_on_gui_input"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="Components" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="UI/ComponentPicker/PlayerHand" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="UI/ModeUI/LevelStats" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="UI/LevelInfo" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="SubMachine" method="_on_play_state_entered"]
+[connection signal="state_entered" from="WorldStates/Root/Play" to="Sounds" method="_on_play_state_entered"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="Items" method="_on_play_state_exited"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="Components" method="_on_play_state_exited"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="UI/ModeUI/LevelStats" method="_on_play_state_exited"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="UI/ModeUI/LevelStats/LevelCompletionCheck" method="_on_play_state_exited"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="UI/LevelInfo" method="_on_play_state_exited"]
+[connection signal="state_exited" from="WorldStates/Root/Play" to="Sounds" method="_on_play_state_exited"]

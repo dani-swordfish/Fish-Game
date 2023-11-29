@@ -10,7 +10,9 @@ var item_count_target: int
 
 func _ready() -> void:
 	item_box.item = item
+	item_box.set_sprite()
 	target_label.text = str(item_count_target)
+	set_current_item(0)
 
 func set_current_item(current_item):
 	current_label.text = str(current_item)

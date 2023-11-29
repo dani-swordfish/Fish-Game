@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Components/cutter.gd" id="1_f0v4m"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_cvuov"]
 [ext_resource type="Script" path="res://Resources/storage.gd" id="2_yac3r"]
+[ext_resource type="PackedScene" uid="uid://dkndhlof3l4s4" path="res://Scenes/Components/sprite_background.tscn" id="3_igev1"]
+[ext_resource type="PackedScene" uid="uid://dcbppgxay8127" path="res://Scenes/Conveyor Components/converyor_belt_animation.tscn" id="4_2r2wx"]
 [ext_resource type="PackedScene" uid="uid://bgq7s2kxcy3tw" path="res://Scenes/Conveyor Components/cutter_animation.tscn" id="4_j4h0y"]
 
 [sub_resource type="Resource" id="Resource_dwxth"]
@@ -11,12 +13,6 @@ any_item = true
 item = 0
 storage_limit = 5
 
-[sub_resource type="Gradient" id="Gradient_dg1oq"]
-colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_33ib3"]
-gradient = SubResource("Gradient_dg1oq")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lep0g"]
 size = Vector2(6, 6)
 
@@ -24,11 +20,20 @@ size = Vector2(6, 6)
 script = ExtResource("1_f0v4m")
 storage_array = Array[ExtResource("2_yac3r")]([SubResource("Resource_dwxth")])
 
-[node name="SpriteBackground" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-1.62125e-05, 0)
-scale = Vector2(0.125, 32)
-texture = SubResource("GradientTexture1D_33ib3")
+[node name="SpriteBackground" parent="." instance=ExtResource("3_igev1")]
+
+[node name="ConveryorBeltAnimation" parent="." instance=ExtResource("4_2r2wx")]
+animation = &"full_belt"
+
+[node name="ConveryorBeltAnimation2" parent="." instance=ExtResource("4_2r2wx")]
+position = Vector2(0, 8)
+rotation = 1.5708
+
+[node name="ConveryorBeltAnimation3" parent="." instance=ExtResource("4_2r2wx")]
+position = Vector2(0, -8)
+rotation = -1.5708
+frame = 5
+frame_progress = 0.333509
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("2_cvuov")
@@ -62,7 +67,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="ProcessTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 0.5
 one_shot = true
 
 [node name="CutterAnimation" parent="." instance=ExtResource("4_j4h0y")]

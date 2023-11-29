@@ -91,6 +91,9 @@ func get_item_frame_coords(item: Enum.ITEMS) -> Vector2:
 		
 		Enum.ITEMS.MALTI_SCALE:
 			return Vector2(0,4)
+		Enum.ITEMS.NONE:
+			return Vector2(1,4)
+		
 		_:
 			printerr("item frame_coords not found")
 			return Vector2(0,0)
@@ -122,6 +125,7 @@ func get_component_frame_coords(component):
 			return Vector2(3,1)
 		Enum.COMPONENTS.REMOVE_COMPONENT:
 			return Vector2(0,3)
+
 
 ## can have no more than 3 items recipe per recipe, randi_cutter could take more level specific
 func get_cutter_recipe(item: Enum.ITEMS)-> Array[Array]:
@@ -160,7 +164,7 @@ func get_constuctor_recipe(item: Enum.ITEMS)-> Array[Array]:
 			return [[Enum.ITEMS.GOLD_BUCKLE, 1], [Enum.ITEMS.SNAKE_SCALE, 2]]
 		
 		Enum.ITEMS.CLOWN_FISH_SUSHI:
-			return [[Enum.ITEMS.CLOWN_FISH, 2], [Enum.ITEMS.RICE, 2], [Enum.ITEMS.SEAWEED, 1]]
+			return [[Enum.ITEMS.CLOWN_FISH, 1], [Enum.ITEMS.RICE, 1], [Enum.ITEMS.SEAWEED, 1]]
 		
 		Enum.ITEMS.FISH_BOWL:
 			return [[Enum.ITEMS.GLASS, 1]]
@@ -196,4 +200,13 @@ func get_fixed_direction(direction: int) -> Enum.DIRECTION:
 	return direction
 	
 
-
+var level_list: Array[String] = [
+	"res://Scenes/Levels/level_1.tscn",
+	"res://Scenes/Levels/level_2.tscn",
+	"res://Scenes/Levels/level_3.tscn",
+	"res://Scenes/Levels/level_4.tscn",
+	"res://Scenes/Levels/level_5.tscn",
+	"res://Scenes/Levels/level_6.tscn",
+	"res://Scenes/Levels/level_7.tscn",
+	"res://Scenes/Levels/level_8.tscn",
+]

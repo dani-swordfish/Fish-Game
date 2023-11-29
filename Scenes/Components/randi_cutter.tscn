@@ -1,14 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bwy3ptujdf41u"]
 
 [ext_resource type="Script" path="res://Scenes/Components/randi_cutter.gd" id="1_8rs42"]
+[ext_resource type="PackedScene" uid="uid://dkndhlof3l4s4" path="res://Scenes/Components/sprite_background.tscn" id="2_nmbsu"]
 [ext_resource type="PackedScene" uid="uid://bgq7s2kxcy3tw" path="res://Scenes/Conveyor Components/cutter_animation.tscn" id="3_6kxnd"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="3_coxxa"]
-
-[sub_resource type="Gradient" id="Gradient_dg1oq"]
-colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_33ib3"]
-gradient = SubResource("Gradient_dg1oq")
+[ext_resource type="PackedScene" uid="uid://dcbppgxay8127" path="res://Scenes/Conveyor Components/converyor_belt_animation.tscn" id="3_yrb4j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lep0g"]
 size = Vector2(6, 6)
@@ -16,11 +12,12 @@ size = Vector2(6, 6)
 [node name="RandiCutter" type="Node2D" groups=["direction_matters", "stores_items"]]
 script = ExtResource("1_8rs42")
 
-[node name="SpriteBackground" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-1.62125e-05, 0)
-scale = Vector2(0.125, 32)
-texture = SubResource("GradientTexture1D_33ib3")
+[node name="SpriteBackground" parent="." instance=ExtResource("2_nmbsu")]
+
+[node name="ConveryorBeltAnimation4" parent="." instance=ExtResource("3_yrb4j")]
+animation = &"full_belt"
+frame = 2
+frame_progress = 0.216666
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("3_coxxa")
@@ -42,7 +39,7 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="ProcessTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.0
 one_shot = true
 
 [node name="CutterAnimation" parent="." instance=ExtResource("3_6kxnd")]

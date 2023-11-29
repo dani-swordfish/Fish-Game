@@ -11,8 +11,13 @@ signal after_components_changed
 @onready var tilemap = %Tilemap
 @onready var components: Node2D = $"../Components"
 @onready var world_states: StateChart = $"../WorldStates"
+@onready var darken: ColorRect = $"../Darken"
 
+@onready var build_component: AudioStreamPlayer = $"../Sounds/BuildComponent"
 
+func _ready() -> void:
+	darken.hide()
+	handle_signals()
 
 
 func _on_play_state_entered() -> void:
@@ -80,7 +85,7 @@ func spawn_component(component: int):
 		printerr("invalid component")
 		return
 	
-	if player_hand.active_box.component_count <= 0:
+	if player_hand.active_box.component_count <= 0 and !player_hand.active_box.is_infinate:
 		return
 	
 	
@@ -99,6 +104,7 @@ func spawn_component(component: int):
 	var component_inst: Node2D = component_scene.instantiate()
 	component_inst.position = tilemap.map_to_local(tilemap.get_component_pos())
 	component_inst.global_rotation_degrees = player_hand.component_rotation
+	component_inst.is_static = false
 	if component == Enum.COMPONENTS.CONV_CORNER:
 		component_inst.corner = true
 		
@@ -107,7 +113,7 @@ func spawn_component(component: int):
 			component_inst.flipped = true
 	
 	components.add_child(component_inst)
-	component_inst.is_static = false
+	
 	component_inst.tile = tilemap.get_component_pos()
 	
 	# IMPORTANT components placed befor the level don't know their component and therefore can't be used, could fix
@@ -116,14 +122,18 @@ func spawn_component(component: int):
 	# reduce component count
 	player_hand.active_box.component_count -= 1
 	
+	build_component.play()
+	
 	handle_signals()
 
 
 func _on_player_hand_player_picked_up_component() -> void:
+	
 	open()
 
 
 func open():
+	darken.show()
 	show()
 	
 
@@ -133,6 +143,9 @@ func _on_player_hand_player_dropped_component() -> void:
 
 func close():
 	hide()
+	if darken == null: return
+	darken.hide()
+	
 
 
 

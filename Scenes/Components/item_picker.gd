@@ -29,6 +29,7 @@ func set_level_options():
 func _on_gui_input(event: InputEvent) -> void:
 	if !get_parent().player_can_pick: return
 	if Globals.references.player_hand.has_component(): return
+	if Globals.references.world_states.get_child(0)._active_state == null: return
 	if Globals.references.world_states.get_child(0)._active_state.name == "Play": return
 	
 	if event is InputEventMouseButton \

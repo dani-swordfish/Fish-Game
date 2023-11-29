@@ -8,18 +8,15 @@ var tile: Vector2i
 
 @onready var sprite_background: Sprite2D = $SpriteBackground
 
-@export var is_static: bool:
-	set(value):
-		is_static = value
-		if is_static:
-			$SpriteBackground.show()
-		else:
-			$SpriteBackground.hide()
+@export var is_static: bool = true
 
 
 func _ready() -> void:
-	var test = is_static
-	is_static = test
+	if is_static:
+		sprite_background.show()
+	else:
+		sprite_background.hide()
+	
 	set_direction()
 	set_physics_process(false)
 	

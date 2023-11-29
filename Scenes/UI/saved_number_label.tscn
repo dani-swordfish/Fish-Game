@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5h2e0bl4h2c2"]
+
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="1_yjjwy"]
+
+[node name="SavedNumberLabel" type="Label" groups=["things_to_despawn"]]
+theme = ExtResource("1_yjjwy")
+theme_override_font_sizes/font_size = 24
+text = "105"
+horizontal_alignment = 1

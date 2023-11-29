@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelOptions" load_steps=2 format=3 uid="uid://fb32b5f6mo1l"]
+
+[ext_resource type="Script" path="res://Resources/picker_options.gd" id="1_r8aww"]
+
+[resource]
+script = ExtResource("1_r8aww")
+spawner_options = Array[int]([])
+sorter_options = Array[int]([])
+constructor_options = Array[int]([21, 22])
+constructor_recipes = Array[int]([21, 22])
+cutter_recipies = Array[int]([])
+simple_constructor_options = Array[int]([])

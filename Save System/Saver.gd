@@ -10,6 +10,10 @@ const SAVE_FILE_PATH = "user://game_save/"
 func save_game(save_data: Resource, save_file_name: String):
 	verify_save_directory(SAVE_FILE_PATH)
 	var save_file = ResourceSaver.save(save_data, SAVE_FILE_PATH + save_file_name)
+	
+	if save_data is HighScore:
+		print(save_data.levels_array)
+	
 	if save_file == null:
 		printerr("ERROR CREATING SAVE FILE ", FileAccess.get_open_error())
 		return

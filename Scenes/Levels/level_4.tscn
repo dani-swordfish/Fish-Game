@@ -1,0 +1,126 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2iu8bx0wm78g"]
+
+[ext_resource type="PackedScene" uid="uid://cvc5bp36c1uet" path="res://Scenes/Levels/LevelBase.tscn" id="1_m3jfq"]
+[ext_resource type="Texture2D" uid="uid://be745rsu4cmkh" path="res://Art/background test.png" id="2_nmmfi"]
+[ext_resource type="Resource" uid="uid://wvq47i8y4vj7" path="res://Scenes/Level Options/level_4_options.tres" id="2_ul8rb"]
+[ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="2_vvvvl"]
+[ext_resource type="PackedScene" uid="uid://dgjyaiw1bas4v" path="res://Scenes/Components/cutter.tscn" id="3_kn75q"]
+[ext_resource type="PackedScene" uid="uid://dwaqp5rfhedr2" path="res://Scenes/Conveyor Components/bin.tscn" id="4_8nmn4"]
+[ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="5_560ux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47lh4"]
+atlas = ExtResource("2_nmmfi")
+region = Rect2(128, 64, 19, 33)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_0qfw7"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_7v27s"]
+
+[node name="Level_4" instance=ExtResource("1_m3jfq")]
+options = ExtResource("2_ul8rb")
+
+[node name="Tilemap" parent="." index="0"]
+layer_2/tile_data = PackedInt32Array(196608, 262148, 2, 262141, 65540, 2, 262142, 131076, 2, 262143, 196612, 2, 196618, 262148, 805306370, 196621, 65540, 805306370, 196620, 131076, 805306370, 196619, 196612, 805306370, 65549, 65540, 805306370, 65548, 131076, 805306370, 65547, 196612, 805306370, 65546, 262148, 805306370, 327686, 262148, 1610612738, 393222, 196612, 1610612738, 458758, 131076, 1610612738, 524294, 65540, 1610612738, -262141, 131076, 1342177281, -196605, 196612, 1342177281, -131069, 262148, 1342177281)
+
+[node name="PipeSprite" type="Sprite2D" parent="." index="1"]
+position = Vector2(113, -9)
+rotation = 1.5708
+texture = SubResource("AtlasTexture_47lh4")
+
+[node name="Spawner" parent="Components" index="0" instance=ExtResource("2_vvvvl")]
+position = Vector2(112, 16)
+rotation = 1.5708
+item = 7
+
+[node name="Spawner4" parent="Components" index="1" instance=ExtResource("2_vvvvl")]
+position = Vector2(48, 112)
+item = 7
+
+[node name="Spawner2" parent="Components" index="2" instance=ExtResource("2_vvvvl")]
+position = Vector2(304, 48)
+rotation = 3.14159
+item = 10
+
+[node name="Spawner3" parent="Components" index="3" instance=ExtResource("2_vvvvl")]
+position = Vector2(304, 112)
+rotation = 3.14159
+item = 10
+
+[node name="Cutter" parent="Components" index="4" instance=ExtResource("3_kn75q")]
+position = Vector2(112, 48)
+rotation = 1.5708
+
+[node name="Bin" parent="Components" index="5" instance=ExtResource("4_8nmn4")]
+position = Vector2(80, 48)
+
+[node name="Bin2" parent="Components" index="6" instance=ExtResource("4_8nmn4")]
+position = Vector2(112, 80)
+
+[node name="Output" parent="Components" index="7" instance=ExtResource("5_560ux")]
+position = Vector2(208, 144)
+rotation = 1.5708
+item = 24
+item_count_target = 20
+
+[node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
+is_infinate = true
+
+[node name="Box4" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="2"]
+initial_component_count = 6
+
+[node name="Box5" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="3"]
+visible = false
+
+[node name="Box6" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="4"]
+initial_component_count = 9
+
+[node name="Box7" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="5"]
+initial_component_count = 4
+
+[node name="Box13" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="6"]
+visible = false
+
+[node name="Box8" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="7"]
+initial_component_count = 6
+
+[node name="Box11" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="9"]
+initial_component_count = 8
+
+[node name="PlayButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="0"]
+button_group = SubResource("ButtonGroup_0qfw7")
+
+[node name="StopButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="1"]
+button_group = SubResource("ButtonGroup_0qfw7")
+
+[node name="ContructorButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel" index="0"]
+button_group = SubResource("ButtonGroup_7v27s")
+
+[node name="CutterButton" parent="UI/RecipeUI/VBoxContainer/HBoxContainer/Panel2" index="0"]
+button_group = SubResource("ButtonGroup_7v27s")
+
+[node name="LevelComplete" parent="UI" index="5"]
+level_no = 4
+
+[node name="LevelInfo" parent="UI" index="6"]
+visible = true
+
+[node name="Polygon2D3" type="Polygon2D" parent="UI/LevelInfo/Panel" index="0"]
+position = Vector2(-240, -60)
+polygon = PackedVector2Array(760, 162, 758, 177, 760, 188, 779, 187, 779, 170)
+
+[node name="Polygon2D" type="Polygon2D" parent="UI/LevelInfo/Panel" index="1"]
+position = Vector2(-240, -60)
+polygon = PackedVector2Array(423, 162, 418, 173, 431, 184, 451, 183, 449, 168)
+
+[node name="Polygon2D2" type="Polygon2D" parent="UI/LevelInfo/Panel" index="2"]
+polygon = PackedVector2Array(291, 123, 305, 123, 311, 115, 316, 117, 316, 134, 291, 134)
+
+[node name="Label" parent="UI/LevelInfo/Panel" index="3"]
+text = "AnGler fIsh"
+
+[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="4"]
+offset_left = -210.0
+offset_top = -112.0
+offset_right = 210.0
+offset_bottom = 112.0
+text = "[center]Add later"

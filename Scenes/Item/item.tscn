@@ -11,6 +11,7 @@ z_index = 1
 script = ExtResource("1_qugon")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
 texture = ExtResource("2_pku5t")
 hframes = 8
 vframes = 8

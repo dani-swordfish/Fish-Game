@@ -61,26 +61,21 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Main" parent="Menus" instance=ExtResource("2_c1i0q")]
-visible = false
 layout_mode = 1
 
 [node name="Settings" parent="Menus" instance=ExtResource("3_kf85n")]
 layout_mode = 1
 
 [node name="Instructions" parent="Menus" instance=ExtResource("5_45fb1")]
-visible = false
 layout_mode = 1
 
 [node name="MenuLevels" parent="Menus" instance=ExtResource("7_5l141")]
-visible = false
 layout_mode = 1
 
 [node name="InGame" parent="Menus" instance=ExtResource("8_tvxcr")]
-visible = false
 layout_mode = 1
 
 [node name="InputRemapper" parent="Menus" instance=ExtResource("4_lhxvt")]
-visible = false
 layout_mode = 1
 
 [node name="Click" type="AudioStreamPlayer" parent="."]

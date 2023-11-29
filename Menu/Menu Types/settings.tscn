@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://v10lyfekxsjd"]
+[gd_scene load_steps=7 format=3 uid="uid://v10lyfekxsjd"]
 
-[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="1_gnesp"]
 [ext_resource type="Script" path="res://Menu/Menu Types/settings.gd" id="1_jqvcx"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="2_6i31n"]
 [ext_resource type="PackedScene" uid="uid://cinva11076slr" path="res://Menu/Menu Components/Music Settings/music_slider.tscn" id="2_cymaf"]
+[ext_resource type="FontFile" uid="uid://c1mdurghusp7i" path="res://Themes/Fonts/Toucon__.ttf" id="3_paqnp"]
 [ext_resource type="PackedScene" uid="uid://m4pwgrtm3784" path="res://Menu/Menu Components/Menu Buttons/fullscreen_button.tscn" id="4_djhol"]
 [ext_resource type="PackedScene" uid="uid://bwoqyjwe64ymg" path="res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn" id="5_cvotr"]
 
@@ -23,20 +24,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.105882, 0.113725, 0.258824, 1)
+color = Color(0.192157, 0.396078, 0.6, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(529, 119, 529, 134, 534, 138, 555, 138, 554, 128, 541, 127)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(689, 114, 684, 118, 687, 127, 694, 132, 707, 132, 709, 130, 709, 119)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -81.0
-offset_top = 56.0
-offset_right = 86.0
-offset_bottom = 79.0
+offset_left = -157.5
+offset_top = 88.0
+offset_right = 162.5
+offset_bottom = 154.0
 grow_horizontal = 2
-theme = ExtResource("1_gnesp")
-text = "Settings"
+theme = ExtResource("2_6i31n")
+theme_override_colors/font_color = Color(1, 0.482353, 0, 1)
+theme_override_fonts/font = ExtResource("3_paqnp")
+theme_override_font_sizes/font_size = 64
+text = "sEttiNgs"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -49,7 +59,7 @@ offset_top = 417.0
 offset_right = -298.5
 offset_bottom = 474.0
 grow_horizontal = 2
-theme = ExtResource("1_gnesp")
+theme = ExtResource("2_6i31n")
 theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 horizontal_alignment = 1
@@ -71,7 +81,7 @@ offset_top = 249.0
 offset_right = -290.0
 offset_bottom = 306.0
 grow_horizontal = 2
-theme = ExtResource("1_gnesp")
+theme = ExtResource("2_6i31n")
 theme_override_font_sizes/font_size = 40
 text = "Master Volume"
 horizontal_alignment = 1
@@ -94,6 +104,8 @@ offset_top = 451.0
 offset_right = 1137.0
 offset_bottom = 515.0
 grow_horizontal = 1
+theme = ExtResource("2_6i31n")
+theme_override_font_sizes/font_size = 32
 
 [node name="VariableMenuTransition" parent="." instance=ExtResource("5_cvotr")]
 layout_mode = 1

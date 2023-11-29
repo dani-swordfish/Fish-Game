@@ -1,13 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwaqp5rfhedr2"]
 
 [ext_resource type="Script" path="res://Scenes/Conveyor Components/bin.gd" id="1_xyeor"]
+[ext_resource type="PackedScene" uid="uid://dkndhlof3l4s4" path="res://Scenes/Components/sprite_background.tscn" id="2_1y3wh"]
 [ext_resource type="Texture2D" uid="uid://dkfqblrp5t4db" path="res://Art/top-down-conveyor.png" id="2_ec80u"]
-
-[sub_resource type="Gradient" id="Gradient_dg1oq"]
-colors = PackedColorArray(0.796243, 0.796243, 0.796243, 1, 0.796243, 0.796243, 0.796243, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_33ib3"]
-gradient = SubResource("Gradient_dg1oq")
+[ext_resource type="PackedScene" uid="uid://dcbppgxay8127" path="res://Scenes/Conveyor Components/converyor_belt_animation.tscn" id="3_oapw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lep0g"]
 size = Vector2(6, 6)
@@ -15,11 +11,22 @@ size = Vector2(6, 6)
 [node name="Bin" type="Node2D"]
 script = ExtResource("1_xyeor")
 
-[node name="SpriteBackground" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-0.5, 0)
-scale = Vector2(0.128906, 32)
-texture = SubResource("GradientTexture1D_33ib3")
+[node name="SpriteBackground" parent="." instance=ExtResource("2_1y3wh")]
+
+[node name="ConveryorBeltAnimation4" parent="." instance=ExtResource("3_oapw1")]
+position = Vector2(-8, 0)
+
+[node name="ConveryorBeltAnimation5" parent="." instance=ExtResource("3_oapw1")]
+position = Vector2(0, -8)
+rotation = 1.5708
+
+[node name="ConveryorBeltAnimation6" parent="." instance=ExtResource("3_oapw1")]
+position = Vector2(8, 0)
+rotation = -3.14159
+
+[node name="ConveryorBeltAnimation7" parent="." instance=ExtResource("3_oapw1")]
+position = Vector2(0, 8)
+rotation = -1.5708
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("2_ec80u")

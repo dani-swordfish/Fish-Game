@@ -1,8 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701105240
+::res://::1701281868
+dark_panel.tres::StyleBoxFlat::1986790744019420034::1701119976::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1699637283::0::1::::<><>::
 icon.svg::CompressedTexture2D::8168920165526191588::1697278437::1697278445::1::::<><>::
-Ingame.tres::Theme::5312187378428990675::1701105240::0::1::::<><>::
+Ingame.tres::Theme::5312187378428990675::1701280801::0::1::::<><>::uid://3kofhgr5wwsw::::res://dark_panel.tres<>uid://clxpfq4w334d2::::res://Themes/Fonts/OpenSans-Regular.ttf<>uid://b45tlk71xlyij::::res://Scenes/spare.tres<>uid://dn1jmhxxc7nwq::::res://Scenes/UI/panel_1.tres
 item_box_for_picker.gd::GDScript::-1::1700909489::0::1::::<>ItemBox<>::
 pages_button_group.tres::ButtonGroup::6386693920865199696::1700924577::0::1::::<><>::
 ::res://addons/::1699552214
@@ -46,67 +47,68 @@ ring_buffer.gd::GDScript::-1::1697401144::0::1::::<>RefCounted<>::
 state_chart_debugger.gd::GDScript::-1::1697401144::0::1::::<>Control<>res://addons/godot_state_charts/utilities/state_chart_debugger.svg::
 state_chart_debugger.svg::CompressedTexture2D::3337082457498567773::1697401144::1697401144::1::::<><>::
 state_chart_debugger.tscn::PackedScene::2572857904024480472::1697401144::0::1::::<><>::res://addons/godot_state_charts/utilities/state_chart_debugger.gd
-::res://Art/::1701108086
-background test.png::CompressedTexture2D::2735051434633504747::1701085135::1701085179::1::::<><>::
+::res://Art/::1701274742
+background test.png::CompressedTexture2D::2735051434633504747::1701206119::1701206120::1::::<><>::
 clown.png::CompressedTexture2D::1819367238450371057::1700836266::1700836334::1::::<><>::
 color-schemes-palettes-combinations-31.jpg::CompressedTexture2D::2949321324480772129::1700933133::1700933133::1::::<><>::
+components_for_ui.png::CompressedTexture2D::2973360569756957058::1701271246::1701188028::1::::<><>::
 converyor test.png::CompressedTexture2D::4634806579000364561::1700685119::1700685121::1::::<><>::
 cutter animation.png::CompressedTexture2D::225150938027616058::1701014447::1701014448::1::::<><>::
 doungon wall blue.png::CompressedTexture2D::2578607093920232739::1700607904::1700607904::1::::<><>::
 doungon.png::CompressedTexture2D::1292563537348833359::1700608811::1700608813::1::::<><>::
 final conveyor animation all.png::CompressedTexture2D::6460292449647496041::1701088333::1701088335::1::::<><>::
-final conveyor animation half.png::CompressedTexture2D::5431495529450325013::1700702539::1700702544::1::::<><>::
-final conveyor animation left and otherl.png::CompressedTexture2D::2508646896283275704::1701086563::1701086610::1::::<><>::
-final conveyor animation left and up and down.png::CompressedTexture2D::5390601032585921336::1701086756::1701086757::1::::<><>::
-final conveyor animation up and down.png::CompressedTexture2D::321691061353207160::1701087102::1701087104::1::::<><>::
-final conveyor belt only.png::CompressedTexture2D::6894084949723792333::1701002257::1701002277::1::::<><>::
-items final.png::CompressedTexture2D::5491283874036475781::1701105453::1701105455::1::::<><>::
+final conveyor animation half.png::CompressedTexture2D::5431495529450325013::1701188953::1701188955::1::::<><>::
+final conveyor animation left and otherl.png::CompressedTexture2D::2508646896283275704::1701209364::1701209402::1::::<><>::
+final conveyor animation left and up and down.png::CompressedTexture2D::5390601032585921336::1701209395::1701209402::1::::<><>::
+final conveyor animation up and down.png::CompressedTexture2D::321691061353207160::1701209318::1701209402::1::::<><>::
+final conveyor belt only.png::CompressedTexture2D::6894084949723792333::1701189074::1701189076::1::::<><>::
+items final.png::CompressedTexture2D::5491283874036475781::1701274741::1701274742::1::::<><>::
 items.png::CompressedTexture2D::2152882692603704279::1700760114::1700760200::1::::<><>::
 Rescipe Book.png::CompressedTexture2D::631649142785558851::1700853713::1700854037::1::::<><>::
 test fish.png::CompressedTexture2D::1093431232825594776::1700391826::1700391852::1::::<><>::
-top-down-conveyor.png::CompressedTexture2D::7872446238649022707::1701108130::1701108135::1::::<><>::
+top-down-conveyor.png::CompressedTexture2D::7872446238649022707::1701188603::1701188608::1::::<><>::
 ::res://Art/BasicTilesets/::1699552215
 basic tileset.png::CompressedTexture2D::2745733869068031131::1690128098::1699541491::1::::<><>::
 ::res://Menu/::1699552215
-::res://Menu/InputRemapping/::1700517583
+::res://Menu/InputRemapping/::1701270906
 action_array.gd::GDScript::-1::1699637282::0::1::::ActionArray<>Resource<>::
 controls.gd::GDScript::-1::1700517583::0::1::::<>MenuType<>::
-InputRemapper.tscn::PackedScene::8283297851995108966::1699556475::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>uid://b1pilxdd7hjki::::res://Test/test_action_array.tres<>res://Menu/InputRemapping/controls.gd<>uid://dpnemb3edm48c::::res://Menu/InputRemapping/input_remap.tscn<>uid://sp7kecnp3wn2::::res://Themes/panel.tres<>uid://bwoqyjwe64ymg::::res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn
+InputRemapper.tscn::PackedScene::8283297851995108966::1701270906::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>uid://b1pilxdd7hjki::::res://Test/test_action_array.tres<>res://Menu/InputRemapping/controls.gd<>uid://c1mdurghusp7i::::res://Themes/Fonts/Toucon__.ttf<>uid://chxi7kg5pq4qp::::res://Ingame.tres<>uid://dpnemb3edm48c::::res://Menu/InputRemapping/input_remap.tscn<>uid://3kofhgr5wwsw::::res://dark_panel.tres<>uid://bwoqyjwe64ymg::::res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn
 input_description.gd::GDScript::-1::1699544486::0::1::::ActionDescription<>Resource<>::
 input_remap.gd::GDScript::-1::1697312528::0::1::::<>HBoxContainer<>::
-input_remap.tscn::PackedScene::8239196009914621416::1699556475::0::1::::<><>::res://Menu/InputRemapping/input_remap.gd<>uid://iio8g86nc5cm::::res://Themes/main_theme.tres
+input_remap.tscn::PackedScene::8239196009914621416::1701270906::0::1::::<><>::res://Menu/InputRemapping/input_remap.gd<>uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>uid://chxi7kg5pq4qp::::res://Ingame.tres
 ::res://Menu/Menu Components/::1699552215
-::res://Menu/Menu Components/Menu Buttons/::1700747972
+::res://Menu/Menu Components/Menu Buttons/::1701270906
 fullscreen_button.gd::GDScript::-1::1698268450::0::1::::<>Button<>::
 fullscreen_button.tscn::PackedScene::903083463163750463::1698490757::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Components/Menu Buttons/fullscreen_button.gd
 level_button.gd::GDScript::-1::1698491614::0::1::::<>Button<>::
-level_button.tscn::PackedScene::3088537348675469086::1699556474::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Components/Menu Buttons/level_button.gd
+level_button.tscn::PackedScene::3088537348675469086::1701270906::0::1::::<><>::uid://chxi7kg5pq4qp::::res://Ingame.tres<>res://Menu/Menu Components/Menu Buttons/level_button.gd
 MenuHubFromInGame.gd::GDScript::-1::1698494859::0::1::::<>Button<>::
 MenuHubFromInGame.tscn::PackedScene::4533322041511846730::1698492656::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Components/Menu Buttons/level_button.gd
 menu_transition_button.gd::GDScript::-1::1698270189::0::1::::<>Button<>::
 menu_transition_button.tscn::PackedScene::4925285647529220648::1698492587::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Components/Menu Buttons/menu_transition_button.gd
 quit.gd::GDScript::-1::1698313778::0::1::::<>Button<>::
 quit.tscn::PackedScene::4552764600341137285::1698490757::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Components/Menu Buttons/quit.gd
-variable_menu_transition.gd::GDScript::-1::1700747972::0::1::::<>Button<>::
-variable_menu_transition.tscn::PackedScene::3960491370144815830::1699556474::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Components/Menu Buttons/variable_menu_transition.gd
+variable_menu_transition.gd::GDScript::-1::1701195168::0::1::::<>Button<>::
+variable_menu_transition.tscn::PackedScene::3960491370144815830::1701270906::0::1::::<><>::uid://chxi7kg5pq4qp::::res://Ingame.tres<>res://Menu/Menu Components/Menu Buttons/variable_menu_transition.gd
 ::res://Menu/Menu Components/Music Settings/::1699552215
 music.gd::GDScript::-1::1698270761::0::1::::<>HSlider<>::
 music_slider.tscn::PackedScene::5362465491093240551::1698515265::0::1::::<><>::res://Menu/Menu Components/Music Settings/music.gd
-::res://Menu/Menu Hub/::1701002392
+::res://Menu/Menu Hub/::1701270905
 in_game_menu_hub.gd::GDScript::-1::1699542606::0::1::::<>MenuHub<>::
 menu_base.gd::GDScript::-1::1699540473::0::1::::MenuBase<>Control<>::
 menu_hub.gd::GDScript::-1::1699540473::0::1::::MenuHub<>MenuBase<>::
-menu_hub.tscn::PackedScene::3051054318143213423::1701002392::0::1::::<><>::res://Menu/Menu Hub/menu_hub.gd<>uid://bamylp0sx0v1h::::res://Menu/Menu Types/main.tscn<>uid://boxebc1442nec::::res://Sounds/Click_Standard_00.mp3<>uid://v10lyfekxsjd::::res://Menu/Menu Types/settings.tscn<>uid://dqaqx8pyws4b7::::res://Menu/InputRemapping/InputRemapper.tscn<>uid://dxdtjm5n7c1rk::::res://Menu/Menu Types/instructions.tscn<>uid://d4ca3xkblibch::::res://Menu/Menu Types/menu_levels.tscn<>uid://ccf3y8xj1tiou::::res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn<>uid://difubvbh8xgw7::::res://Menu/Menu Types/in_game.tscn
-::res://Menu/Menu Types/::1701002392
+menu_hub.tscn::PackedScene::3051054318143213423::1701270905::0::1::::<><>::res://Menu/Menu Hub/menu_hub.gd<>uid://bamylp0sx0v1h::::res://Menu/Menu Types/main.tscn<>uid://boxebc1442nec::::res://Sounds/Click_Standard_00.mp3<>uid://v10lyfekxsjd::::res://Menu/Menu Types/settings.tscn<>uid://dqaqx8pyws4b7::::res://Menu/InputRemapping/InputRemapper.tscn<>uid://dxdtjm5n7c1rk::::res://Menu/Menu Types/instructions.tscn<>uid://d4ca3xkblibch::::res://Menu/Menu Types/menu_levels.tscn<>uid://ccf3y8xj1tiou::::res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn<>uid://difubvbh8xgw7::::res://Menu/Menu Types/in_game.tscn
+::res://Menu/Menu Types/::1701270906
 instructions.tscn::PackedScene::8780968960281800932::1699556474::0::1::::<><>::res://Menu/Menu Types/Type Base/menu_type.gd<>uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>uid://bwoqyjwe64ymg::::res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn
 in_game.gd::GDScript::-1::1700575895::0::1::::<>MenuType<>::
 in_game.tscn::PackedScene::7732311919501311500::1700575895::0::1::::<><>::res://Menu/Menu Types/in_game.gd<>uid://sp7kecnp3wn2::::res://Themes/panel.tres<>uid://ccf3y8xj1tiou::::res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn<>uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>uid://b5t8ffmkijp1s::::res://Menu/Menu Components/Menu Buttons/MenuHubFromInGame.tscn<>res://Menu/Menu Components/Menu Buttons/MenuHubFromInGame.gd
 main.gd::GDScript::-1::1700950629::0::1::::<>MenuType<>::
-main.tscn::PackedScene::2412670895621111047::1701002392::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Types/main.gd<>uid://ccf3y8xj1tiou::::res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn<>res://Menu/Menu Types/VBoxContainer.gd<>uid://b54nmrga5qjd2::::res://Menu/Menu Components/Menu Buttons/quit.tscn
-menu_levels.gd::GDScript::-1::1699540474::0::1::::<>MenuType<>::
-menu_levels.tscn::PackedScene::9198918497865247199::1699556475::0::1::::<><>::res://Menu/Menu Types/menu_levels.gd<>uid://bwoqyjwe64ymg::::res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn<>uid://iio8g86nc5cm::::res://Themes/main_theme.tres
+main.tscn::PackedScene::2412670895621111047::1701270906::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Types/main.gd<>uid://ccf3y8xj1tiou::::res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn<>res://Menu/Menu Types/VBoxContainer.gd<>uid://b54nmrga5qjd2::::res://Menu/Menu Components/Menu Buttons/quit.tscn<>uid://chxi7kg5pq4qp::::res://Ingame.tres<>uid://c1mdurghusp7i::::res://Themes/Fonts/Toucon__.ttf<>uid://3kofhgr5wwsw::::res://dark_panel.tres<>uid://b45tlk71xlyij::::res://Scenes/spare.tres<>uid://dn1jmhxxc7nwq::::res://Scenes/UI/panel_1.tres
+menu_levels.gd::GDScript::-1::1701195954::0::1::::<>MenuType<>::
+menu_levels.tscn::PackedScene::9198918497865247199::1701270906::0::1::::<><>::res://Menu/Menu Types/menu_levels.gd<>uid://chxi7kg5pq4qp::::res://Ingame.tres<>uid://bwoqyjwe64ymg::::res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn<>uid://c1mdurghusp7i::::res://Themes/Fonts/Toucon__.ttf
 settings.gd::GDScript::-1::1698267891::0::1::::<>MenuType<>::
-settings.tscn::PackedScene::1529178375036805397::1698515265::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>res://Menu/Menu Types/settings.gd<>uid://cinva11076slr::::res://Menu/Menu Components/Music Settings/music_slider.tscn<>uid://m4pwgrtm3784::::res://Menu/Menu Components/Menu Buttons/fullscreen_button.tscn<>uid://bwoqyjwe64ymg::::res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn
+settings.tscn::PackedScene::1529178375036805397::1701270906::0::1::::<><>::res://Menu/Menu Types/settings.gd<>uid://chxi7kg5pq4qp::::res://Ingame.tres<>uid://cinva11076slr::::res://Menu/Menu Components/Music Settings/music_slider.tscn<>uid://c1mdurghusp7i::::res://Themes/Fonts/Toucon__.ttf<>uid://m4pwgrtm3784::::res://Menu/Menu Components/Menu Buttons/fullscreen_button.tscn<>uid://bwoqyjwe64ymg::::res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn
 VBoxContainer.gd::GDScript::-1::1698305568::0::1::::<>VBoxContainer<>::
 ::res://Menu/Menu Types/Type Base/::1699552215
 menu_type.gd::GDScript::-1::1698269928::0::1::::MenuType<>MenuBase<>::
@@ -115,109 +117,147 @@ game_over.gd::GDScript::-1::1697397917::0::1::::<>Control<>::
 game_over.tscn::PackedScene::66082733704194954::1697400996::0::1::::<><>::res://Menu/Win and Loose Menu/game_over.gd<>uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>uid://mt4vw4ohegd4::::res://Sounds/Jingle_Lose_00.mp3
 win.gd::GDScript::-1::1697397952::0::1::::<>Control<>::
 win.tscn::PackedScene::3558881161125269420::1697400996::0::1::::<><>::res://Menu/Win and Loose Menu/win.gd<>uid://iio8g86nc5cm::::res://Themes/main_theme.tres<>uid://rodnrqtehm76::::res://Sounds/Jingle_Win_00.mp3
-::res://Resources/::1701105341
+::res://Resources/::1701280801
 any_storage.tres::Resource/Resource::4155874723129581729::1700595830::0::1::::<><>::res://Resources/storage.gd
+high_score.gd::GDScript::-1::1701202348::0::1::::HighScore<>Resource<>::
+high_score.tres::Resource/Resource::622048147498893243::1701193563::0::1::::<><>::res://Resources/high_score.gd
 picker_options.gd::GDScript::-1::1700913226::0::1::::LevelOptions<>Resource<>::
 storage.gd::GDScript::-1::1700752324::0::1::::Storage<>Resource<>::
-test_level.tres::Resource/LevelOptions::1052089732183071141::1701105341::0::1::::<><>::res://Resources/picker_options.gd
+test_level.tres::Resource/LevelOptions::1052089732183071141::1701280801::0::1::::<><>::res://Resources/picker_options.gd
 ::res://Save System/::1700506372
 Saver.gd::GDScript::-1::1700506372::0::1::::Saver<>Resource<>::
 saver.tres::Resource/Resource::5157045364763055328::1699544913::0::1::::<><>::res://Save System/Saver.gd
-::res://Scenes/::1700150608
-::res://Scenes/Boxes/::1701107072
+::res://Scenes/::1701209619
+spare.tres::StyleBoxFlat::4485002324293110017::1701209619::0::1::::<><>::
+::res://Scenes/Boxes/::1701279767
 box.gd::GDScript::-1::1700595182::0::1::::Box<>Panel<>::
-box.tscn::PackedScene::1968995473779705644::1701107072::0::1::::<><>::res://Scenes/Boxes/box_gui.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://chxi7kg5pq4qp::::res://Ingame.tres
-box_gui.gd::GDScript::-1::1701014697::0::1::::<>Box<>::
-player_box.tscn::PackedScene::2967177087163964193::1701107072::0::1::::<><>::uid://chxi7kg5pq4qp::::res://Ingame.tres<>res://Scenes/Boxes/box.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
-::res://Scenes/Components/::1701107675
-component.gd::GDScript::-1::1701033072::0::1::::Componenet<>Node2D<>::
+box.tscn::PackedScene::1968995473779705644::1701188197::0::1::::<><>::res://Scenes/Boxes/box_gui.gd<>uid://chxi7kg5pq4qp::::res://Ingame.tres<>uid://bimk2xgflawvq::::res://Art/components_for_ui.png
+box_gui.gd::GDScript::-1::1701196691::0::1::::<>Box<>::
+player_box.tscn::PackedScene::2967177087163964193::1701279767::0::1::::<><>::uid://chxi7kg5pq4qp::::res://Ingame.tres<>res://Scenes/Boxes/box.gd<>uid://bimk2xgflawvq::::res://Art/components_for_ui.png
+::res://Scenes/Components/::1701279767
+component.gd::GDScript::-1::1701182735::0::1::::Componenet<>Node2D<>::
 constructor.gd::GDScript::-1::1700752987::0::1::::<>Process<>::
-constructor.tscn::PackedScene::900582930682899111::1701107071::0::1::::<><>::res://Scenes/Components/constructor.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://c8j5oav6rcoh1::::res://Scenes/Conveyor Components/item_picker_sprite.tscn<>uid://delo2acgw8sqr::::res://Scenes/UI/item_picker.tscn
+constructor.tscn::PackedScene::900582930682899111::1701207319::0::1::::<><>::res://Scenes/Components/constructor.gd<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://c8j5oav6rcoh1::::res://Scenes/Conveyor Components/item_picker_sprite.tscn<>uid://delo2acgw8sqr::::res://Scenes/UI/item_picker.tscn<>uid://bb0hbvliiab1a::::res://Art/final conveyor animation left and otherl.png<>uid://cybocqe0om1t2::::res://Art/final conveyor animation all.png<>uid://ci2in8u30saay::::res://Art/final conveyor animation left and up and down.png<>uid://et3g7yyackq7::::res://Art/final conveyor animation up and down.png
 cutter.gd::GDScript::-1::1701107675::0::1::::<>Process<>::
-cutter.tscn::PackedScene::7600432175875608071::1701107071::0::1::::<><>::res://Scenes/Components/cutter.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>res://Resources/storage.gd<>uid://bgq7s2kxcy3tw::::res://Scenes/Conveyor Components/cutter_animation.tscn
-item_picker.gd::GDScript::-1::1700852242::0::1::::<>Control<>::
+cutter.tscn::PackedScene::7600432175875608071::1701207319::0::1::::<><>::res://Scenes/Components/cutter.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>res://Resources/storage.gd<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn<>uid://bgq7s2kxcy3tw::::res://Scenes/Conveyor Components/cutter_animation.tscn
+item_picker.gd::GDScript::-1::1701118529::0::1::::<>Control<>::
 multi_spawner.gd::GDScript::-1::1701107675::0::1::::<>Process<>::
-multi_spawner.tscn::PackedScene::4357554599574872825::1701107071::0::1::::<><>::res://Scenes/Components/multi_spawner.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
+multi_spawner.tscn::PackedScene::4357554599574872825::1701202146::0::1::::<><>::res://Scenes/Components/multi_spawner.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
 process.gd::GDScript::-1::1700752413::0::1::::Process<>Conveyor<>::
 randi_cutter.gd::GDScript::-1::1700764570::0::1::::<>Process<>::
-randi_cutter.tscn::PackedScene::3981848201786182388::1701107071::0::1::::<><>::res://Scenes/Components/randi_cutter.gd<>uid://bgq7s2kxcy3tw::::res://Scenes/Conveyor Components/cutter_animation.tscn<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
+randi_cutter.tscn::PackedScene::3981848201786182388::1701202146::0::1::::<><>::res://Scenes/Components/randi_cutter.gd<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://bgq7s2kxcy3tw::::res://Scenes/Conveyor Components/cutter_animation.tscn<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
 spawner.gd::GDScript::-1::1701107675::0::1::::<>Process<>::
-spawner.tscn::PackedScene::297443217827653588::1701107071::0::1::::<><>::uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>res://Scenes/Components/spawner.gd<>uid://c8j5oav6rcoh1::::res://Scenes/Conveyor Components/item_picker_sprite.tscn<>uid://delo2acgw8sqr::::res://Scenes/UI/item_picker.tscn<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
-::res://Scenes/Conveyor Components/::1701107072
+spawner.tscn::PackedScene::297443217827653588::1701279767::0::1::::<><>::uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>res://Scenes/Components/spawner.gd<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://c8j5oav6rcoh1::::res://Scenes/Conveyor Components/item_picker_sprite.tscn<>uid://delo2acgw8sqr::::res://Scenes/UI/item_picker.tscn<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
+sprite_background.tscn::PackedScene::7888182649447212205::1701207319::0::1::::<><>::uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
+::res://Scenes/Conveyor Components/::1701212433
 bin.gd::GDScript::-1::1700662573::0::1::::Output<>Componenet<>::
-bin.tscn::PackedScene::8704416472107724633::1701107072::0::1::::<><>::res://Scenes/Conveyor Components/bin.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
-converyor_belt_animation.tscn::PackedScene::7302642008613500646::1701027449::0::1::::<><>::uid://c5hstpdks36y8::::res://Art/final conveyor belt only.png<>uid://cjnb65ea1tttl::::res://Art/final conveyor animation half.png
+bin.tscn::PackedScene::8704416472107724633::1701202147::0::1::::<><>::res://Scenes/Conveyor Components/bin.gd<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
+converyor_belt_animation.tscn::PackedScene::7302642008613500646::1701207319::0::1::::<><>::uid://c5hstpdks36y8::::res://Art/final conveyor belt only.png<>uid://cjnb65ea1tttl::::res://Art/final conveyor animation half.png
 conveyor.gd::GDScript::-1::1701033571::0::1::::Conveyor<>Componenet<>::
-conveyor.tscn::PackedScene::6521550656709764473::1701107071::0::1::::<><>::res://Scenes/Conveyor Components/corner_or_strait.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://cybocqe0om1t2::::res://Art/final conveyor animation all.png<>uid://bb0hbvliiab1a::::res://Art/final conveyor animation left and otherl.png<>uid://ci2in8u30saay::::res://Art/final conveyor animation left and up and down.png<>uid://et3g7yyackq7::::res://Art/final conveyor animation up and down.png
-conveyor_bridge.gd::GDScript::-1::1701038765::0::1::::<>Componenet<>::
-conveyor_bridge.tscn::PackedScene::7061181810367985892::1701107072::0::1::::<><>::res://Scenes/Conveyor Components/conveyor_bridge.gd<>res://Scenes/Conveyor Components/SubConveyor.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
+conveyor.tscn::PackedScene::6521550656709764473::1701212433::0::1::::<><>::res://Scenes/Conveyor Components/corner_or_strait.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://cybocqe0om1t2::::res://Art/final conveyor animation all.png<>uid://bb0hbvliiab1a::::res://Art/final conveyor animation left and otherl.png<>uid://ci2in8u30saay::::res://Art/final conveyor animation left and up and down.png<>uid://et3g7yyackq7::::res://Art/final conveyor animation up and down.png
+conveyor_bridge.gd::GDScript::-1::1701180365::0::1::::<>Componenet<>::
+conveyor_bridge.tscn::PackedScene::7061181810367985892::1701207320::0::1::::<><>::res://Scenes/Conveyor Components/conveyor_bridge.gd<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>res://Scenes/Conveyor Components/SubConveyor.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
 conveyor_sorter.gd::GDScript::-1::1701033443::0::1::::<>ConveyorSplitter<>::
-conveyor_sorter.tscn::PackedScene::5021689425624768789::1701107072::0::1::::<><>::uid://8scy2k1de12h::::res://Scenes/Conveyor Components/conveyor_split.tscn<>res://Scenes/Conveyor Components/conveyor_sorter.gd<>uid://c5hstpdks36y8::::res://Art/final conveyor belt only.png<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn<>uid://delo2acgw8sqr::::res://Scenes/UI/item_picker.tscn<>uid://cjnb65ea1tttl::::res://Art/final conveyor animation half.png<>uid://be745rsu4cmkh::::res://Art/background test.png<>uid://c8j5oav6rcoh1::::res://Scenes/Conveyor Components/item_picker_sprite.tscn
+conveyor_sorter.tscn::PackedScene::5021689425624768789::1701202147::0::1::::<><>::uid://8scy2k1de12h::::res://Scenes/Conveyor Components/conveyor_split.tscn<>res://Scenes/Conveyor Components/conveyor_sorter.gd<>uid://c5hstpdks36y8::::res://Art/final conveyor belt only.png<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn<>uid://delo2acgw8sqr::::res://Scenes/UI/item_picker.tscn<>uid://cjnb65ea1tttl::::res://Art/final conveyor animation half.png<>uid://c8j5oav6rcoh1::::res://Scenes/Conveyor Components/item_picker_sprite.tscn
 conveyor_split.gd::GDScript::-1::1701033444::0::1::::ConveyorSplitter<>Conveyor<>::
-conveyor_split.tscn::PackedScene::2353556367431411349::1701107072::0::1::::<><>::res://Scenes/Conveyor Components/conveyor_split.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
+conveyor_split.tscn::PackedScene::2353556367431411349::1701202147::0::1::::<><>::res://Scenes/Conveyor Components/conveyor_split.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
 corner_or_strait.gd::GDScript::-1::1701087376::0::1::::<>Conveyor<>::
 cutter_animation.tscn::PackedScene::2842560312272228556::1701005820::0::1::::<><>::uid://dhcg5y33sju5::::res://Art/cutter animation.png
-item_picker_sprite.tscn::PackedScene::7109499151997674880::1701032412::0::1::::<><>::uid://be745rsu4cmkh::::res://Art/background test.png<>uid://ckiav4pe027c0::::res://Art/items final.png
-output.gd::GDScript::-1::1700950896::0::1::::<>Output<>::
-output.tscn::PackedScene::3600926902255136804::1701107072::0::1::::<><>::res://Scenes/Conveyor Components/output.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png
+item_picker_sprite.tscn::PackedScene::7109499151997674880::1701131394::0::1::::<><>::uid://be745rsu4cmkh::::res://Art/background test.png<>uid://ckiav4pe027c0::::res://Art/items final.png
+output.gd::GDScript::-1::1701203865::0::1::::<>Output<>::
+output.tscn::PackedScene::3600926902255136804::1701207319::0::1::::<><>::res://Scenes/Conveyor Components/output.gd<>uid://dkndhlof3l4s4::::res://Scenes/Components/sprite_background.tscn<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://c8j5oav6rcoh1::::res://Scenes/Conveyor Components/item_picker_sprite.tscn<>uid://dcbppgxay8127::::res://Scenes/Conveyor Components/converyor_belt_animation.tscn
 SubConveyor.gd::GDScript::-1::1700561532::0::1::::<>Conveyor<>::
-::res://Scenes/Item/::1700923763
+::res://Scenes/Item/::1701207319
 item.gd::GDScript::-1::1700701287::0::1::::<>Node2D<>::
-item.tscn::PackedScene::2453121550613797732::1700923763::0::1::::<><>::res://Scenes/Item/item.gd<>uid://ckiav4pe027c0::::res://Art/items final.png
+item.tscn::PackedScene::2453121550613797732::1701207319::0::1::::<><>::res://Scenes/Item/item.gd<>uid://ckiav4pe027c0::::res://Art/items final.png
+::res://Scenes/Level Options/::1701280802
+level_1_options.tres::Resource/Resource::354756987313689767::1701207772::0::1::::<><>::res://Resources/picker_options.gd
+level_2_options.tres::Resource/Resource::560552888404210251::1701205290::0::1::::<><>::res://Resources/picker_options.gd
+level_3_options.tres::Resource/LevelOptions::8407338415170674640::1701280801::0::1::::<><>::res://Resources/picker_options.gd
+level_4_options.tres::Resource/Resource::1588531447417718574::1701259809::0::1::::<><>::res://Resources/picker_options.gd
+level_5_options.tres::Resource/LevelOptions::7859486975282026621::1701280801::0::1::::<><>::res://Resources/picker_options.gd
+level_6_options.tres::Resource/LevelOptions::6069177231710606484::1701280801::0::1::::<><>::res://Resources/picker_options.gd
+level_7_options.tres::Resource/LevelOptions::4081408325574899928::1701280802::0::1::::<><>::res://Resources/picker_options.gd
+level_8_options.tres::Resource/Resource::4249645519842509875::1701279492::0::1::::<><>::res://Resources/picker_options.gd
+::res://Scenes/Levels/::1701281227
+LevelBase.gd::GDScript::-1::1701179694::0::1::::<>Node2D<>::
+LevelBase.tscn::PackedScene::6252759967386892347::1701281225::0::1::::<><>::res://Scenes/Levels/LevelBase.gd<>uid://o8v08ng85u34::::res://Resources/test_level.tres<>uid://ckvs5mpywhe1v::::res://Scenes/Tilemap/sub_tilemap.tscn<>res://Scenes/World/References.gd<>res://Scenes/Test/items.gd<>res://Scenes/Test/components.gd<>res://Scenes/Test/ui.gd<>uid://chxi7kg5pq4qp::::res://Ingame.tres<>uid://dn1jmhxxc7nwq::::res://Scenes/UI/panel_1.tres<>uid://3b2ckl862ymm::::res://Scenes/Boxes/box.tscn<>res://Scenes/Player/player_hand.gd<>uid://bijk8c6lns3yb::::res://Scenes/Boxes/player_box.tscn<>res://Scenes/Test/item_picker_ui.gd<>res://Scenes/Test/mode_ui.gd<>uid://bimk2xgflawvq::::res://Art/components_for_ui.png<>uid://dbqjgk6fld6ec::::res://Scenes/UI/play_stop_button_group.tres<>res://Scenes/Test/level_stats.gd<>res://Scenes/Test/level_completion_check.gd<>res://Scenes/Test/recipe_ui.gd<>uid://cw806evncma4w::::res://pages_button_group.tres<>uid://c1mdurghusp7i::::res://Themes/Fonts/Toucon__.ttf<>uid://beinvkawx86b5::::res://Scenes/UI/recipe_book_page.tscn<>uid://bjbhf3pxaktla::::res://Scenes/UI/book_closed_texture.tres<>res://Scenes/Test/level_complete.gd<>uid://3kofhgr5wwsw::::res://dark_panel.tres<>res://Scenes/UI/level_info.gd<>uid://bjp7oigxj17qp::::res://Menu/Menu Hub/menu_hub.tscn<>res://Menu/Menu Hub/in_game_menu_hub.gd<>res://Scenes/World/sounds.gd<>uid://dwnwuyury5la4::::res://Sounds/Conveyor.wav<>res://Scenes/Test/sub_machine.gd<>uid://vps482hwm63l::::res://Sounds/woo-hoo-82843.mp3<>res://addons/godot_state_charts/state_chart.gd<>uid://bv8sb1a1453st::::res://Sounds/Page Turning Sfx.wav<>res://addons/godot_state_charts/compound_state.gd<>uid://cqdmtif5s6yms::::res://Sounds/craft-[AudioTrimmer.com].ogg<>res://addons/godot_state_charts/atomic_state.gd<>uid://djtmdbq4o3q6b::::res://Sounds/switch6.wav<>res://addons/godot_state_charts/transition.gd
+level_1.tscn::PackedScene::7599205746768740180::1701281225::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://fb32b5f6mo1l::::res://Scenes/Level Options/level_1_options.tres<>uid://m3ip7rbf34xv::::res://Scenes/Components/constructor.tscn<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn
+level_2.tscn::PackedScene::5952120773941219957::1701281226::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://h8shve7cr5ql::::res://Scenes/Level Options/level_2_options.tres<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://be745rsu4cmkh::::res://Art/background test.png<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn<>uid://dgjyaiw1bas4v::::res://Scenes/Components/cutter.tscn<>uid://cy6c8snu4ia2t::::res://Scenes/Conveyor Components/conveyor.tscn
+level_3.tscn::PackedScene::8733720488527981414::1701281226::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://dr1tvuqujclwy::::res://Scenes/Level Options/level_3_options.tres<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn
+level_4.tscn::PackedScene::6685728527919392008::1701281226::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://be745rsu4cmkh::::res://Art/background test.png<>uid://wvq47i8y4vj7::::res://Scenes/Level Options/level_4_options.tres<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://dgjyaiw1bas4v::::res://Scenes/Components/cutter.tscn<>uid://dwaqp5rfhedr2::::res://Scenes/Conveyor Components/bin.tscn<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn
+level_5.tscn::PackedScene::3023410826338349115::1701281226::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://be745rsu4cmkh::::res://Art/background test.png<>uid://dj8guqe1fx6fp::::res://Scenes/Level Options/level_5_options.tres<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn
+level_6.tscn::PackedScene::8621203910112841764::1701281226::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://be745rsu4cmkh::::res://Art/background test.png<>uid://csp7pyn1uxkk7::::res://Scenes/Level Options/level_6_options.tres<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn
+level_7.tscn::PackedScene::2546466364159509845::1701281227::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://be745rsu4cmkh::::res://Art/background test.png<>uid://byfcg03pwob6g::::res://Scenes/Level Options/level_7_options.tres<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn
+level_8.tscn::PackedScene::103663347881305473::1701281227::0::1::::<><>::uid://cvc5bp36c1uet::::res://Scenes/Levels/LevelBase.tscn<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://b1stbng2x4lcl::::res://Scenes/Level Options/level_8_options.tres<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn
 ::res://Scenes/Player/::1701009025
 player_hand.gd::GDScript::-1::1701009025::0::1::::<>Control<>::
-::res://Scenes/Test/::1701107070
+::res://Scenes/Test/::1701251236
 components.gd::GDScript::-1::1701038171::0::1::::<>Node2D<>::
 items.gd::GDScript::-1::1700589821::0::1::::<>Node2D<>::
 item_picker_ui.gd::GDScript::-1::1700917484::0::1::::<>Control<>::
-mode_ui.gd::GDScript::-1::1701004184::0::1::::<>Control<>::
-recipe_ui.gd::GDScript::-1::1700924578::0::1::::<>Control<>::
-sub_machine.gd::GDScript::-1::1701093990::0::1::::<>Control<>::
+level_complete.gd::GDScript::-1::1701251236::0::1::::<>Control<>::
+level_completion_check.gd::GDScript::-1::1701122749::0::1::::<>Node<>::
+level_stats.gd::GDScript::-1::1701185971::0::1::::<>PanelContainer<>::
+mode_ui.gd::GDScript::-1::1701109983::0::1::::<>Control<>::
+recipe_ui.gd::GDScript::-1::1701196816::0::1::::<>Control<>::
+sub_machine.gd::GDScript::-1::1701203488::0::1::::<>Control<>::
 test_fish.tscn::PackedScene::5805439295988582870::1700172295::0::1::::<><>::uid://ptwwgp32toke::::res://Art/test fish.png<>res://Scenes/Item/item.gd
-test_level.gd::GDScript::-1::1701095100::0::1::::<>Node2D<>::
-test_level.tscn::PackedScene::6252759967386892347::1701107070::0::1::::<><>::res://Scenes/Test/test_level.gd<>uid://ckvs5mpywhe1v::::res://Scenes/Tilemap/sub_tilemap.tscn<>uid://o8v08ng85u34::::res://Resources/test_level.tres<>res://Scenes/World/References.gd<>res://Scenes/Test/items.gd<>res://Scenes/Test/components.gd<>res://Scenes/Test/ui.gd<>res://Scenes/Player/player_hand.gd<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn<>uid://3b2ckl862ymm::::res://Scenes/Boxes/box.tscn<>res://Scenes/Test/sub_machine.gd<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>res://Scenes/Test/mode_ui.gd<>uid://b3c3j1qflhmfx::::res://Scenes/Components/multi_spawner.tscn<>res://addons/godot_state_charts/state_chart.gd<>res://addons/godot_state_charts/compound_state.gd<>uid://cy6c8snu4ia2t::::res://Scenes/Conveyor Components/conveyor.tscn<>uid://bwy3ptujdf41u::::res://Scenes/Components/randi_cutter.tscn<>res://addons/godot_state_charts/atomic_state.gd<>res://Scenes/Test/item_picker_ui.gd<>uid://chxi7kg5pq4qp::::res://Ingame.tres<>uid://dn1jmhxxc7nwq::::res://Scenes/UI/panel_1.tres<>res://addons/godot_state_charts/transition.gd<>uid://bijk8c6lns3yb::::res://Scenes/Boxes/player_box.tscn<>uid://dbqjgk6fld6ec::::res://Scenes/UI/play_stop_button_group.tres<>res://Scenes/Test/recipe_ui.gd<>uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://cw806evncma4w::::res://pages_button_group.tres<>uid://bjbhf3pxaktla::::res://Scenes/UI/book_closed_texture.tres<>uid://beinvkawx86b5::::res://Scenes/UI/recipe_book_page.tscn
 ui.gd::GDScript::-1::1701025298::0::1::::<>CanvasLayer<>::
-::res://Scenes/Tilemap/::1700703007
+::res://Scenes/Tilemap/::1701207319
 sub_tilemap.gd::GDScript::-1::1700607442::0::1::::<>TileMap<>::
-sub_tilemap.tscn::PackedScene::5519228870861122673::1700703007::0::1::::<><>::uid://dkfqblrp5t4db::::res://Art/top-down-conveyor.png<>uid://cy6c8snu4ia2t::::res://Scenes/Conveyor Components/conveyor.tscn<>res://Scenes/Tilemap/sub_tilemap.gd<>uid://b7bet72ny64f2::::res://Art/converyor test.png<>uid://soelkrcm8lvr::::res://Art/doungon.png<>uid://be745rsu4cmkh::::res://Art/background test.png
-::res://Scenes/UI/::1701105240
+sub_tilemap.tscn::PackedScene::5519228870861122673::1701207319::0::1::::<><>::res://Scenes/Tilemap/sub_tilemap.gd<>uid://be745rsu4cmkh::::res://Art/background test.png
+::res://Scenes/UI/::1701280801
 book_closed_texture.tres::AtlasTexture::3020620096979642418::1700916765::0::1::::<><>::uid://i88f0qf373ox::::res://Art/Rescipe Book.png
 book_open_texture.tres::AtlasTexture::4404324224661924733::1700916769::0::1::::<><>::uid://i88f0qf373ox::::res://Art/Rescipe Book.png
 item_box_for_picker.gd::GDScript::-1::1700909573::0::1::::<>ItemBox<>::
 item_box_for_picker.tscn::PackedScene::2197059524831005573::1701002392::0::1::::<><>::uid://difpcvx2jdcgu::::res://Scenes/UI/Item Boxes/item_box.tscn<>res://Scenes/UI/item_box_for_picker.gd
-item_picker.tscn::PackedScene::7463623838653192097::1701002392::0::1::::<><>::res://Scenes/Components/item_picker.gd
+item_picker.tscn::PackedScene::7463623838653192097::1701131394::0::1::::<><>::res://Scenes/Components/item_picker.gd
 label_for_recipe.tscn::PackedScene::709983540394680154::1700911965::0::1::::<><>::uid://iio8g86nc5cm::::res://Themes/main_theme.tres
-panel_1.tres::StyleBoxFlat::8125959126683948784::1701105240::0::1::::<><>::
+level_info.gd::GDScript::-1::1701185553::0::1::::<>Control<>::
+output_count_ui.gd::GDScript::-1::1701119606::0::1::::<>HBoxContainer<>::
+output_count_ui.tscn::PackedScene::8276495558584430768::1701131394::0::1::::<><>::uid://chxi7kg5pq4qp::::res://Ingame.tres<>res://Scenes/UI/output_count_ui.gd<>uid://difpcvx2jdcgu::::res://Scenes/UI/Item Boxes/item_box.tscn
+panel_1.tres::StyleBoxFlat::8125959126683948784::1701280801::0::1::::<><>::
 play_stop_button_group.tres::ButtonGroup::7263038679845088558::1701004031::0::1::::<><>::
-recipe.gd::GDScript::-1::1700925339::0::1::::<>PanelContainer<>::
-recipe.tscn::PackedScene::608775090663719582::1701002392::0::1::::<><>::res://Scenes/UI/recipe.gd
+recipe.gd::GDScript::-1::1701135596::0::1::::<>PanelContainer<>::
+recipe.tscn::PackedScene::608775090663719582::1701182032::0::1::::<><>::res://Scenes/UI/recipe.gd
 recipe_book_page.gd::GDScript::-1::1700926140::0::1::::<>PanelContainer<>::
-recipe_book_page.tscn::PackedScene::2684518429120825076::1701002392::0::1::::<><>::uid://dn1jmhxxc7nwq::::res://Scenes/UI/panel_1.tres<>res://Scenes/UI/recipe_book_page.gd<>uid://chxi7kg5pq4qp::::res://Ingame.tres
+recipe_book_page.tscn::PackedScene::2684518429120825076::1701182033::0::1::::<><>::uid://dn1jmhxxc7nwq::::res://Scenes/UI/panel_1.tres<>res://Scenes/UI/recipe_book_page.gd<>uid://chxi7kg5pq4qp::::res://Ingame.tres
+saved_number_label.tscn::PackedScene::4508184454260212979::1701270906::0::1::::<><>::uid://chxi7kg5pq4qp::::res://Ingame.tres
 ::res://Scenes/UI/Item Boxes/::1701002391
 item_box.gd::GDScript::-1::1700913604::0::1::::ItemBox<>Panel<>::
 item_box.tscn::PackedScene::7732010155192926384::1701002391::0::1::::<><>::res://Scenes/UI/Item Boxes/item_box.gd<>uid://ckiav4pe027c0::::res://Art/items final.png
-::res://Scenes/World/::1701009660
+::res://Scenes/World/::1701191654
 References.gd::GDScript::-1::1701009660::0::1::::<>Node2D<>::
-::res://Singletons/::1701105693
+sounds.gd::GDScript::-1::1701191654::0::1::::<>Node<>::
+::res://Singletons/::1701272986
 direction.gd::GDScript::-1::1701105005::0::1::::Enum<>Node<>::
-globals.gd::GDScript::-1::1701105693::0::1::::<>Node<>::
-::res://Sounds/::1699552215
+globals.gd::GDScript::-1::1701272986::0::1::::<>Node<>::
+::res://Sounds/::1701196452
 Click_Mechanical_01.mp3::AudioStreamMP3::1176657746821658285::1697279016::1697279017::1::::<><>::
 Click_Standard_00.mp3::AudioStreamMP3::3416789983302972550::1697279013::1697279013::1::::<><>::
+Conveyor.wav::AudioStreamWAV::8731626303899910745::1701191473::1701191619::1::::<><>::
+craft-[AudioTrimmer.com].ogg::AudioStreamOggVorbis::5902818962153476770::1701193018::1701193018::1::::<><>::
+craft.ogg::AudioStreamOggVorbis::6805994192128389225::1701192629::1701192629::1::::<><>::
 Jingle_Lose_00.mp3::AudioStreamMP3::883288796404400427::1697278876::1697278876::1::::<><>::
 Jingle_Win_00.mp3::AudioStreamMP3::1222317915185182055::1697278876::1697278876::1::::<><>::
-::res://Test/::1701002306
+Page Turning Sfx.wav::AudioStreamWAV::3929606924467845607::1701192212::1701192217::1::::<><>::
+switch6.wav::AudioStreamWAV::7830918861021319487::1701196406::1701196452::1::::<><>::
+woo-hoo-82843.mp3::AudioStreamMP3::1506077851930844831::1701191896::1701191896::1::::<><>::
+::res://Test/::1701280801
 blank.tscn::PackedScene::2393090040583205460::1700589822::0::1::::<><>::res://Test/menu_test.gd<>uid://donc6ln3cw5ki::::res://icon.svg<>uid://cy6c8snu4ia2t::::res://Scenes/Conveyor Components/conveyor.tscn<>uid://eic31mtpctmq::::res://Scenes/Components/spawner.tscn<>uid://8scy2k1de12h::::res://Scenes/Conveyor Components/conveyor_split.tscn<>uid://dgjyaiw1bas4v::::res://Scenes/Components/cutter.tscn<>uid://dwaqp5rfhedr2::::res://Scenes/Conveyor Components/bin.tscn<>uid://brkk0fodootua::::res://Scenes/Conveyor Components/output.tscn<>uid://cdssqx1vrhmdx::::res://Scenes/Conveyor Components/conveyor_sorter.tscn<>uid://m3ip7rbf34xv::::res://Scenes/Components/constructor.tscn<>uid://c7uqvrqg5tlpc::::res://Scenes/Conveyor Components/conveyor_bridge.tscn
 menu_test.gd::GDScript::-1::1700581197::0::1::::<>Node2D<>::
 test conv.tscn::PackedScene::6222765852157074508::1700763174::0::1::::<><>::uid://b7bet72ny64f2::::res://Art/converyor test.png
-test_action_array.tres::Resource/Resource::4242802877118746712::1701002305::0::1::::<><>::res://Menu/InputRemapping/input_description.gd<>res://Menu/InputRemapping/action_array.gd
+test_action_array.tres::Resource/ActionArray::4242802877118746712::1701280801::0::1::::<><>::res://Menu/InputRemapping/input_description.gd<>res://Menu/InputRemapping/action_array.gd
 test_inputs.gd::GDScript::-1::1698674953::0::1::::<>Control<>::
 test_inputs.tscn::PackedScene::7184610235990016552::1699556475::0::1::::<><>::res://Test/test_inputs.gd
-::res://Themes/::1701105240
+::res://Themes/::1701280801
 button_focus_hover.tres::StyleBoxFlat::7346667472062947546::1700517583::0::1::::<><>::
 button_normal.tres::StyleBoxFlat::1263630846812313281::1700517583::0::1::::<><>::
-main_theme.tres::Theme::578935107778959816::1701105240::0::1::::<><>::uid://sad2yvuc8vd6::::res://Themes/button_normal.tres<>uid://d2bwfie2p7v65::::res://Themes/Fonts/CaslonAntique.ttf<>uid://dcw1smemise63::::res://Themes/button_focus_hover.tres<>uid://sp7kecnp3wn2::::res://Themes/panel.tres
+main_theme.tres::Theme::578935107778959816::1701280801::0::1::::<><>::uid://sad2yvuc8vd6::::res://Themes/button_normal.tres<>uid://d2bwfie2p7v65::::res://Themes/Fonts/CaslonAntique.ttf<>uid://dcw1smemise63::::res://Themes/button_focus_hover.tres<>uid://sp7kecnp3wn2::::res://Themes/panel.tres
 new_bus_layout.tres::AudioBusLayout::5347743166279466651::1697280891::0::1::::<><>::
 panel.tres::StyleBoxFlat::1296325867297896733::1700517583::0::1::::<><>::
-::res://Themes/Fonts/::1699552215
+::res://Themes/Fonts/::1701260298
 CaslonAntique.ttf::FontFile::9057770337484727392::1695205434::1697278673::1::::<><>::
+OpenSans-Regular.ttf::FontFile::5593319905820015893::1701119240::1701119240::1::::<><>::
+Toucon__.ttf::FontFile::6622742604391438260::1701260298::1701260298::1::::<><>::
