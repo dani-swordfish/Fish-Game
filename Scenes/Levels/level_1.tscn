@@ -40,9 +40,6 @@ position = Vector2(304, 80)
 item = 22
 item_count_target = 6
 
-[node name="UI" parent="." index="5"]
-visible = false
-
 [node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
 initial_component_count = 0
 is_infinate = true
@@ -81,16 +78,24 @@ button_group = SubResource("ButtonGroup_ho37g")
 visible = true
 
 [node name="Polygon2D3" type="Polygon2D" parent="UI/LevelInfo/Panel" index="0"]
-position = Vector2(82, -11)
-polygon = PackedVector2Array(197, 125, 192, 125, 190, 132, 192, 137, 196, 142, 200, 144, 206, 144, 216, 142, 216, 133, 203, 131)
+position = Vector2(102, -26)
+polygon = PackedVector2Array(199, 129, 195, 129, 194, 131, 195, 134, 199, 139, 202, 143, 206, 144, 213, 142, 213, 133, 203, 131)
 
 [node name="Polygon2D" type="Polygon2D" parent="UI/LevelInfo/Panel" index="1"]
-polygon = PackedVector2Array(513, 104, 508, 104, 508, 128, 526, 128, 527, 123, 527, 111)
+position = Vector2(-57, -14)
+polygon = PackedVector2Array(507, 112, 507, 116, 508, 128, 526, 128, 527, 123, 525, 113)
 
-[node name="Label" parent="UI/LevelInfo/Panel" index="2"]
-text = "Level 1"
+[node name="Polygon2D2" type="Polygon2D" parent="UI/LevelInfo/Panel" index="2"]
+polygon = PackedVector2Array(162, 107, 162, 121, 181, 121, 181, 113, 176, 113, 171, 107)
 
-[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="3"]
+[node name="Polygon2D4" type="Polygon2D" parent="UI/LevelInfo/Panel" index="3"]
+polygon = PackedVector2Array(561, 108, 562, 114, 565, 118, 570, 121, 579, 120, 581, 113, 575, 113, 571, 110, 564, 108)
+
+[node name="Label" parent="UI/LevelInfo/Panel" index="4"]
+theme_override_font_sizes/font_size = 48
+text = "cLowNing AroUnd"
+
+[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="5"]
 offset_left = -250.5
 offset_top = -108.5
 offset_right = 250.5

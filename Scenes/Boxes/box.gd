@@ -16,7 +16,7 @@ func set_component():
 	sprite.show()
 	
 	sprite.frame_coords = Globals.get_component_frame_coords(component)
-	# TODO add coords
+
 
 
 func has_component() -> bool:

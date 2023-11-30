@@ -11,6 +11,7 @@ const LABEL_FOR_RECIPE = preload("res://Scenes/UI/label_for_recipe.tscn")
 const ITEM_BOX: PackedScene = preload("res://Scenes/UI/Item Boxes/item_box.tscn")
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 
+
 func _ready() -> void:
 	if type == Enum.COMPONENTS.CONSTRUCTOR:
 		spawn_contructor_recipe()
@@ -59,6 +60,8 @@ func spawn_item_box(item_to_spawn):
 	var item_inst = ITEM_BOX.instantiate()
 	item_inst.item = item_to_spawn
 	h_box_container.add_child(item_inst)
+	
+	
 
 
 func spawn_label(is_plus:bool):

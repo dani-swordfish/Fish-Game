@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_feqw2"]
 script = ExtResource("1_f6360")
 action = "rotate"
-description = "Rotate"
+description = "Rotate Component"
 events = Array[InputEvent]([])
 
 [sub_resource type="Resource" id="Resource_aoij1"]

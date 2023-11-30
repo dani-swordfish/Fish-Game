@@ -8,7 +8,7 @@ extends Process
 @export var override_level_default: bool = false
 @onready var item_picker_ui: Control = Globals.references.item_picker_ui
 
-# TODO use to give spawner different rates in different levels
+
 # also add to randi spawner
 @export var spawn_rate: float = 1.0
 

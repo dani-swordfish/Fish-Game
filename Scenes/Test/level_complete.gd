@@ -1,5 +1,5 @@
 extends Control
-# TODO could save score
+
 
 @export var level_no: int = 1
 
@@ -9,6 +9,7 @@ extends Control
 @onready var stop_button: Button = $"../ModeUI/PlayStop/MarginContainer/HBoxContainer/StopButton"
 
 var high_score_resource: HighScore = HighScore.new()
+@onready var mouse_click: AudioStreamPlayer = $"../../Sounds/MouseClick"
 
 @onready var saver: Saver = preload("res://Save System/saver.tres")
 func _ready() -> void:
@@ -26,7 +27,8 @@ func open(time: float, component_count: float):
 
 
 func close():
-	stop_button.pressed.emit()
+	#stop_button.pressed.emit()
+	mouse_click.play()
 	hide()
 
 
@@ -35,18 +37,18 @@ func _on_continue_button_pressed() -> void:
 
 
 func _on_next_level_button_pressed() -> void:
+	mouse_click.play()
 	get_tree().paused = false
-	get_tree().change_scene_to_file(Globals.level_list[level_no +1])
+	get_tree().change_scene_to_file(Globals.level_list[level_no])
 
 
 func load_high_scores():
 	if saver.load_game("high_scores.tres") == null:
-		print("did not load")
+		#print("did not load")
 		return
 	high_score_resource = saver.load_game("high_scores.tres").duplicate()
-	print("did load high scores")
+	#print("did load high scores")
 
 
 func save_high_scores():
 	saver.save_game(high_score_resource.duplicate(), "high_scores.tres")
-	print("high score saved", high_score_resource, high_score_resource.levels_array)

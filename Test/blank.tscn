@@ -96,25 +96,20 @@ rotation = -1.5708
 
 [node name="Conveyor4" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(160, 96)
-is_static = true
 
 [node name="Conveyor13" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(384, 96)
 rotation = -1.5708
-is_static = true
 
 [node name="Conveyor21" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(256, 128)
-is_static = true
 
 [node name="Conveyor14" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(128, 96)
-is_static = true
 
 [node name="Conveyor15" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(128, 64)
 rotation = 3.14159
-is_static = true
 
 [node name="Conveyor16" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(192, 128)
@@ -123,37 +118,30 @@ rotation = -1.5708
 [node name="Conveyor17" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(192, 64)
 rotation = 3.14159
-is_static = true
 
 [node name="Conveyor23" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(160, 64)
 rotation = 3.14159
-is_static = true
 
 [node name="Conveyor18" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(224, 64)
 rotation = 3.14159
-is_static = true
 
 [node name="Conveyor22" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(288, 224)
 rotation = -1.5708
-is_static = true
 
 [node name="Conveyor19" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(256, 64)
 rotation = 1.5708
-is_static = true
 
 [node name="Conveyor20" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(288, 96)
 rotation = 1.5708
-is_static = true
 
 [node name="Conveyor5" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(352, 64)
 rotation = 1.5708
-is_static = true
 
 [node name="Conveyor6" parent="ConveyorBelts" instance=ExtResource("3_fxmdb")]
 position = Vector2(192, 96)

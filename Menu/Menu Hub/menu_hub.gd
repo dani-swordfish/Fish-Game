@@ -6,6 +6,7 @@ class_name MenuHub
 var current_menu: MENU_TYPE
 
 @onready var menus: Control = $Menus
+@onready var menu_music: AudioStreamPlayer = $MenuMusic
 
 
 func _ready() -> void:
@@ -13,6 +14,9 @@ func _ready() -> void:
 		child.menu_transition.connect(on_menu_transition_button)
 	get_tree().paused = false
 	initialise()
+	for node in get_tree().root.get_children():
+		if node.is_in_group("menu_hub"):
+			menu_music.play()
 
 
 # runs on ready and open

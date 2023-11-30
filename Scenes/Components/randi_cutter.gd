@@ -45,7 +45,6 @@ func item_arrived(arrived_item_node):
 		return
 	
 	if Globals.get_cutter_recipe(item_node.item) == []:
-		print("invalid item distroyed")
 		item_node.queue_free()
 		storage_array[0].storage_space -= 1
 		return

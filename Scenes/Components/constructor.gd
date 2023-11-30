@@ -28,7 +28,6 @@ func get_has_space(item_node_received)-> bool:
 	#print(item_node_received.item, Globals.get_constuctor_recipe(item), " constructor")
 	
 	if !is_item_in_recipe(item_node_received):
-		print("item type reject")
 		return false
 	
 	var storage: Storage = get_storage(item_node_received)
@@ -65,9 +64,7 @@ func item_arrived(arrived_item_node):
 	arrived_item_node.queue_free()
 	
 	for i in storage_array.size():
-		print(storage_array[i].item, "  item set for stroage array")
 		if new_item == storage_array[i].item:
-			print("append")
 			storage_array[i].item_storage.append(new_item)
 	
 	if !has_item_ready and process_timer.time_left == 0:
@@ -87,7 +84,6 @@ func construct_item():
 	
 
 func _on_process_timer_timeout() -> void:
-	print("timeout  ", has_storage_check() , storage_array)
 	if has_storage_check() and !has_item_ready:
 		construct_item()
 		process_timer.start()
@@ -109,7 +105,6 @@ func reset_storage():
 		return
 	
 	for ingredient: Array[int] in Globals.get_constuctor_recipe(item):
-		print( ingredient)
 		var new_storage: Storage = Storage.new()
 		# could change storage limit for certain items
 		storage_array.append(new_storage)
@@ -118,7 +113,6 @@ func reset_storage():
 		if ingredient[1] > 1:
 			new_storage.storage_limit *= ingredient[1]
 			new_storage.items_needed = ingredient[1]
-	print(storage_array)
 
 
 ## for direction_matters group

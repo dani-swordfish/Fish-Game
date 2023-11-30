@@ -21,6 +21,7 @@ position = Vector2(48, 48)
 [node name="Spawner2" parent="Components" index="1" instance=ExtResource("2_6ghnk")]
 position = Vector2(48, 80)
 item = 4
+spawn_rate = 0.5
 
 [node name="Spawner3" parent="Components" index="2" instance=ExtResource("2_6ghnk")]
 position = Vector2(48, 112)

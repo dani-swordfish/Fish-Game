@@ -15,7 +15,6 @@ func _on_pressed() -> void:
 	for node in get_tree().root.get_children():
 		if node.is_in_group("menu_hub"):
 			menu_transition.emit(in_menu_transition_to)
-			print("in menu")
 			return
 	
 	menu_transition.emit(in_game_transition_to)

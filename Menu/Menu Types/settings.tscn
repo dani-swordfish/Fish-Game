@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://v10lyfekxsjd"]
+[gd_scene load_steps=8 format=3 uid="uid://v10lyfekxsjd"]
 
 [ext_resource type="Script" path="res://Menu/Menu Types/settings.gd" id="1_jqvcx"]
 [ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="2_6i31n"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://c1mdurghusp7i" path="res://Themes/Fonts/Toucon__.ttf" id="3_paqnp"]
 [ext_resource type="PackedScene" uid="uid://m4pwgrtm3784" path="res://Menu/Menu Components/Menu Buttons/fullscreen_button.tscn" id="4_djhol"]
 [ext_resource type="PackedScene" uid="uid://bwoqyjwe64ymg" path="res://Menu/Menu Components/Menu Buttons/variable_menu_transition.tscn" id="5_cvotr"]
+[ext_resource type="AudioStream" uid="uid://c752o3q70yf0y" path="res://Sounds/5 Menu Screen Slide SFX 02.wav" id="7_5xmhq"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -120,3 +121,6 @@ offset_right = 90.0
 offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_5xmhq")

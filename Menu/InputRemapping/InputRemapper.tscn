@@ -18,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_f54s7")
 action_array = ExtResource("2_reqm2")
+actions_to_reject_event_remap = Array[String](["ui_cancel", "pause_menu"])
 menu_type = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]

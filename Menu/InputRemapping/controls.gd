@@ -125,7 +125,6 @@ func _input(event: InputEvent) -> void:
 		if event.as_text().trim_suffix(" (Physical)") in get_events_used_by_other_actions(action_to_remap):
 			accept_event()
 			if user_warning.is_visible_in_tree():
-				print("visible")
 				return
 			user_warning.text = "Key is already being used."
 			user_warning.show()
@@ -168,7 +167,6 @@ func save_actions():
 
 func load_actions():
 	if saver.load_game("input_remap.tres") == null:
-		print("did not load")
 		return
 	action_array.action_array = saver.load_game("input_remap.tres").action_array.duplicate()
 	for i in action_array.action_array.size():
@@ -177,7 +175,6 @@ func load_actions():
 			InputMap.action_erase_events(action_description.action)
 			for event in action_description.events:
 				InputMap.action_add_event(action_description.action, event)
-	print("did load")
 
 # fade might look better
 func _on_warning_timer_timeout() -> void:

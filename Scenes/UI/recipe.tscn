@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://iw5o368wy1je"]
+[gd_scene load_steps=3 format=3 uid="uid://iw5o368wy1je"]
 
 [ext_resource type="Script" path="res://Scenes/UI/recipe.gd" id="1_gip7d"]
+[ext_resource type="StyleBox" uid="uid://b0fqd8ppawnph" path="res://Scenes/UI/recipe_panel.tres" id="1_mib5p"]
 
 [node name="Recipe" type="PanelContainer"]
+theme_override_styles/panel = ExtResource("1_mib5p")
 script = ExtResource("1_gip7d")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

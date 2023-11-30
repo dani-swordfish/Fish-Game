@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqx7iugws1vmq"]
+[gd_scene load_steps=5 format=3 uid="uid://bqx7iugws1vmq"]
 
 [ext_resource type="Script" path="res://Menu/Win and Loose Menu/win.gd" id="1_hmc37"]
-[ext_resource type="Theme" uid="uid://iio8g86nc5cm" path="res://Themes/main_theme.tres" id="2_pn8yu"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="2_oe1cj"]
 [ext_resource type="AudioStream" uid="uid://rodnrqtehm76" path="res://Sounds/Jingle_Win_00.mp3" id="3_co4fe"]
+[ext_resource type="FontFile" uid="uid://c1mdurghusp7i" path="res://Themes/Fonts/Toucon__.ttf" id="3_cwle8"]
 
 [node name="Win" type="Control"]
 layout_mode = 3
@@ -20,7 +21,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.2262, 0.71539, 0.78, 1)
+color = Color(0.192157, 0.396078, 0.6, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(433, 97, 435, 116, 461, 119, 470, 108, 444, 95)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(581, 120, 591, 139, 615, 140, 614, 128, 598, 126, 588, 116)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(760, 93, 765, 119, 793, 115, 791, 95)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(936, 122, 938, 141, 966, 141, 965, 129, 950, 128, 941, 120)
 
 [node name="MenuButton" type="Button" parent="."]
 layout_mode = 1
@@ -30,12 +43,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -62.0
-offset_top = -194.0
+offset_top = -156.0
 offset_right = 71.0
-offset_bottom = -130.0
+offset_bottom = -92.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("2_pn8yu")
+theme = ExtResource("2_oe1cj")
+theme_override_font_sizes/font_size = 32
 text = "Menu"
 
 [node name="Label" type="Label" parent="."]
@@ -43,17 +57,41 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -112.5
-offset_top = 205.0
-offset_right = 112.5
-offset_bottom = 262.0
+offset_left = -297.5
+offset_top = 85.0
+offset_right = 297.5
+offset_bottom = 151.0
 grow_horizontal = 2
-theme = ExtResource("2_pn8yu")
-text = "Waves Survived
-You Win!"
+theme = ExtResource("2_oe1cj")
+theme_override_colors/font_color = Color(1, 0.482353, 0, 1)
+theme_override_fonts/font = ExtResource("3_cwle8")
+theme_override_font_sizes/font_size = 72
+text = "gaMe ComPletE"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_co4fe")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -165.0
+offset_right = 331.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_oe1cj")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Thanks for playing!
+
+This game was a tough one to make with many different component and coding challenges, but I'm pretty happy with the results.  If you have any comments or criticisms, feel free to leave them in the comments section below, I would love to hear them.
+
+So long, and thanks for all the fish!"
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

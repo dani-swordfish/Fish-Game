@@ -50,7 +50,7 @@ func _on_stop():
 	#next_component = null
 
 
-# TODO at player start of game
+
 func _physics_process(delta: float) -> void:
 	if next_component == null: return
 	
@@ -71,7 +71,7 @@ func item_arrived(arrived_item_node):
 
 
 
-# TODO at player start of game
+
 func get_next_component(raycast = ray_cast_2d, com_direction = direction) -> Node2D:
 	if ray_cast_2d == null:
 		print("ray cast == null")
@@ -103,7 +103,7 @@ func move_item(move_direction = direction, new_compnent = next_component, item_t
 		return
 	
 	
-	# TODO select correct storage if stores multiple items ##test
+
 	if new_compnent.is_in_group("stores_items"):
 		if new_compnent.storage_array[0].any_item:
 			new_compnent.storage_array[0].storage_space += 1

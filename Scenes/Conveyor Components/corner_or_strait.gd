@@ -53,8 +53,6 @@ func ajust_for_inputs():
 	inputs.sort()
 	
 	inputs.erase(0)
-	if is_in_group("for_test"):
-		print(inputs)
 	
 	if inputs.size() == 0:
 		corner = false
@@ -73,8 +71,6 @@ func ajust_for_inputs():
 				flipped = true
 	
 	if inputs.size() == 2:
-		print(2)
-		
 		if inputs == [1,3]:
 			conveyor_animation.animation = "up_and_down_inputs"
 		

@@ -38,7 +38,7 @@ func on_target_reached():
 		var time_taken = get_parent().round_to_dec(get_parent().time_taken, 2)
 		level_complete.open(time_taken, componenet_count)
 		world_states.send_event("stop")
-		print("level_complete")
+		#print("level_complete")
 
 
 func _on_play_state_exited() -> void:

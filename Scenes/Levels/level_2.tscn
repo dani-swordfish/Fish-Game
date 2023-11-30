@@ -58,9 +58,6 @@ position = Vector2(208, 80)
 rotation = 3.14159
 is_static = false
 
-[node name="UI" parent="." index="6"]
-visible = false
-
 [node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
 is_infinate = true
 
@@ -123,7 +120,7 @@ offset_top = -82.5
 offset_right = 196.5
 offset_bottom = 82.5
 text = "[center]The Cutter separates items into parts.
-Check the recipe book cutter and constructor recipes."
+Check the recipe book for cutter and constructor recipes."
 
 [node name="SubMachine" parent="." index="7"]
 offset_top = 33.0

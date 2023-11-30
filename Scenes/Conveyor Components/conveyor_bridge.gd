@@ -1,7 +1,5 @@
 extends Componenet
-# TODO player can flip whilst placing
-# test more
-# asthetics? hide one item?
+
 @onready var conveyor_2: Node2D = $Conveyor2
 @export var flipped: bool = false
 @onready var top_down_conveyor: Sprite2D = $"Top-down-conveyor"

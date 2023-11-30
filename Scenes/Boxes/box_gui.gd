@@ -2,7 +2,7 @@ extends Box
 
 @export var initial_component_count: int = 0
 
-# TODO make work
+
 @export var is_infinate: bool = false
 
 var component_count:int:
@@ -37,13 +37,9 @@ func _on_gui_input(event: InputEvent) -> void:
 	if references.world_states.get_child(0)._active_state.name == "Play":
 		return
 	
-	# TODO check maybe remove
-	#if component_count <= 0:
-		#return
 	
 	if event is InputEventMouseButton \
 	and event.is_pressed():
-		print("test")
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			player_hand.pick_up_componant(component, self)
 			select_component.play()

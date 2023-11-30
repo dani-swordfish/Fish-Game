@@ -35,7 +35,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		return
 	
 	if !player_hand.has_component():  
-		print("player has no compoenent")
+		#print("player has no compoenent")
 		return
 	
 	
@@ -43,6 +43,7 @@ func _on_gui_input(event: InputEvent) -> void:
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		if player_hand.get_component() == Enum.COMPONENTS.REMOVE_COMPONENT:
 			if remove_component():
+				build_component.play()
 				handle_signals()
 			return
 		
@@ -68,7 +69,7 @@ func remove_component() -> bool:
 				cov.queue_free()
 				return true
 			else:
-				print("tried to remove static component")
+				#print("tried to remove static component")
 				return false
 	return false
 
@@ -96,7 +97,7 @@ func spawn_component(component: int):
 			if !cov.is_static:
 				remove_component()
 			else:
-				print("tried to place component on top of static component")
+				#print("tried to place component on top of static component")
 				return
 	
 	## should only run if spawning happens

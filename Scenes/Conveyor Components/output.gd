@@ -11,7 +11,7 @@ signal target_reached(item:int)
 
 @onready var item_picker_sprite: Node2D = $ItemPickerSprite
 
-# TODO pass to UI
+
 var item_count: int = 0
 
 
@@ -25,7 +25,6 @@ func _ready() -> void:
 
 func get_has_space(item_node_received)-> bool:
 	if !item_node_received.item == item:
-		print("item type reject")
 		return false
 	else:
 		return super.get_has_space(item_node_received)
@@ -49,7 +48,6 @@ func item_arrived(arrived_item_node):
 		if item_count == item_count_target:
 			target_reached.emit()
 	else:
-		print("wrong item in output")
 		pass # could add gameplay outcome
 	super.item_arrived(arrived_item_node)
 	

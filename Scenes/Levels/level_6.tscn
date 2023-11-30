@@ -40,9 +40,6 @@ rotation = 1.5708
 item = 16
 item_count_target = 9
 
-[node name="UI" parent="." index="6"]
-visible = false
-
 [node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
 is_infinate = true
 
