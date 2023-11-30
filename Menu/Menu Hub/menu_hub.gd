@@ -14,6 +14,8 @@ func _ready() -> void:
 		child.menu_transition.connect(on_menu_transition_button)
 	get_tree().paused = false
 	initialise()
+	
+	# only plays music if menu_hub is scene root node
 	for node in get_tree().root.get_children():
 		if node.is_in_group("menu_hub"):
 			menu_music.play()

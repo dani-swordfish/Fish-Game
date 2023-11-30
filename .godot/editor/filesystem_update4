@@ -1,4 +1,3 @@
-res://Singletons/globals.gd
 res://Scenes/Levels/LevelBase.tscn
 res://Resources/test_level.tres
 res://Scenes/UI/panel_1.tres
@@ -29,5 +28,6 @@ res://Test/blank.tscn
 res://Test/test_inputs.tscn
 res://Menu/Menu Types/settings.tscn
 res://Scenes/UI/item_box_for_picker.tscn
+res://Scenes/Conveyor Components/conveyor.tscn
 res://Menu/Menu Hub/menu_hub.gd
-res://Scenes/Test/level_complete.gd
+res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn

@@ -40,6 +40,9 @@ rotation = 1.5708
 item = 16
 item_count_target = 9
 
+[node name="UI" parent="." index="6"]
+visible = true
+
 [node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
 is_infinate = true
 
@@ -79,5 +82,20 @@ level_no = 6
 [node name="LevelInfo" parent="UI" index="6"]
 visible = true
 
-[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="1"]
+[node name="Polygon2D2" type="Polygon2D" parent="UI/LevelInfo/Panel" index="0"]
+position = Vector2(16, 0)
+polygon = PackedVector2Array(376, 116, 376, 132, 402, 132, 402, 122, 388, 122, 382, 115)
+
+[node name="Polygon2D" type="Polygon2D" parent="UI/LevelInfo/Panel" index="1"]
+position = Vector2(16, 0)
+polygon = PackedVector2Array(192, 104, 191, 115, 191, 125, 200, 129, 211, 128, 211, 116, 197, 103)
+
+[node name="Polygon2D3" type="Polygon2D" parent="UI/LevelInfo/Panel" index="2"]
+position = Vector2(16, 0)
+polygon = PackedVector2Array(548, 105, 549, 121, 575, 121, 575, 108, 552, 103)
+
+[node name="Label" parent="UI/LevelInfo/Panel" index="3"]
+text = "hIssstEricAl"
+
+[node name="RichTextLabel" parent="UI/LevelInfo/Panel" index="4"]
 text = "[center]Time to buckle down and get things done!"

@@ -62,6 +62,9 @@ rotation = 1.5708
 item = 24
 item_count_target = 20
 
+[node name="UI" parent="." index="6"]
+visible = true
+
 [node name="Box" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="0"]
 is_infinate = true
 
@@ -123,4 +126,6 @@ offset_left = -210.0
 offset_top = -112.0
 offset_right = 210.0
 offset_bottom = 112.0
-text = "[center]Add later"
+text = "[center]A fish which can light the way.
+
+The incinerator will destroy all items delivered to it."
