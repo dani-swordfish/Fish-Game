@@ -37,5 +37,7 @@ Button/styles/normal = ExtResource("2_e483x")
 Button/styles/pressed = ExtResource("1_sugfc")
 Label/colors/font_color = Color(1, 1, 1, 1)
 PanelContainer/styles/panel = ExtResource("1_4istu")
+TooltipLabel/colors/font_color = Color(0, 0, 0, 1)
+TooltipLabel/font_sizes/font_size = 18
 TooltipPanel/font_sizes/font_size = 22
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_yqimw")

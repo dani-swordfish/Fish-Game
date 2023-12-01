@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqhk5e6bi2kr"]
+[gd_scene load_steps=11 format=3 uid="uid://bqhk5e6bi2kr"]
 
 [ext_resource type="PackedScene" uid="uid://cvc5bp36c1uet" path="res://Scenes/Levels/LevelBase.tscn" id="1_7n5qb"]
 [ext_resource type="PackedScene" uid="uid://eic31mtpctmq" path="res://Scenes/Components/spawner.tscn" id="2_6btv2"]
 [ext_resource type="Resource" uid="uid://b1stbng2x4lcl" path="res://Scenes/Level Options/level_8_options.tres" id="2_gosqv"]
 [ext_resource type="PackedScene" uid="uid://brkk0fodootua" path="res://Scenes/Conveyor Components/output.tscn" id="3_80jxa"]
+[ext_resource type="Theme" uid="uid://chxi7kg5pq4qp" path="res://Ingame.tres" id="5_ns8o2"]
+[ext_resource type="Script" path="res://Scenes/UI/hint_page.gd" id="6_wqfca"]
+[ext_resource type="StyleBox" uid="uid://3kofhgr5wwsw" path="res://dark_panel.tres" id="7_8l0ob"]
+[ext_resource type="FontFile" uid="uid://c1mdurghusp7i" path="res://Themes/Fonts/Toucon__.ttf" id="8_y5yhy"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_y4fwy"]
 
@@ -57,6 +61,16 @@ initial_component_count = 3
 [node name="Box11" parent="UI/ComponentPicker/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer" index="9"]
 initial_component_count = 8
 
+[node name="HintButton" type="Button" parent="UI/ComponentPicker" index="4"]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 627.0
+offset_right = 937.0
+offset_bottom = 666.0
+theme = ExtResource("5_ns8o2")
+theme_override_font_sizes/font_size = 22
+text = "Hint"
+
 [node name="PlayButton" parent="UI/ModeUI/PlayStop/MarginContainer/HBoxContainer" index="0"]
 button_group = SubResource("ButtonGroup_y4fwy")
 
@@ -71,9 +85,6 @@ button_group = SubResource("ButtonGroup_637bd")
 
 [node name="LevelComplete" parent="UI" index="5"]
 level_no = 8
-
-[node name="LevelInfo" parent="UI" index="6"]
-visible = true
 
 [node name="Polygon2D" type="Polygon2D" parent="UI/LevelInfo/Panel" index="0"]
 polygon = PackedVector2Array(194, 102, 189, 115, 201, 124, 221, 124, 219, 107)
@@ -97,3 +108,109 @@ text = "[center]Are you up for a scaly challenge?
 Hint:
 Snake and clownfish produce one scale per animal and the others produce two
 "
+
+[node name="HintPage" type="Control" parent="UI" index="7"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_wqfca")
+
+[node name="Panel" type="Panel" parent="UI/HintPage" index="0"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_ns8o2")
+theme_override_styles/panel = ExtResource("7_8l0ob")
+
+[node name="Polygon2D" type="Polygon2D" parent="UI/HintPage/Panel" index="0"]
+position = Vector2(0, -15)
+polygon = PackedVector2Array(194, 102, 189, 115, 201, 124, 221, 124, 219, 107)
+
+[node name="Polygon2D2" type="Polygon2D" parent="UI/HintPage/Panel" index="1"]
+position = Vector2(0, -15)
+polygon = PackedVector2Array(319, 90, 318, 129, 347, 128, 350, 93, 345, 87)
+
+[node name="Polygon2D3" type="Polygon2D" parent="UI/HintPage/Panel" index="2"]
+position = Vector2(0, -15)
+polygon = PackedVector2Array(522, 112, 522, 124, 538, 124, 541, 119, 547, 114, 546, 109, 540, 108)
+
+[node name="Label" type="Label" parent="UI/HintPage/Panel" index="3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -273.5
+offset_top = 68.0
+offset_right = 273.5
+offset_bottom = 134.0
+grow_horizontal = 2
+theme = ExtResource("5_ns8o2")
+theme_override_colors/font_color = Color(1, 0.482353, 0, 1)
+theme_override_fonts/font = ExtResource("8_y5yhy")
+theme_override_font_sizes/font_size = 64
+text = "rAinBow Fish"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/HintPage/Panel" index="4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -317.0
+offset_top = -149.0
+offset_right = 344.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_ns8o2")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Hint 1:
+Clownfish only produce scales, so they don't need to go through a sorter.
+Hint 2:
+The constructor has three inputs and there are four types of scales, this means that two items need to share a belt
+Hint 3:
+Snake and clownfish produce one scale per animal, and so will be able to share a belt."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HintPage/Panel" index="5"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Spacer3" type="Control" parent="UI/HintPage/Panel/HBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContinueButton" type="Button" parent="UI/HintPage/Panel/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Continue "
+
+[node name="Spacer2" type="Control" parent="UI/HintPage/Panel/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="UI/ComponentPicker/HintButton" to="UI/HintPage" method="_on_hint_button_pressed"]
+[connection signal="pressed" from="UI/HintPage/Panel/HBoxContainer/ContinueButton" to="UI/HintPage" method="_on_continue_button_pressed"]

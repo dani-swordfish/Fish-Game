@@ -32,8 +32,6 @@ rotation = 1.5708
 [node name="ConveryorBeltAnimation3" parent="." instance=ExtResource("4_2r2wx")]
 position = Vector2(0, -8)
 rotation = -1.5708
-frame = 5
-frame_progress = 0.333509
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("2_cvuov")
@@ -71,6 +69,8 @@ wait_time = 0.5
 one_shot = true
 
 [node name="CutterAnimation" parent="." instance=ExtResource("4_j4h0y")]
+frame = 0
+frame_progress = 0.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="ProcessTimer" to="." method="_on_process_timer_timeout"]

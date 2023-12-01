@@ -71,14 +71,10 @@ collide_with_bodies = false
 
 [node name="ConveryorBeltAnimation4" parent="." instance=ExtResource("3_o4fd6")]
 animation = &"full_belt"
-frame = 14
-frame_progress = 0.109475
 
 [node name="ConveryorBeltAnimation5" parent="." instance=ExtResource("3_o4fd6")]
 rotation = -1.5708
 animation = &"full_belt"
-frame = 14
-frame_progress = 0.12336
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("2_robnq")

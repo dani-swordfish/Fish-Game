@@ -1,33 +1,23 @@
 res://Scenes/Levels/LevelBase.tscn
 res://Resources/test_level.tres
+res://dark_panel.tres
 res://Scenes/UI/panel_1.tres
 res://Ingame.tres
 res://Themes/main_theme.tres
 res://Test/test_action_array.tres
-res://Scenes/Level Options/level_3_options.tres
-res://Scenes/Level Options/level_5_options.tres
 res://Scenes/Level Options/level_6_options.tres
-res://Scenes/Level Options/level_7_options.tres
-res://Scenes/Levels/level_1.tscn
-res://Scenes/Levels/level_2.tscn
-res://Scenes/Levels/level_3.tscn
-res://Scenes/Levels/level_4.tscn
-res://Scenes/Levels/level_5.tscn
-res://Scenes/Levels/level_6.tscn
-res://Scenes/Levels/level_7.tscn
-res://Scenes/Levels/level_8.tscn
-res://Menu/InputRemapping/InputRemapper.tscn
-res://Scenes/Boxes/box.tscn
-res://Menu/Menu Hub/menu_hub.tscn
-res://Menu/Menu Types/in_game.tscn
-res://Menu/Win and Loose Menu/win.tscn
-res://Scenes/UI/Item Boxes/item_box.tscn
-res://Scenes/UI/recipe.tscn
-res://Test/test conv.tscn
-res://Test/blank.tscn
-res://Test/test_inputs.tscn
-res://Menu/Menu Types/settings.tscn
-res://Scenes/UI/item_box_for_picker.tscn
+res://Scenes/Level Options/level_3_options.tres
+res://Scenes/Components/constructor.tscn
+res://Scenes/Components/cutter.tscn
+res://Scenes/Components/multi_spawner.tscn
+res://Scenes/Components/spawner.tscn
+res://Scenes/Conveyor Components/bin.tscn
 res://Scenes/Conveyor Components/conveyor.tscn
-res://Menu/Menu Hub/menu_hub.gd
-res://Menu/Menu Components/Menu Buttons/menu_transition_button.tscn
+res://Scenes/Conveyor Components/conveyor_bridge.tscn
+res://Scenes/Conveyor Components/conveyor_sorter.tscn
+res://Scenes/Conveyor Components/conveyor_split.tscn
+res://Scenes/Conveyor Components/output.tscn
+res://Scenes/Components/randi_cutter.tscn
+res://Scenes/Levels/level_6.tscn
+res://Menu/Menu Hub/menu_hub.tscn
+res://Scenes/Levels/level_3.tscn

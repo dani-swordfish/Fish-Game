@@ -16,8 +16,6 @@ script = ExtResource("1_8rs42")
 
 [node name="ConveryorBeltAnimation4" parent="." instance=ExtResource("3_yrb4j")]
 animation = &"full_belt"
-frame = 2
-frame_progress = 0.216666
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("3_coxxa")

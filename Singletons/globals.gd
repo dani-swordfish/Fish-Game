@@ -200,12 +200,13 @@ func get_fixed_direction(direction: int) -> Enum.DIRECTION:
 	return direction
 	
 
+## IMPORTANT also change export var if changing level order
 var level_list: Array[String] = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Levels/level_2.tscn",
 	"res://Scenes/Levels/level_4.tscn",
-	"res://Scenes/Levels/level_3.tscn",
 	"res://Scenes/Levels/level_5.tscn",
+	"res://Scenes/Levels/level_3.tscn",
 	"res://Scenes/Levels/level_6.tscn",
 	"res://Scenes/Levels/level_7.tscn",
 	"res://Scenes/Levels/level_8.tscn",

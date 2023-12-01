@@ -506,7 +506,6 @@ item_picker_array = Array[int]([3, 2, 1])
 z_index = -3
 sprite_frames = SubResource("SpriteFrames_g71fm")
 animation = &"three_inputs"
-frame_progress = 0.210993
 
 [node name="Top-down-conveyor" type="Sprite2D" parent="."]
 texture = ExtResource("2_yab2n")
